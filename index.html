@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test Review Units 6 and 7 Common Core</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Cabin:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0d1118;--card:#161b26;--card2:#1e2538;--card3:#252d42;--border:#2a3150;--u6:#06b6d4;--u6dim:rgba(6,182,212,0.13);--u7:#c084fc;--u7dim:rgba(192,132,252,0.12);--green:#34d399;--red:#f87171;--yellow:#fbbf24;--text:#e2e8f0;--muted:#64748b;--white:#f8fafc;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:'Cabin',sans-serif;min-height:100vh;padding-bottom:64px;}
+.hdr{background:linear-gradient(160deg,#0f1521,#151c2e 60%,#0d1118);border-bottom:2px solid var(--border);padding:16px 18px 12px;text-align:center;position:sticky;top:0;z-index:200;}
+.hdr-school{font-size:.62rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+.hdr-title{font-family:'Nunito',sans-serif;font-size:1.45rem;font-weight:900;color:var(--white);}
+.hdr-sub{font-size:.75rem;color:var(--muted);margin-top:3px;}
+.badge-row{display:flex;justify-content:center;gap:8px;margin-top:9px;flex-wrap:wrap;}
+.badge{padding:3px 13px;border-radius:20px;font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;}
+.b6{background:rgba(6,182,212,.12);color:var(--u6);border:1px solid rgba(6,182,212,.4);}
+.b7{background:rgba(192,132,252,.1);color:var(--u7);border:1px solid rgba(192,132,252,.35);}
+.tbar{background:var(--card);border-bottom:1px solid var(--border);padding:7px 16px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}
+.tdisp{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;color:var(--green);letter-spacing:2px;transition:color .3s;}
+.tdisp.warn{color:var(--yellow);}.tdisp.danger{color:var(--red);}
+.tbtn{background:var(--border);color:var(--text);border:none;padding:5px 15px;border-radius:7px;font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;}
+.tbtn:hover{background:#3a4160;}
+.spill{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.3);color:var(--green);padding:3px 13px;border-radius:20px;font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:700;}
+.tabs{display:flex;overflow-x:auto;background:var(--card);border-bottom:2px solid var(--border);padding:0 4px;gap:1px;scrollbar-width:none;}
+.tabs::-webkit-scrollbar{display:none;}
+.tab{flex-shrink:0;padding:10px 11px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.63rem;letter-spacing:.5px;text-transform:uppercase;border:none;background:none;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;}
+.tab:hover{color:var(--text);}.tab.a6{color:var(--u6);border-bottom-color:var(--u6);}.tab.a7{color:var(--u7);border-bottom-color:var(--u7);}.tab.ax{color:var(--yellow);border-bottom-color:var(--yellow);}
+.panel{display:none;padding:18px 15px;max-width:740px;margin:0 auto;}.panel.active{display:block;}
+.stitle{font-family:'Nunito',sans-serif;font-weight:900;font-size:.92rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:13px;padding-bottom:8px;border-bottom:2px solid;}
+.s6{color:var(--u6);border-color:rgba(6,182,212,.3);}.s7{color:var(--u7);border-color:rgba(192,132,252,.25);}.sx{color:var(--yellow);border-color:rgba(251,191,36,.3);}
+.rule{border-left:4px solid;border-radius:0 10px 10px 0;padding:12px 15px;margin-bottom:13px;font-size:.84rem;line-height:1.8;background:linear-gradient(135deg,var(--card2),var(--card));}
+.rule6{border-color:var(--u6);}.rule7{border-color:var(--u7);}
+.rule code{background:rgba(255,255,255,.07);padding:1px 6px;border-radius:4px;font-family:monospace;font-size:.88em;color:#c8d3f5;}
+.ok{color:var(--green);font-weight:700;}.no{color:var(--red);font-weight:700;}
+table.gt{width:100%;border-collapse:collapse;font-size:.8rem;margin-bottom:14px;}
+table.gt th{padding:8px 11px;text-align:left;border:1px solid var(--border);font-family:'Nunito',sans-serif;font-weight:800;}
+table.gt td{padding:7px 11px;border:1px solid var(--border);vertical-align:top;line-height:1.55;}
+table.gt tr:nth-child(even) td{background:rgba(255,255,255,.02);}
+.th6{background:var(--u6dim);color:var(--u6);}.th7{background:var(--u7dim);color:var(--u7);}
+.aff{color:var(--green);}.neg{color:var(--red);}.sbj{font-weight:700;color:var(--white);}
+.base{color:var(--muted);}.pst{color:var(--u7);font-weight:700;}
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:8px;margin-bottom:18px;}
+.vc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:9px 10px;text-align:center;cursor:pointer;user-select:none;transition:transform .2s;}
+.vc:hover{transform:translateY(-2px);}
+.vc .em{font-size:1.65rem;display:block;margin-bottom:4px;}.vc .wd{font-size:.73rem;font-weight:700;color:var(--white);}
+.vc .df{font-size:.63rem;color:var(--muted);margin-top:4px;max-height:0;overflow:hidden;transition:max-height .3s;}.vc.open .df{max-height:60px;}
+.vc .ht{font-size:.57rem;color:var(--muted);margin-top:2px;}
+.ebox{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:15px;margin-bottom:16px;}
+.elabel{font-size:.62rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;color:var(--muted);margin-bottom:8px;}
+.eq{font-size:.9rem;line-height:1.65;margin-bottom:11px;}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
+.opt{background:var(--card2);border:1.5px solid var(--border);border-radius:8px;padding:8px 11px;font-size:.79rem;cursor:pointer;transition:all .2s;line-height:1.4;}
+.opt:hover{border-color:#3d4470;background:var(--card3);}
+.opt.correct{background:rgba(52,211,153,.13);border-color:var(--green);color:var(--green);}
+.opt.wrong{background:rgba(248,113,113,.1);border-color:var(--red);color:var(--red);}
+.opt.disabled{pointer-events:none;opacity:.55;}.opt.reveal{background:rgba(52,211,153,.08);border-color:var(--green);color:var(--green);opacity:1;}
+select.bl{background:var(--card2);border:1.5px solid var(--border);border-radius:6px;color:var(--text);font-size:.82rem;padding:5px 7px;outline:none;cursor:pointer;font-family:'Cabin',sans-serif;}
+select.bl.correct{border-color:var(--green);color:var(--green);}.select.bl.wrong{border-color:var(--red);color:var(--red);}
+input.blin{background:var(--card2);border:1.5px solid var(--border);border-radius:6px;color:var(--text);font-size:.82rem;padding:5px 9px;outline:none;width:110px;text-align:center;font-family:'Cabin',sans-serif;}
+input.blin:focus{border-color:#505580;}input.blin.correct{border-color:var(--green);color:var(--green);}input.blin.wrong{border-color:var(--red);color:var(--red);}
+.mcols{display:grid;grid-template-columns:1fr 1fr;gap:8px;}.mcol{display:flex;flex-direction:column;gap:6px;}
+.mi{background:var(--card2);border:1.5px solid var(--border);border-radius:8px;padding:8px 11px;font-size:.77rem;cursor:pointer;transition:all .2s;text-align:center;line-height:1.35;}
+.mi.sel{border-color:#7882c5;background:rgba(120,130,197,.14);color:#b0b8f8;}
+.mi.ok{border-color:var(--green);background:rgba(52,211,153,.08);color:var(--green);pointer-events:none;}
+.mi.fail{border-color:var(--red);background:rgba(248,113,113,.07);color:var(--red);}
+.tfrow{display:flex;align-items:flex-start;gap:9px;margin-bottom:11px;flex-wrap:wrap;}
+.tfstmt{flex:1;font-size:.83rem;line-height:1.55;min-width:180px;}
+.tfbtns{display:flex;gap:6px;flex-shrink:0;}
+.tfbtn{padding:5px 13px;border-radius:7px;border:1.5px solid var(--border);background:var(--card2);color:var(--text);font-size:.75rem;font-weight:700;cursor:pointer;transition:all .2s;}
+.tfbtn.st{border-color:var(--green);background:rgba(52,211,153,.12);color:var(--green);}
+.tfbtn.sf{border-color:var(--red);background:rgba(248,113,113,.1);color:var(--red);}
+.tffb{font-size:.67rem;font-weight:600;width:100%;padding-top:2px;}
+.wprompt{background:linear-gradient(135deg,rgba(192,132,252,.07),rgba(120,90,180,.04));border:1px solid rgba(192,132,252,.22);border-radius:10px;padding:13px 15px;margin-bottom:12px;}
+.wprompt p{font-size:.85rem;line-height:1.65;}
+textarea.wa{width:100%;background:var(--card2);border:1.5px solid var(--border);border-radius:9px;color:var(--text);font-size:.85rem;padding:11px 13px;resize:vertical;min-height:85px;outline:none;font-family:'Cabin',sans-serif;line-height:1.65;}
+.cbtn{display:inline-block;padding:7px 20px;border-radius:8px;border:none;font-family:'Nunito',sans-serif;font-weight:800;font-size:.8rem;cursor:pointer;margin-top:6px;}
+.cbtn:hover{opacity:.85;}.c6{background:var(--u6);color:#002a30;}.c7{background:var(--u7);color:#1a0a2e;}.cx{background:var(--yellow);color:#1a1200;}
+.fb{margin-top:7px;font-size:.77rem;font-weight:700;min-height:18px;}.fbok{color:var(--green);}.fbno{color:var(--red);}
+.ocard{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:14px;margin-bottom:12px;}
+.ocard h3{font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:800;margin-bottom:9px;}
+.tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tag{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:3px 9px;font-size:.72rem;color:var(--muted);}
+.footer{background:var(--card);border-top:1px solid var(--border);padding:11px 16px;text-align:center;font-size:.62rem;color:var(--muted);position:fixed;bottom:0;left:0;right:0;}
+</style></head><body>
+
+<div class="hdr">
+  <div class="hdr-school">Prof. Salah Sahmoudi &middot; Abdellah Guennoun High School, Sa&iuml;ss-F&egrave;s</div>
+  <div class="hdr-title">&#128221; Extensive Test Review</div>
+  <div class="hdr-sub">Common Core &middot; <em>Visa to the World</em> &middot; 55 minutes</div>
+  <div class="badge-row">
+    <span class="badge b6">&#128138; Unit 6 &mdash; Health &amp; Welfare</span>
+    <span class="badge b7">&#127912; Unit 7 &mdash; The Arts</span>
+  </div>
+</div>
+
+<div class="tbar">
+  <span style="font-size:.75rem;color:var(--muted);">&#9201;</span>
+  <span class="tdisp" id="td">55:00</span>
+  <button class="tbtn" id="tBtn" onclick="toggleTimer()">&#9654; Start</button>
+  <button class="tbtn" onclick="resetTimer()">&#8635; Reset</button>
+  <span class="spill" id="scoreEl">Score: 0 / 0</span>
+</div>
+
+<div class="tabs">
+  <button class="tab" onclick="go('ov',this)" data-u="x">&#128506; Overview</button>
+  <button class="tab" onclick="go('u6v',this)" data-u="6">U6 &middot; Vocab</button>
+  <button class="tab" onclick="go('u6s',this)" data-u="6">U6 &middot; Modals</button>
+  <button class="tab" onclick="go('u6c',this)" data-u="6">U6 &middot; Conditionals</button>
+  <button class="tab" onclick="go('u6j',this)" data-u="6">U6 &middot; Conjunctions</button>
+  <button class="tab" onclick="go('u7v',this)" data-u="7">U7 &middot; Vocab</button>
+  <button class="tab" onclick="go('u7s',this)" data-u="7">U7 &middot; Suggestions</button>
+  <button class="tab" onclick="go('u7p',this)" data-u="7">U7 &middot; Simple Past</button>
+  <button class="tab" onclick="go('writing',this)" data-u="x">&#9999; Writing</button>
+  <button class="tab" onclick="go('mixed',this)" data-u="x">&#128256; Mixed Quiz</button>
+</div>
+
+<!-- OVERVIEW -->
+<div class="panel active" id="panel-ov">
+  <div class="ocard"><h3 style="color:var(--u6)">&#128138; Unit 6 &mdash; Health &amp; Welfare</h3>
+    <div class="tags"><span class="tag">Illnesses: cold, flu, fever, cough, sore throat</span><span class="tag">Symptoms: dizziness, fatigue, nausea, chills</span><span class="tag">should / shouldn&apos;t</span><span class="tag">can / can&apos;t / must / mustn&apos;t</span><span class="tag">Conditional Type 0</span><span class="tag">Conditional Type 1</span><span class="tag">and / but / so / because</span></div>
+  </div>
+  <div class="ocard"><h3 style="color:var(--u7)">&#127912; Unit 7 &mdash; The Arts</h3>
+    <div class="tags"><span class="tag">Art forms: painting, sculpture, photography, music, dance</span><span class="tag">Artists: painter, sculptor, musician, architect</span><span class="tag">Making suggestions: Why don&apos;t we / How about / Let&apos;s / What about</span><span class="tag">Simple Past: was / were</span><span class="tag">Regular verbs: -ed</span><span class="tag">Irregular verbs: go-went, write-wrote, see-saw...</span></div>
+  </div>
+  <div class="ebox" style="text-align:center;border-color:rgba(251,191,36,.2);">
+    <p style="font-size:.84rem;color:var(--muted);line-height:1.9;">&#9201; Press <strong style="color:var(--white)">&#9654; Start</strong> then work tab by tab.<br>&#128311; Blue = Unit 6 &nbsp;&middot;&nbsp; &#128312; Purple = Unit 7 &nbsp;&middot;&nbsp; Click answers for instant feedback!</p>
+  </div>
+</div>
+
+<!-- U6 VOCAB -->
+<div class="panel" id="panel-u6v">
+  <div class="stitle s6">&#128138; Unit 6 &middot; Vocabulary</div>
+  <div class="rule rule6"><strong>&#128204; Expressing illness:</strong><br>
+    <code>I have a + illness</code> &rarr; <em>I have a cold / headache / fever.</em><br>
+    <code>I feel + adjective</code> &rarr; <em>I feel sick / tired / terrible / dizzy.</em><br>
+    <code>My + body part + hurts</code> &rarr; <em>My head hurts. My throat aches.</em>
+  </div>
+  <p style="font-size:.73rem;color:var(--muted);margin-bottom:9px;">&#128070; Tap each card to reveal</p>
+  <div class="vgrid" id="u6vg"></div>
+  <div class="stitle s6" style="margin-top:20px;">&#129657; Exercise 1 &mdash; Illness to Symptom Matching</div>
+  <div class="ebox">
+    <div class="elabel">Click one from each column to make correct pairs</div>
+    <div class="mcols" id="u6match"></div>
+    <button class="cbtn c6" style="margin-top:11px;" onclick="checkU6Match()">Check Pairs</button>
+    <div class="fb" id="u6matchFB"></div>
+  </div>
+  <div class="stitle s6" style="margin-top:20px;">&#9999; Exercise 2 &mdash; Fill in the Blank</div>
+  <div class="ebox">
+    <div class="elabel">Choose the correct illness or symptom word</div>
+    <div id="u6vfill"></div>
+    <button class="cbtn c6" onclick="checkU6vFill()">Check Answers</button>
+    <div class="fb" id="u6vfillFB"></div>
+  </div>
+  <div class="stitle s6" style="margin-top:20px;">&#9989; Exercise 3 &mdash; True or False</div>
+  <div class="ebox">
+    <div class="elabel">Is each statement True or False?</div>
+    <div id="u6tf"></div>
+  </div>
+</div>
+
+<!-- U6 MODALS -->
+<div class="panel" id="panel-u6s">
+  <div class="stitle s6">&#128138; Unit 6 &middot; Should / Shouldn&apos;t &amp; Modals</div>
+  <div class="rule rule6"><strong>&#128208; should / shouldn&apos;t</strong> &mdash; giving advice<br>
+    <code>should + base verb</code> = good idea &#10003;&nbsp;&middot;&nbsp;<code>shouldn&apos;t + base verb</code> = bad idea &#10007;<br>
+    <em>You should rest. &middot; You shouldn&apos;t eat junk food.</em>
+  </div>
+  <div class="rule rule6"><strong>&#128208; can / can&apos;t / must / mustn&apos;t</strong><br>
+    <code>can</code> = ability / permission &nbsp;&middot;&nbsp; <code>can&apos;t</code> = not able / not allowed<br>
+    <code>must</code> = strong obligation &nbsp;&middot;&nbsp; <code>mustn&apos;t</code> = prohibition (do NOT!)<br>
+    &#9888; All modals + base verb (no -s, no -ing, no to)
+  </div>
+  <div id="u6sModalQ"></div>
+  <div class="stitle s6" style="margin-top:18px;">&#9999; Complete the Advice</div>
+  <div class="ebox">
+    <div class="elabel">Choose the correct modal to complete each sentence</div>
+    <div id="u6sAdvice"></div>
+    <button class="cbtn c6" onclick="checkU6sAdvice()">Check Answers</button>
+    <div class="fb" id="u6sAdviceFB"></div>
+  </div>
+</div>
+
+<!-- U6 CONDITIONALS -->
+<div class="panel" id="panel-u6c">
+  <div class="stitle s6">&#128138; Unit 6 &middot; Conditionals Type 0 &amp; Type 1</div>
+  <table class="gt">
+    <thead><tr><th class="th6" style="width:18%"></th><th class="th6">&#9889; Type 0 &mdash; General Truth</th><th class="th6">&#128302; Type 1 &mdash; Real / Possible Future</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Use</strong></td><td>Facts, science, habits &mdash; always true</td><td>A future situation that is likely</td></tr>
+      <tr><td><strong>Formula</strong></td><td><code>If + Pres. Simple, Pres. Simple</code></td><td><code>If + Pres. Simple, will + base</code></td></tr>
+      <tr><td><strong>Example</strong></td><td><em>If you heat water, it <strong style="color:var(--u6)">boils</strong>.</em></td><td><em>If you rest, you <strong style="color:var(--u6)">will feel</strong> better.</em></td></tr>
+    </tbody>
+  </table>
+  <div class="rule rule6">
+    &#9888; After <code>if</code>, NEVER use <em>will</em>: <span class="no">&#10007; If it will rain</span> &rarr; <span class="ok">&#10003; If it rains</span><br>
+    When if-clause comes first &rarr; comma: <code>If ..., result.</code>
+  </div>
+  <div id="u6condQ"></div>
+  <div class="stitle s6" style="margin-top:18px;">&#128295; Build the Sentence</div>
+  <div class="ebox">
+    <div class="elabel">Choose the correct verb form for each blank</div>
+    <div id="u6condBuild"></div>
+    <button class="cbtn c6" onclick="checkU6condBuild()">Check Answers</button>
+    <div class="fb" id="u6condBuildFB"></div>
+  </div>
+</div>
+
+<!-- U6 CONJUNCTIONS -->
+<div class="panel" id="panel-u6j">
+  <div class="stitle s6">&#128138; Unit 6 &middot; Conjunctions</div>
+  <table class="gt">
+    <thead><tr><th class="th6">Conjunction</th><th class="th6">Meaning</th><th class="th6">Example</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--green);font-weight:700;">and</td><td>Addition</td><td><em>I have a cold <strong>and</strong> a fever.</em></td></tr>
+      <tr><td style="color:var(--yellow);font-weight:700;">but</td><td>Contrast</td><td><em>I feel sick, <strong>but</strong> I went to school.</em></td></tr>
+      <tr><td style="color:var(--u6);font-weight:700;">so</td><td>Result</td><td><em>I have a headache, <strong>so</strong> I will take a pill.</em></td></tr>
+      <tr><td style="color:var(--u7);font-weight:700;">because</td><td>Reason</td><td><em>I stayed home <strong>because</strong> I was sick.</em></td></tr>
+    </tbody>
+  </table>
+  <div class="rule rule6">
+    <strong>so</strong> = result (what happened) &nbsp;&middot;&nbsp; <strong>because</strong> = reason (why)<br>
+    <em>I went to the doctor <span class="ok">because</span> I had a fever.</em> (reason &rarr; why)<br>
+    <em>I had a fever, <span class="ok">so</span> I went to the doctor.</em> (result &rarr; what happened)
+  </div>
+  <div id="u6conjQ"></div>
+  <div class="stitle s6" style="margin-top:18px;">&#128279; Combine the Sentences</div>
+  <div class="ebox">
+    <div class="elabel">Select the correct conjunction to link the two sentences</div>
+    <div id="u6conjCombine"></div>
+    <button class="cbtn c6" onclick="checkU6conjCombine()">Check Answers</button>
+    <div class="fb" id="u6conjCombineFB"></div>
+  </div>
+</div>
+
+<!-- U7 VOCAB -->
+<div class="panel" id="panel-u7v">
+  <div class="stitle s7">&#127912; Unit 7 &middot; The Arts Vocabulary</div>
+  <div class="rule rule7"><strong>&#128204; Art form &rarr; person:</strong><br>
+    painting &rarr; <em>painter</em> &nbsp;&middot;&nbsp; sculpture &rarr; <em>sculptor</em> &nbsp;&middot;&nbsp; photography &rarr; <em>photographer</em><br>
+    music &rarr; <em>musician</em> &nbsp;&middot;&nbsp; dance &rarr; <em>dancer</em> &nbsp;&middot;&nbsp; architecture &rarr; <em>architect</em>
+  </div>
+  <p style="font-size:.73rem;color:var(--muted);margin-bottom:9px;">&#128070; Tap each card to reveal</p>
+  <div class="vgrid" id="u7vg"></div>
+  <div class="stitle s7" style="margin-top:20px;">&#127914; Exercise 1 &mdash; Art Form to Person Matching</div>
+  <div class="ebox">
+    <div class="elabel">Click one from each column to match art form to person</div>
+    <div class="mcols" id="u7match"></div>
+    <button class="cbtn c7" style="margin-top:11px;" onclick="checkU7Match()">Check Pairs</button>
+    <div class="fb" id="u7matchFB"></div>
+  </div>
+  <div class="stitle s7" style="margin-top:18px;">&#127919; Exercise 2 &mdash; Vocabulary MCQ</div>
+  <div id="u7vocabQ"></div>
+</div>
+
+<!-- U7 SUGGESTIONS -->
+<div class="panel" id="panel-u7s">
+  <div class="stitle s7">&#127912; Unit 7 &middot; Making Suggestions</div>
+  <table class="gt">
+    <thead><tr><th class="th7">Phrase</th><th class="th7">Form</th><th class="th7">Example</th></tr></thead>
+    <tbody>
+      <tr><td style="color:var(--u7);font-weight:700;">Why don&apos;t we...?</td><td>Why don&apos;t we + base verb</td><td><em>Why don&apos;t we <strong>visit</strong> the museum?</em></td></tr>
+      <tr><td style="color:var(--u7);font-weight:700;">How about...?</td><td>How about + verb-ing</td><td><em>How about <strong>going</strong> to a concert?</em></td></tr>
+      <tr><td style="color:var(--u7);font-weight:700;">Let&apos;s...!</td><td>Let&apos;s + base verb</td><td><em>Let&apos;s <strong>watch</strong> a film tonight!</em></td></tr>
+      <tr><td style="color:var(--u7);font-weight:700;">What about...?</td><td>What about + verb-ing</td><td><em>What about <strong>visiting</strong> an art gallery?</em></td></tr>
+    </tbody>
+  </table>
+  <div class="rule rule7">
+    <strong>Accepting:</strong> <em>That sounds great! / I&apos;d love to! / Sure, why not?</em><br>
+    <strong>Declining:</strong> <em>I&apos;m sorry, I can&apos;t. / I&apos;d love to, but I&apos;m busy. / Maybe another time.</em>
+  </div>
+  <div id="u7suggestQ"></div>
+  <div class="stitle s7" style="margin-top:18px;">&#9999; Complete the Suggestion</div>
+  <div class="ebox">
+    <div class="elabel">Fill in the blank with the correct form of the verb in brackets</div>
+    <div id="u7suggestFill"></div>
+    <button class="cbtn c7" onclick="checkU7suggestFill()">Check Answers</button>
+    <div class="fb" id="u7suggestFillFB"></div>
+  </div>
+</div>
+
+<!-- U7 SIMPLE PAST -->
+<div class="panel" id="panel-u7p">
+  <div class="stitle s7">&#127912; Unit 7 &middot; Simple Past</div>
+  <div class="rule rule7"><strong>&#128208; Part 1 &mdash; was / were</strong></div>
+  <table class="gt">
+    <thead><tr><th class="th7">Subject</th><th class="th7">&#10003; Affirmative</th><th class="th7">&#10007; Negative</th><th class="th7">&#10067; Question</th></tr></thead>
+    <tbody>
+      <tr><td class="sbj">I</td><td class="aff">I <strong>was</strong> at the gallery.</td><td class="neg">I <strong>wasn&apos;t</strong> there.</td><td><strong>Was</strong> I late?</td></tr>
+      <tr><td class="sbj">He / She / It</td><td class="aff">She <strong>was</strong> a dancer.</td><td class="neg">He <strong>wasn&apos;t</strong> famous.</td><td><strong>Was</strong> she good?</td></tr>
+      <tr><td class="sbj">You / We / They</td><td class="aff">They <strong>were</strong> great artists.</td><td class="neg">We <strong>weren&apos;t</strong> there.</td><td><strong>Were</strong> they famous?</td></tr>
+    </tbody>
+  </table>
+  <div class="rule rule7">&#128336; Time words: <code>yesterday</code> &middot; <code>last week/month/year</code> &middot; <code>in 1990</code> &middot; <code>...ago</code> &middot; <code>when I was young</code></div>
+  <div class="stitle s7" style="margin-top:18px;">&#128208; Part 2 &mdash; Regular Verbs &rarr; add -ed</div>
+  <div class="rule rule7">
+    <code>paint &rarr; painted</code> &middot; <code>watch &rarr; watched</code> &middot; <code>perform &rarr; performed</code> &middot; <code>visit &rarr; visited</code><br>
+    <code>dance &rarr; danced</code> (drop e) &nbsp;&middot;&nbsp; <code>study &rarr; studied</code> (y&rarr;ied) &nbsp;&middot;&nbsp; <code>stop &rarr; stopped</code> (double consonant)<br>
+    &#10007; Negative: <code>didn&apos;t + base verb</code> &nbsp;&middot;&nbsp; &#10067; Question: <code>Did + subject + base verb?</code>
+  </div>
+  <div class="stitle s7" style="margin-top:18px;">&#128208; Part 3 &mdash; Irregular Verbs (memorise!)</div>
+  <table class="gt">
+    <thead><tr><th class="th7">Base</th><th class="th7">Past</th><th class="th7">Base</th><th class="th7">Past</th><th class="th7">Base</th><th class="th7">Past</th></tr></thead>
+    <tbody>
+      <tr><td class="base">go</td><td class="pst">went</td><td class="base">make</td><td class="pst">made</td><td class="base">see</td><td class="pst">saw</td></tr>
+      <tr><td class="base">take</td><td class="pst">took</td><td class="base">write</td><td class="pst">wrote</td><td class="base">come</td><td class="pst">came</td></tr>
+      <tr><td class="base">have</td><td class="pst">had</td><td class="base">give</td><td class="pst">gave</td><td class="base">know</td><td class="pst">knew</td></tr>
+      <tr><td class="base">think</td><td class="pst">thought</td><td class="base">buy</td><td class="pst">bought</td><td class="base">meet</td><td class="pst">met</td></tr>
+    </tbody>
+  </table>
+  <div id="u7pastQ"></div>
+  <div class="stitle s7" style="margin-top:18px;">&#128269; Spot the Error</div>
+  <div class="ebox">
+    <div class="elabel">One word in each sentence is wrong. Choose the correction.</div>
+    <div id="u7errorQ"></div>
+  </div>
+</div>
+
+<!-- WRITING -->
+<div class="panel" id="panel-writing">
+  <div class="stitle sx">&#9999; Writing Tasks &mdash; Units 6 &amp; 7</div>
+  <div class="wprompt">
+    <strong style="color:var(--u6);">Task 1 &mdash; Health Advice (Unit 6)</strong>
+    <p>Your friend has a fever, sore throat and feels dizzy. Write <strong>4 sentences</strong> of advice using <strong>should / shouldn&apos;t / must / can</strong>. Use at least one conjunction.</p>
+  </div>
+  <textarea class="wa" id="w1" placeholder="You should rest and drink warm water because your fever is high..."></textarea>
+  <div class="wprompt" style="margin-top:13px;">
+    <strong style="color:var(--u6);">Task 2 &mdash; Conditional Sentences (Unit 6)</strong>
+    <p>Write <strong>one Type 0</strong> sentence (general health truth) and <strong>one Type 1</strong> sentence (real future health situation).</p>
+  </div>
+  <textarea class="wa" id="w2" placeholder="Type 0: If you eat too much sugar, you get toothache.&#10;Type 1: If I feel better tomorrow, I will go to school."></textarea>
+  <div class="wprompt" style="margin-top:13px;">
+    <strong style="color:var(--u7);">Task 3 &mdash; Suggest an Activity (Unit 7)</strong>
+    <p>Write a short dialogue (4&ndash;5 lines) using at least <strong>2 suggestion phrases</strong> and include an acceptance or polite refusal.</p>
+  </div>
+  <textarea class="wa" id="w3" placeholder="A: Why don't we go to the art exhibition?&#10;B: I'd love to! How about going on Saturday?&#10;A: That sounds great!"></textarea>
+  <div class="wprompt" style="margin-top:13px;">
+    <strong style="color:var(--u7);">Task 4 &mdash; Famous Artist (Unit 7)</strong>
+    <p>Write <strong>4&ndash;5 sentences</strong> about a famous artist. Use Simple Past (was/were + regular AND irregular verbs) and at least one conjunction.</p>
+  </div>
+  <textarea class="wa" id="w4" placeholder="Frida Kahlo was a famous Mexican painter. She was born in 1907 and she painted many self-portraits..."></textarea>
+  <button class="cbtn cx" style="margin-top:10px;" onclick="saveW()">&#128190; Save All Answers</button>
+  <div class="fb" id="wFB"></div>
+  <div class="rule rule7" style="margin-top:16px;">
+    <strong>&#10003; Self-Correction Checklist:</strong><br>
+    &#9633; Capital letter at the start &middot; Full stop at the end<br>
+    &#9633; Correct modal + base verb (no -s, no -ing, no to)<br>
+    &#9633; if-clause uses Present Simple (NOT will)<br>
+    &#9633; Conjunction used correctly: and / but / so / because<br>
+    &#9633; Simple Past: was (I/he/she/it) &middot; were (you/we/they)<br>
+    &#9633; Regular -ed / irregular forms are correct
+  </div>
+</div>
+
+<!-- MIXED QUIZ -->
+<div class="panel" id="panel-mixed">
+  <div class="stitle sx">&#128256; Mixed Quiz &mdash; Units 6 &amp; 7</div>
+  <p style="font-size:.78rem;color:var(--muted);margin-bottom:15px;">20 questions covering all topics from both units.</p>
+  <div id="mixedC"></div>
+  <div id="mixedDone" style="display:none;text-align:center;padding:24px 16px;">
+    <div style="font-size:3rem;margin-bottom:10px;">&#127942;</div>
+    <div style="font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</div>
+    <p style="color:var(--muted);" id="mixedMsg"></p>
+  </div>
+</div>
+
+<div class="footer">Prof. Salah Sahmoudi &middot; Abdellah Guennoun High School, Sa&iuml;ss-F&egrave;s &middot; Common Core &mdash; Visa to the World</div>
+
+<script>
+// ============================================================
+//  DATA
+// ============================================================
+const u6Cards=[
+  {e:'&#129298;',w:'Fever',d:'Very high body temperature (39&deg;+)'},
+  {e:'&#129303;',w:'Cold',d:'Runny nose, sneezing, mild cough'},
+  {e:'&#128567;',w:'Flu',d:'Like a cold but stronger — high fever'},
+  {e:'&#129301;',w:'Headache',d:'Pain in your head — take a painkiller'},
+  {e:'&#128560;',w:'Cough',d:'Forcing air sharply out of the lungs'},
+  {e:'&#128308;',w:'Sore throat',d:'Painful irritated throat — hard to swallow'},
+  {e:'&#129314;',w:'Nausea',d:'Feeling sick in your stomach'},
+  {e:'&#128565;',w:'Dizziness',d:'Feeling unsteady, the room spins'},
+  {e:'&#128564;',w:'Fatigue',d:'Extreme tiredness — no energy'},
+  {e:'&#129463;',w:'Toothache',d:'Sharp pain in or around a tooth'},
+  {e:'&#129326;',w:'Stomachache',d:'Pain in the stomach or belly'},
+  {e:'&#129657;',w:'Rash',d:'Red itchy spots on the skin'},
+  {e:'&#129398;',w:'Chills',d:'Feeling very cold, shivering'},
+  {e:'&#128138;',w:'Medicine',d:'Pills or liquid to treat illness'},
+  {e:'&#129690;',w:'Prescription',d:'Doctor\'s written order for medicine'},
+  {e:'&#127973;',w:'Appointment',d:'Scheduled time to see the doctor'},
+];
+const matchIll=['Cold','Headache','Fever','Sore Throat','Stomachache'];
+const matchSym=['Runny nose &amp; sneezing','Pain in the head','High temperature','Painful throat','Pain in the belly'];
+const matchCorr=[0,1,2,3,4];
+const u6vFillData=[
+  {s:'My head is pounding. I have a terrible ___.', a:'headache', o:['fever','headache','cough','rash']},
+  {s:'My temperature is 40°C. I have a high ___.', a:'fever', o:['chills','fever','nausea','fatigue']},
+  {s:'I can\'t stop sneezing. I think I have a ___.', a:'cold', o:['flu','cold','rash','dizziness']},
+  {s:'I feel sick in my stomach. I have ___.', a:'nausea', o:['fatigue','cough','nausea','chills']},
+  {s:'I feel very weak and tired. I have ___.', a:'fatigue', o:['fatigue','headache','rash','dizziness']},
+];
+const u6tfData=[
+  {stmt:'A toothache is pain in your head.',correct:false,exp:'&#10060; False! A toothache is pain in a tooth. Head pain = headache.'},
+  {stmt:'You say "I have a fever" when your temperature is very high.',correct:true,exp:'&#10003; True! Fever = very high body temperature.'},
+  {stmt:'Fatigue means you feel dizzy and the room is spinning.',correct:false,exp:'&#10060; False! Fatigue = extreme tiredness. Dizziness = feeling the room spins.'},
+  {stmt:'A prescription is a doctor\'s written order for medicine.',correct:true,exp:'&#10003; True! You take a prescription to the pharmacy.'},
+  {stmt:'Chills means you feel very hot and sweaty.',correct:false,exp:'&#10060; False! Chills = feeling very cold and shivering.'},
+];
+const u6sModalData=[
+  {q:'Your friend has a bad cough. Best advice?',opts:['You should go swimming.','You should drink warm honey and lemon.','You mustn\'t rest.','You can eat cold ice cream.'],ans:1},
+  {q:'"You ___ smoke in the hospital." (prohibition)',opts:['should','can','mustn\'t','must'],ans:2},
+  {q:'"___ I open the window?" (asking permission)',opts:['Must','Should','Can','Will'],ans:2},
+  {q:'Grammatically CORRECT sentence:',opts:['You must to rest.','You must resting.','You must rest.','You musts rest.'],ans:2},
+  {q:'"She is really sick. She ___ see a doctor." (obligation)',opts:['should','mustn\'t','can\'t','must'],ans:3},
+  {q:'"You ___ eat junk food when you are sick." (bad idea)',opts:['should','can','mustn\'t','shouldn\'t'],ans:3},
+];
+const u6sAdvData=[
+  {s:'You have a fever. You ___ stay in bed.', a:'should', o:['should','mustn\'t','can\'t','will']},
+  {s:'You ___ eat junk food when you are sick.', a:'shouldn\'t', o:['should','shouldn\'t','must','can']},
+  {s:'You ___ smoke. It is very bad for your health.', a:'mustn\'t', o:['should','can','mustn\'t','will']},
+  {s:'___ I take this medicine twice a day?', a:'Can', o:['Must','Should','Can','Will']},
+  {s:'Doctor: "You ___ finish all the medicine."', a:'must', o:['should','must','can\'t','mustn\'t']},
+];
+const u6condData=[
+  {q:'Which is Conditional Type 0?',opts:['If you rest, you will feel better.','If ice gets warm, it melts.','If she studies, she will pass.','If it rains, I will stay home.'],ans:1},
+  {q:'Which is Conditional Type 1?',opts:['If you heat metal, it expands.','If plants have no water, they die.','If you take this medicine, you will feel better.','If you eat sugar, your teeth hurt.'],ans:2},
+  {q:'Type 1 — "If I ___ sick, I will stay home."',opts:['will feel','felt','feel','feeling'],ans:2},
+  {q:'Type 0 — "If you mix red and blue, you ___ purple."',opts:['will get','got','getting','get'],ans:3},
+  {q:'Which sentence is WRONG?',opts:['If it rains, we will cancel.','If you exercise, you get stronger.','If it will rain, we cancel.','If she rests, she will recover.'],ans:2},
+  {q:'Type 0 correct ending — "If you eat too much sugar, ___."',opts:['you will get toothache','you got toothache','you getting toothache','you get toothache'],ans:3},
+];
+const u6condBuildData=[
+  {s:'If you ___ water, it boils.', a:'heat', o:['heat','heated','will heat','heating'], type:'Type 0'},
+  {s:'If she takes her medicine, she ___ better.', a:'will feel', o:['feels','felt','will feel','feeling'], type:'Type 1'},
+  {s:'If you ___ junk food, you get stomachache.', a:'eat', o:['ate','will eat','eat','eating'], type:'Type 0'},
+  {s:'If it rains tomorrow, we ___ inside.', a:'will stay', o:['stay','stayed','will stay','staying'], type:'Type 1'},
+];
+const u6conjData=[
+  {q:'"I was sick, ___ I didn\'t go to school." (result)',opts:['because','but','and','so'],ans:3},
+  {q:'"I stayed home ___ I had a fever." (reason)',opts:['so','but','because','and'],ans:2},
+  {q:'"I have a headache, ___ I don\'t have a fever." (contrast)',opts:['and','but','so','because'],ans:1},
+  {q:'"I have a cold ___ a sore throat." (addition)',opts:['but','so','and','because'],ans:2},
+  {q:'Correct use of "because":',opts:['I was tired, because I rested.','I rested because I was tired.','Because I was tired so I rested.','I because rested was tired.'],ans:1},
+  {q:'"I took medicine ___ I felt better soon." (result)',opts:['because','but','and','so'],ans:3},
+];
+const u6conjCombineData=[
+  {s1:'She has a bad cough.',s2:'she went to the doctor.',conj:'so',opts:['and','but','so','because']},
+  {s1:'I feel sick.',s2:'I ate too much.',conj:'because',opts:['and','but','so','because']},
+  {s1:'He has a fever.',s2:'he doesn\'t have a headache.',conj:'but',opts:['and','but','so','because']},
+  {s1:'She took her medicine',s2:'drank warm water.',conj:'and',opts:['and','but','so','because']},
+];
+const u7Cards=[
+  {e:'&#128444;',w:'Painting',d:'Art made with paint on canvas or paper'},
+  {e:'&#128511;',w:'Sculpture',d:'3D artwork carved from stone or metal'},
+  {e:'&#128247;',w:'Photography',d:'Art of taking and developing pictures'},
+  {e:'&#127917;',w:'Theatre',d:'Performing plays on a stage for an audience'},
+  {e:'&#127916;',w:'Cinema / Film',d:'Art of making and watching motion pictures'},
+  {e:'&#127963;',w:'Architecture',d:'Art and science of designing buildings'},
+  {e:'&#127925;',w:'Music',d:'Art of organising sounds and melody'},
+  {e:'&#128131;',w:'Dance',d:'Moving the body to music or rhythm'},
+  {e:'&#129350;',w:'Pottery',d:'Making objects from clay'},
+  {e:'&#128288;',w:'Calligraphy',d:'Beautiful decorative handwriting as art'},
+  {e:'&#128396;',w:'Painter',d:'A person who makes paintings'},
+  {e:'&#128509;',w:'Sculptor',d:'A person who makes sculptures'},
+  {e:'&#128247;',w:'Photographer',d:'A person who takes photographs professionally'},
+  {e:'&#127908;',w:'Musician',d:'A person who plays or composes music'},
+  {e:'&#127959;',w:'Architect',d:'A person who designs buildings'},
+  {e:'&#127916;',w:'Director',d:'A person who directs films or theatre'},
+];
+const u7matchArt=['Painting','Music','Photography','Dance','Architecture'];
+const u7matchPerson=['Painter','Musician','Photographer','Dancer','Architect'];
+const u7matchCorr=[0,1,2,3,4];
+const u7vocabMCQ=[
+  {q:'Which art form involves carving stone or metal into 3D shapes?',opts:['Painting','Calligraphy','Sculpture','Photography'],ans:2},
+  {q:'A person who designs buildings is called a(n):',opts:['Sculptor','Architect','Musician','Director'],ans:1},
+  {q:'Which art form uses a camera to create images?',opts:['Theatre','Pottery','Dance','Photography'],ans:3},
+  {q:'Calligraphy is the art of:',opts:['Making pottery','Beautiful handwriting','Performing on stage','Taking photos'],ans:1},
+  {q:'"Mohamed Melehi was a famous Moroccan ___." (he made paintings)',opts:['sculptor','architect','dancer','painter'],ans:3},
+];
+const u7suggestData=[
+  {q:'Which phrase is followed by verb-ing?',opts:['Let\'s visit','Why don\'t we visit','How about visiting','What do we visit'],ans:2},
+  {q:'"Let\'s ___ to the art gallery." (go)',opts:['going','to go','go','went'],ans:2},
+  {q:'Suggest going to a concert:',opts:['I went to a concert.','Why don\'t we go to a concert?','She suggested a concert.','Did you go to the concert?'],ans:1},
+  {q:'"I\'d love to, but I\'m busy." = ',opts:['accepting a suggestion','making a suggestion','refusing a suggestion','giving advice'],ans:2},
+  {q:'"What about ___ an art class?" (join)',opts:['join','joins','joined','joining'],ans:3},
+  {q:'Which suggestion phrase uses the base verb (no -ing)?',opts:['How about going','What about visiting','Let\'s watch','How about watching'],ans:2},
+];
+const u7suggestFillData=[
+  {s:'Why don\'t we ___ (visit) the art museum?', a:'visit', hint:'base verb'},
+  {s:'How about ___ (go) to a concert tonight?', a:'going', hint:'verb-ing'},
+  {s:'Let\'s ___ (watch) this documentary about Picasso!', a:'watch', hint:'base verb'},
+  {s:'What about ___ (take) a painting class together?', a:'taking', hint:'verb-ing'},
+];
+const u7pastData=[
+  {q:'"Leonardo da Vinci ___ a famous Italian painter."',opts:['is','were','was','be'],ans:2},
+  {q:'"Picasso and Matisse ___ great artists."',opts:['was','is','were','are'],ans:2},
+  {q:'Regular past of "paint":',opts:['painten','painted','paint','paintted'],ans:1},
+  {q:'"They ___ to the museum last Saturday." (go)',opts:['goed','goes','went','going'],ans:2},
+  {q:'"She ___ a poem about art last week." (write)',opts:['write','writes','wrote','writed'],ans:2},
+  {q:'"He ___ a painting lesson last Monday." (have)',opts:['has','haved','had','have'],ans:2},
+  {q:'Negative: "She was famous." &rarr;',opts:['She weren\'t famous.','She wasn\'t famous.','She didn\'t famous.','She not was famous.'],ans:1},
+  {q:'Which is a REGULAR past tense form?',opts:['went','made','danced','took'],ans:2},
+];
+const u7errorData=[
+  {q:'She writed a poem about the ocean last year.',opts:['writed &rarr; wrote','ocean &rarr; sea','year &rarr; month','last &rarr; past'],ans:0},
+  {q:'They were at the exhibition last week, wasn\'t they?',opts:['were &rarr; was','exhibition &rarr; show','last &rarr; past','wasn\'t &rarr; weren\'t'],ans:3},
+  {q:'He goed to the concert with his family.',opts:['goed &rarr; went','concert &rarr; show','his &rarr; her','to &rarr; at'],ans:0},
+  {q:'Why don\'t we going to the theatre tonight?',opts:['going &rarr; go','theatre &rarr; cinema','tonight &rarr; yesterday','don\'t &rarr; doesn\'t'],ans:0},
+];
+const mixedData=[
+  {u:'U6',q:'Your friend has a fever. Best advice:',opts:['Go swimming.','Rest and drink water.','Play football.','Eat ice cream.'],ans:1,c:'var(--u6)'},
+  {u:'U6',q:'"You ___ smoke here." (prohibition)',opts:['should','can','mustn\'t','must'],ans:2,c:'var(--u6)'},
+  {u:'U6',q:'Type 0: "If you heat water to 100°C, it ___."',opts:['will boil','boiled','boils','is boiling'],ans:2,c:'var(--u6)'},
+  {u:'U6',q:'Type 1: "If she rests, she ___ better."',opts:['feel','felt','feels','will feel'],ans:3,c:'var(--u6)'},
+  {u:'U6',q:'"I was tired, ___ I went to bed early." (result)',opts:['because','but','and','so'],ans:3,c:'var(--u6)'},
+  {u:'U6',q:'Which is NOT a symptom of the flu?',opts:['High fever','Broken arm','Fatigue','Chills'],ans:1,c:'var(--u6)'},
+  {u:'U6',q:'Correct Conditional Type 1:',opts:['If it will rain, we cancel.','If it rained, we will cancel.','If it rains, we will cancel.','If it rain, we cancel.'],ans:2,c:'var(--u6)'},
+  {u:'U6',q:'"She stayed home ___ she was sick." (reason)',opts:['so','and','but','because'],ans:3,c:'var(--u6)'},
+  {u:'U6',q:'"You ___ exercise every day." (strong advice)',opts:['mustn\'t','shouldn\'t','should','can\'t'],ans:2,c:'var(--u6)'},
+  {u:'U6',q:'Type 0 or Type 1? "If it rains tomorrow, we will cancel."',opts:['Type 0','Type 1','Both','Neither'],ans:1,c:'var(--u6)'},
+  {u:'U7',q:'A person who takes photographs is a:',opts:['Painter','Director','Photographer','Sculptor'],ans:2,c:'var(--u7)'},
+  {u:'U7',q:'"Michelangelo ___ a famous sculptor."',opts:['is','were','was','be'],ans:2,c:'var(--u7)'},
+  {u:'U7',q:'Simple Past of "go":',opts:['goed','going','gone','went'],ans:3,c:'var(--u7)'},
+  {u:'U7',q:'"___ visiting the art gallery?" (suggestion)',opts:['Let\'s','Why don\'t we','How about','What do you think'],ans:2,c:'var(--u7)'},
+  {u:'U7',q:'"She ___ (write) a poem last year."',opts:['write','writes','wrote','writed'],ans:2,c:'var(--u7)'},
+  {u:'U7',q:'Regular past of "dance":',opts:['danceed','danced','dancted','dancing'],ans:1,c:'var(--u7)'},
+  {u:'U7',q:'"Let\'s ___ to the museum." (go)',opts:['going','to go','go','went'],ans:2,c:'var(--u7)'},
+  {u:'U7',q:'"Picasso and Dali ___ Spanish artists."',opts:['was','is','were','are'],ans:2,c:'var(--u7)'},
+  {u:'U7',q:'Accepting a suggestion:',opts:['I\'d love to, but I\'m busy.','I think so.','That sounds great!','Maybe another time.'],ans:2,c:'var(--u7)'},
+  {u:'U7',q:'Which verb forms its past with -ed?',opts:['go','write','have','visit'],ans:3,c:'var(--u7)'},
+];
+
+// ============================================================
+//  STATE
+// ============================================================
+let totC=0,totA=0,timerSec=55*60,timerOn=false,timerInt=null;
+let u6mSel={l:null,r:null},u6mPairs={};
+let u7mSel={l:null,r:null},u7mPairs={};
+let mixDone=0;
+
+// ============================================================
+//  TIMER
+// ============================================================
+function updT(){
+  const m=Math.floor(timerSec/60),s=timerSec%60;
+  const el=document.getElementById('td');
+  el.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
+  el.classList.remove('warn','danger');
+  if(timerSec<=300)el.classList.add('danger');
+  else if(timerSec<=600)el.classList.add('warn');
+}
+function toggleTimer(){
+  if(timerOn){clearInterval(timerInt);timerOn=false;document.getElementById('tBtn').textContent='&#9654; Resume';}
+  else{timerOn=true;document.getElementById('tBtn').textContent='&#9646;&#9646; Pause';
+    timerInt=setInterval(()=>{if(timerSec>0){timerSec--;updT();}else{clearInterval(timerInt);document.getElementById('tBtn').textContent='Done!';}},1000);}
+}
+function resetTimer(){clearInterval(timerInt);timerOn=false;timerSec=55*60;updT();document.getElementById('tBtn').textContent='&#9654; Start';}
+
+// ============================================================
+//  SCORE
+// ============================================================
+function addSc(c,t){totC+=c;totA+=t;document.getElementById('scoreEl').textContent='Score: '+totC+' / '+totA;}
+
+// ============================================================
+//  TABS
+// ============================================================
+function go(name,btn){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('a6','a7','ax'));
+  document.getElementById('panel-'+name).classList.add('active');
+  const u=btn.dataset.u;
+  if(u==='6')btn.classList.add('a6');
+  else if(u==='7')btn.classList.add('a7');
+  else btn.classList.add('ax');
+}
+
+// ============================================================
+//  VOCAB GRIDS
+// ============================================================
+function buildVG(data,id){
+  document.getElementById(id).innerHTML=data.map(v=>`
+    <div class="vc" onclick="this.classList.toggle('open');this.querySelector('.ht').style.display=this.classList.contains('open')?'none':'block'">
+      <span class="em">${v.e}</span><div class="wd">${v.w}</div>
+      <div class="df">${v.d}</div><div class="ht">&#128070; tap</div>
+    </div>`).join('');
+}
+
+// ============================================================
+//  MCQ
+// ============================================================
+function buildMCQ(data,cid){
+  document.getElementById(cid).innerHTML=data.map((item,qi)=>`
+    <div class="ebox" id="mcq_${cid}_${qi}">
+      <div class="elabel">Question ${qi+1}</div>
+      <div class="eq">${item.q}</div>
+      <div class="opts">${item.opts.map((o,oi)=>`<div class="opt" onclick="chkMCQ(this,'${cid}',${qi},${oi},${item.ans})">${o}</div>`).join('')}</div>
+      <div class="fb" id="fb_${cid}_${qi}"></div>
+    </div>`).join('');
+}
+function chkMCQ(el,cid,qi,chosen,correct){
+  const box=document.getElementById('mcq_'+cid+'_'+qi);
+  if(box.dataset.done)return;
+  box.dataset.done='1';
+  const opts=box.querySelectorAll('.opt');
+  opts.forEach(o=>o.classList.add('disabled'));
+  opts[correct].classList.add('reveal');
+  const fb=document.getElementById('fb_'+cid+'_'+qi);
+  if(chosen===correct){el.classList.add('correct');fb.textContent='&#10003; Correct!';fb.className='fb fbok';addSc(1,1);}
+  else{el.classList.add('wrong');fb.textContent='&#10060; Answer: "'+opts[correct].textContent+'"';fb.className='fb fbno';addSc(0,1);}
+}
+
+// ============================================================
+//  SELECT FILL
+// ============================================================
+function buildSelectFill(data,cid){
+  document.getElementById(cid).innerHTML=data.map((item,i)=>{
+    const opts=item.o.map(o=>`<option value="${o}">${o}</option>`).join('');
+    const pts=item.s.split('___');
+    return `<div style="margin-bottom:11px;font-size:.86rem;line-height:2.4;">${pts[0]}<select class="bl" id="${cid}_${i}"><option value="">...</option>${opts}</select>${pts[1]||''}</div>`;
+  }).join('');
+}
+function chkSelectFill(data,cid,fbId){
+  let ok=0;
+  data.forEach((item,i)=>{
+    const el=document.getElementById(cid+'_'+i);
+    el.classList.remove('correct','wrong');
+    if(el.value===item.a){el.classList.add('correct');ok++;}else{el.classList.add('wrong');}
+  });
+  const fb=document.getElementById(fbId);
+  fb.textContent=ok+'/'+data.length+' correct!';
+  fb.className='fb '+(ok===data.length?'fbok':'fbno');
+  addSc(ok,data.length);
+}
+function checkU6vFill(){chkSelectFill(u6vFillData,'u6vfill','u6vfillFB');}
+function checkU6sAdvice(){chkSelectFill(u6sAdvData,'u6sAdvice','u6sAdviceFB');}
+
+// ============================================================
+//  TRUE/FALSE
+// ============================================================
+function buildTF(data,cid){
+  document.getElementById(cid).innerHTML=data.map((item,i)=>`
+    <div class="tfrow" id="tf_${cid}_${i}">
+      <div class="tfstmt">${i+1}. ${item.stmt}</div>
+      <div class="tfbtns">
+        <button class="tfbtn" onclick="chkTF(${i},'${cid}',${item.correct},true)">T</button>
+        <button class="tfbtn" onclick="chkTF(${i},'${cid}',${item.correct},false)">F</button>
+      </div>
+      <div class="tffb" id="tffb_${cid}_${i}"></div>
+    </div>`).join('');
+}
+function chkTF(i,cid,correct,chosen){
+  const row=document.getElementById('tf_'+cid+'_'+i);
+  if(row.dataset.done)return;
+  row.dataset.done='1';
+  const btns=row.querySelectorAll('.tfbtn');
+  btns.forEach(b=>b.disabled=true);
+  const fb=document.getElementById('tffb_'+cid+'_'+i);
+  const isOk=(chosen===correct);
+  btns[chosen?0:1].classList.add(isOk?'st':'sf');
+  fb.innerHTML=u6tfData[i].exp;
+  fb.style.color=isOk?'var(--green)':'var(--red)';
+  addSc(isOk?1:0,1);
+}
+
+// ============================================================
+//  MATCHING
+// ============================================================
+function buildU6Match(){
+  const c=document.getElementById('u6match');
+  c.innerHTML=`<div class="mcol">${matchIll.map((s,i)=>`<div class="mi" id="u6mL${i}" onclick="u6sel('l',${i})">${s}</div>`).join('')}</div>
+    <div class="mcol">${matchSym.map((s,i)=>`<div class="mi" id="u6mR${i}" onclick="u6sel('r',${i})">${s}</div>`).join('')}</div>`;
+}
+function u6sel(side,idx){
+  u6mSel[side]=idx;
+  document.querySelectorAll('[id^="u6m"]').forEach(el=>{if(!el.classList.contains('ok'))el.classList.remove('sel');});
+  document.getElementById(side==='l'?'u6mL'+idx:'u6mR'+idx).classList.add('sel');
+  if(u6mSel.l!==null&&u6mSel.r!==null){
+    const l=u6mSel.l,r=u6mSel.r,ok=matchCorr[l]===r;
+    const lE=document.getElementById('u6mL'+l),rE=document.getElementById('u6mR'+r);
+    if(ok){lE.classList.add('ok');rE.classList.add('ok');u6mPairs[l]=r;}
+    else{lE.classList.add('fail');rE.classList.add('fail');setTimeout(()=>{lE.classList.remove('fail','sel');rE.classList.remove('fail','sel');},700);}
+    u6mSel={l:null,r:null};
+  }
+}
+function checkU6Match(){
+  const ok=Object.keys(u6mPairs).length,total=matchIll.length;
+  const fb=document.getElementById('u6matchFB');
+  fb.textContent=ok+'/'+total+' correct pairs!';
+  fb.className='fb '+(ok===total?'fbok':'fbno');
+  addSc(ok,total);
+}
+function buildU7Match(){
+  const c=document.getElementById('u7match');
+  c.innerHTML=`<div class="mcol">${u7matchArt.map((s,i)=>`<div class="mi" id="u7mL${i}" onclick="u7sel('l',${i})">${s}</div>`).join('')}</div>
+    <div class="mcol">${u7matchPerson.map((s,i)=>`<div class="mi" id="u7mR${i}" onclick="u7sel('r',${i})">${s}</div>`).join('')}</div>`;
+}
+function u7sel(side,idx){
+  u7mSel[side]=idx;
+  document.querySelectorAll('[id^="u7m"]').forEach(el=>{if(!el.classList.contains('ok'))el.classList.remove('sel');});
+  document.getElementById(side==='l'?'u7mL'+idx:'u7mR'+idx).classList.add('sel');
+  if(u7mSel.l!==null&&u7mSel.r!==null){
+    const l=u7mSel.l,r=u7mSel.r,ok=u7matchCorr[l]===r;
+    const lE=document.getElementById('u7mL'+l),rE=document.getElementById('u7mR'+r);
+    if(ok){lE.classList.add('ok');rE.classList.add('ok');u7mPairs[l]=r;}
+    else{lE.classList.add('fail');rE.classList.add('fail');setTimeout(()=>{lE.classList.remove('fail','sel');rE.classList.remove('fail','sel');},700);}
+    u7mSel={l:null,r:null};
+  }
+}
+function checkU7Match(){
+  const ok=Object.keys(u7mPairs).length,total=u7matchArt.length;
+  const fb=document.getElementById('u7matchFB');
+  fb.textContent=ok+'/'+total+' correct pairs!';
+  fb.className='fb '+(ok===total?'fbok':'fbno');
+  addSc(ok,total);
+}
+
+// ============================================================
+//  COND BUILD
+// ============================================================
+function buildU6condBuild(){
+  document.getElementById('u6condBuild').innerHTML=u6condBuildData.map((item,i)=>{
+    const opts=item.o.map(o=>`<option value="${o}">${o}</option>`).join('');
+    const pts=item.s.split('___');
+    return `<div style="margin-bottom:11px;font-size:.86rem;line-height:2.4;"><span style="font-size:.62rem;color:var(--u6);font-weight:700;margin-right:5px;">${item.type}</span>${pts[0]}<select class="bl" id="cb${i}"><option value="">...</option>${opts}</select>${pts[1]||''}</div>`;
+  }).join('');
+}
+function checkU6condBuild(){
+  let ok=0;
+  u6condBuildData.forEach((item,i)=>{
+    const el=document.getElementById('cb'+i);
+    el.classList.remove('correct','wrong');
+    if(el.value===item.a){el.classList.add('correct');ok++;}else{el.classList.add('wrong');}
+  });
+  const fb=document.getElementById('u6condBuildFB');
+  fb.textContent=ok+'/'+u6condBuildData.length+' correct!';
+  fb.className='fb '+(ok===u6condBuildData.length?'fbok':'fbno');
+  addSc(ok,u6condBuildData.length);
+}
+
+// ============================================================
+//  CONJ COMBINE
+// ============================================================
+function buildU6conjCombine(){
+  document.getElementById('u6conjCombine').innerHTML=u6conjCombineData.map((item,i)=>{
+    const opts=item.opts.map(o=>`<option value="${o}">${o}</option>`).join('');
+    return `<div style="margin-bottom:11px;font-size:.86rem;line-height:2.4;">${item.s1} <select class="bl" id="cc${i}"><option value="">...</option>${opts}</select> ${item.s2}</div>`;
+  }).join('');
+}
+function checkU6conjCombine(){
+  let ok=0;
+  u6conjCombineData.forEach((item,i)=>{
+    const el=document.getElementById('cc'+i);
+    el.classList.remove('correct','wrong');
+    if(el.value===item.conj){el.classList.add('correct');ok++;}else{el.classList.add('wrong');}
+  });
+  const fb=document.getElementById('u6conjCombineFB');
+  fb.textContent=ok+'/'+u6conjCombineData.length+' correct!';
+  fb.className='fb '+(ok===u6conjCombineData.length?'fbok':'fbno');
+  addSc(ok,u6conjCombineData.length);
+}
+
+// ============================================================
+//  SUGGEST FILL
+// ============================================================
+function buildU7suggestFill(){
+  document.getElementById('u7suggestFill').innerHTML=u7suggestFillData.map((item,i)=>{
+    const pts=item.s.split('___');
+    return `<div style="margin-bottom:11px;font-size:.86rem;line-height:2.4;">${pts[0]}<input class="blin" id="sf${i}" placeholder="${item.hint}">${pts[1]||''}</div>`;
+  }).join('');
+}
+function checkU7suggestFill(){
+  let ok=0;
+  u7suggestFillData.forEach((item,i)=>{
+    const el=document.getElementById('sf'+i);
+    el.classList.remove('correct','wrong');
+    if(el.value.trim().toLowerCase()===item.a){el.classList.add('correct');ok++;}else{el.classList.add('wrong');}
+  });
+  const fb=document.getElementById('u7suggestFillFB');
+  fb.textContent=ok+'/'+u7suggestFillData.length+' correct!';
+  fb.className='fb '+(ok===u7suggestFillData.length?'fbok':'fbno');
+  addSc(ok,u7suggestFillData.length);
+}
+
+// ============================================================
+//  ERROR SPOT
+// ============================================================
+function buildU7errorQ(){
+  document.getElementById('u7errorQ').innerHTML=u7errorData.map((item,qi)=>`
+    <div class="ebox" id="err_${qi}" style="margin-bottom:12px;">
+      <div class="elabel">Find the error — Question ${qi+1}</div>
+      <div class="eq" style="font-style:italic;color:var(--yellow);">"${item.q}"</div>
+      <div class="opts">${item.opts.map((o,oi)=>`<div class="opt" onclick="chkErr(this,${qi},${oi},${item.ans})">${o}</div>`).join('')}</div>
+      <div class="fb" id="errfb_${qi}"></div>
+    </div>`).join('');
+}
+function chkErr(el,qi,chosen,correct){
+  const box=document.getElementById('err_'+qi);
+  if(box.dataset.done)return;
+  box.dataset.done='1';
+  const opts=box.querySelectorAll('.opt');
+  opts.forEach(o=>o.classList.add('disabled'));
+  opts[correct].classList.add('reveal');
+  const fb=document.getElementById('errfb_'+qi);
+  if(chosen===correct){el.classList.add('correct');fb.textContent='&#10003; Correct!';fb.className='fb fbok';addSc(1,1);}
+  else{el.classList.add('wrong');fb.textContent='&#10060; Answer: "'+opts[correct].textContent+'"';fb.className='fb fbno';addSc(0,1);}
+}
+
+// ============================================================
+//  WRITING
+// ============================================================
+function saveW(){
+  const all=[1,2,3,4].map(n=>document.getElementById('w'+n).value.trim());
+  const fb=document.getElementById('wFB');
+  if(all.every(v=>!v)){fb.textContent='&#9888; Write at least one task first!';fb.className='fb fbno';return;}
+  fb.textContent='&#10003; Answers saved! Use the checklist below to self-correct.';
+  fb.className='fb fbok';
+}
+
+// ============================================================
+//  MIXED QUIZ
+// ============================================================
+function buildMixed(){
+  document.getElementById('mixedC').innerHTML=mixedData.map((item,qi)=>`
+    <div class="ebox" id="mix_${qi}" style="border-top:3px solid ${item.c};">
+      <div class="elabel" style="color:${item.c};">&#128218; ${item.u}</div>
+      <div class="eq">${item.q}</div>
+      <div class="opts">${item.opts.map((o,oi)=>`<div class="opt" onclick="chkMix(this,${qi},${oi},${item.ans})">${o}</div>`).join('')}</div>
+      <div class="fb" id="mfb_${qi}"></div>
+    </div>`).join('');
+}
+function chkMix(el,qi,chosen,correct){
+  const box=document.getElementById('mix_'+qi);
+  if(box.dataset.done)return;
+  box.dataset.done='1';
+  const opts=box.querySelectorAll('.opt');
+  opts.forEach(o=>o.classList.add('disabled'));
+  opts[correct].classList.add('reveal');
+  const fb=document.getElementById('mfb_'+qi);
+  if(chosen===correct){el.classList.add('correct');fb.textContent='&#10003; Correct!';fb.className='fb fbok';addSc(1,1);}
+  else{el.classList.add('wrong');fb.textContent='&#10060; Answer: "'+opts[correct].textContent+'"';fb.className='fb fbno';addSc(0,1);}
+  mixDone++;
+  if(mixDone===mixedData.length){
+    document.getElementById('mixedDone').style.display='block';
+    document.getElementById('mixedMsg').textContent='You completed all '+mixedData.length+' questions! Check your score above.';
+  }
+}
+
+// ============================================================
+//  INIT
+// ============================================================
+buildVG(u6Cards,'u6vg');
+buildVG(u7Cards,'u7vg');
+buildU6Match();
+buildU7Match();
+buildSelectFill(u6vFillData,'u6vfill');
+buildTF(u6tfData,'u6tf');
+buildMCQ(u6sModalData,'u6sModalQ');
+buildSelectFill(u6sAdvData,'u6sAdvice');
+buildMCQ(u6condData,'u6condQ');
+buildU6condBuild();
+buildMCQ(u6conjData,'u6conjQ');
+buildU6conjCombine();
+buildMCQ(u7vocabMCQ,'u7vocabQ');
+buildMCQ(u7suggestData,'u7suggestQ');
+buildU7suggestFill();
+buildMCQ(u7pastData,'u7pastQ');
+buildU7errorQ();
+buildMixed();
+updT();
+</script>
+</body>
+</html>
