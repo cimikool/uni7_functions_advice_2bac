@@ -3,870 +3,1657 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Test Review Units 6 and 7 Common Core</title>
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Cabin:wght@400;600;700&display=swap" rel="stylesheet">
+<title>Giving & Asking for Advice – 2BAC</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0d1118;--card:#161b26;--card2:#1e2538;--card3:#252d42;--border:#2a3150;--u6:#06b6d4;--u6dim:rgba(6,182,212,0.13);--u7:#c084fc;--u7dim:rgba(192,132,252,0.12);--green:#34d399;--red:#f87171;--yellow:#fbbf24;--text:#e2e8f0;--muted:#64748b;--white:#f8fafc;}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--text);font-family:'Cabin',sans-serif;min-height:100vh;padding-bottom:64px;}
-.hdr{background:linear-gradient(160deg,#0f1521,#151c2e 60%,#0d1118);border-bottom:2px solid var(--border);padding:16px 18px 12px;text-align:center;position:sticky;top:0;z-index:200;}
-.hdr-school{font-size:.62rem;letter-spacing:2.5px;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
-.hdr-title{font-family:'Nunito',sans-serif;font-size:1.45rem;font-weight:900;color:var(--white);}
-.hdr-sub{font-size:.75rem;color:var(--muted);margin-top:3px;}
-.badge-row{display:flex;justify-content:center;gap:8px;margin-top:9px;flex-wrap:wrap;}
-.badge{padding:3px 13px;border-radius:20px;font-family:'Nunito',sans-serif;font-size:.72rem;font-weight:800;}
-.b6{background:rgba(6,182,212,.12);color:var(--u6);border:1px solid rgba(6,182,212,.4);}
-.b7{background:rgba(192,132,252,.1);color:var(--u7);border:1px solid rgba(192,132,252,.35);}
-.tbar{background:var(--card);border-bottom:1px solid var(--border);padding:7px 16px;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;}
-.tdisp{font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;color:var(--green);letter-spacing:2px;transition:color .3s;}
-.tdisp.warn{color:var(--yellow);}.tdisp.danger{color:var(--red);}
-.tbtn{background:var(--border);color:var(--text);border:none;padding:5px 15px;border-radius:7px;font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;}
-.tbtn:hover{background:#3a4160;}
-.spill{background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.3);color:var(--green);padding:3px 13px;border-radius:20px;font-family:'Nunito',sans-serif;font-size:.75rem;font-weight:700;}
-.tabs{display:flex;overflow-x:auto;background:var(--card);border-bottom:2px solid var(--border);padding:0 4px;gap:1px;scrollbar-width:none;}
-.tabs::-webkit-scrollbar{display:none;}
-.tab{flex-shrink:0;padding:10px 11px;font-family:'Nunito',sans-serif;font-weight:800;font-size:.63rem;letter-spacing:.5px;text-transform:uppercase;border:none;background:none;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;}
-.tab:hover{color:var(--text);}.tab.a6{color:var(--u6);border-bottom-color:var(--u6);}.tab.a7{color:var(--u7);border-bottom-color:var(--u7);}.tab.ax{color:var(--yellow);border-bottom-color:var(--yellow);}
-.panel{display:none;padding:18px 15px;max-width:740px;margin:0 auto;}.panel.active{display:block;}
-.stitle{font-family:'Nunito',sans-serif;font-weight:900;font-size:.92rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:13px;padding-bottom:8px;border-bottom:2px solid;}
-.s6{color:var(--u6);border-color:rgba(6,182,212,.3);}.s7{color:var(--u7);border-color:rgba(192,132,252,.25);}.sx{color:var(--yellow);border-color:rgba(251,191,36,.3);}
-.rule{border-left:4px solid;border-radius:0 10px 10px 0;padding:12px 15px;margin-bottom:13px;font-size:.84rem;line-height:1.8;background:linear-gradient(135deg,var(--card2),var(--card));}
-.rule6{border-color:var(--u6);}.rule7{border-color:var(--u7);}
-.rule code{background:rgba(255,255,255,.07);padding:1px 6px;border-radius:4px;font-family:monospace;font-size:.88em;color:#c8d3f5;}
-.ok{color:var(--green);font-weight:700;}.no{color:var(--red);font-weight:700;}
-table.gt{width:100%;border-collapse:collapse;font-size:.8rem;margin-bottom:14px;}
-table.gt th{padding:8px 11px;text-align:left;border:1px solid var(--border);font-family:'Nunito',sans-serif;font-weight:800;}
-table.gt td{padding:7px 11px;border:1px solid var(--border);vertical-align:top;line-height:1.55;}
-table.gt tr:nth-child(even) td{background:rgba(255,255,255,.02);}
-.th6{background:var(--u6dim);color:var(--u6);}.th7{background:var(--u7dim);color:var(--u7);}
-.aff{color:var(--green);}.neg{color:var(--red);}.sbj{font-weight:700;color:var(--white);}
-.base{color:var(--muted);}.pst{color:var(--u7);font-weight:700;}
-.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(125px,1fr));gap:8px;margin-bottom:18px;}
-.vc{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:9px 10px;text-align:center;cursor:pointer;user-select:none;transition:transform .2s;}
-.vc:hover{transform:translateY(-2px);}
-.vc .em{font-size:1.65rem;display:block;margin-bottom:4px;}.vc .wd{font-size:.73rem;font-weight:700;color:var(--white);}
-.vc .df{font-size:.63rem;color:var(--muted);margin-top:4px;max-height:0;overflow:hidden;transition:max-height .3s;}.vc.open .df{max-height:60px;}
-.vc .ht{font-size:.57rem;color:var(--muted);margin-top:2px;}
-.ebox{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:15px;margin-bottom:16px;}
-.elabel{font-size:.62rem;text-transform:uppercase;letter-spacing:1.5px;font-weight:700;color:var(--muted);margin-bottom:8px;}
-.eq{font-size:.9rem;line-height:1.65;margin-bottom:11px;}
-.opts{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
-.opt{background:var(--card2);border:1.5px solid var(--border);border-radius:8px;padding:8px 11px;font-size:.79rem;cursor:pointer;transition:all .2s;line-height:1.4;}
-.opt:hover{border-color:#3d4470;background:var(--card3);}
-.opt.correct{background:rgba(52,211,153,.13);border-color:var(--green);color:var(--green);}
-.opt.wrong{background:rgba(248,113,113,.1);border-color:var(--red);color:var(--red);}
-.opt.disabled{pointer-events:none;opacity:.55;}.opt.reveal{background:rgba(52,211,153,.08);border-color:var(--green);color:var(--green);opacity:1;}
-select.bl{background:var(--card2);border:1.5px solid var(--border);border-radius:6px;color:var(--text);font-size:.82rem;padding:5px 7px;outline:none;cursor:pointer;font-family:'Cabin',sans-serif;}
-select.bl.correct{border-color:var(--green);color:var(--green);}.select.bl.wrong{border-color:var(--red);color:var(--red);}
-input.blin{background:var(--card2);border:1.5px solid var(--border);border-radius:6px;color:var(--text);font-size:.82rem;padding:5px 9px;outline:none;width:110px;text-align:center;font-family:'Cabin',sans-serif;}
-input.blin:focus{border-color:#505580;}input.blin.correct{border-color:var(--green);color:var(--green);}input.blin.wrong{border-color:var(--red);color:var(--red);}
-.mcols{display:grid;grid-template-columns:1fr 1fr;gap:8px;}.mcol{display:flex;flex-direction:column;gap:6px;}
-.mi{background:var(--card2);border:1.5px solid var(--border);border-radius:8px;padding:8px 11px;font-size:.77rem;cursor:pointer;transition:all .2s;text-align:center;line-height:1.35;}
-.mi.sel{border-color:#7882c5;background:rgba(120,130,197,.14);color:#b0b8f8;}
-.mi.ok{border-color:var(--green);background:rgba(52,211,153,.08);color:var(--green);pointer-events:none;}
-.mi.fail{border-color:var(--red);background:rgba(248,113,113,.07);color:var(--red);}
-.tfrow{display:flex;align-items:flex-start;gap:9px;margin-bottom:11px;flex-wrap:wrap;}
-.tfstmt{flex:1;font-size:.83rem;line-height:1.55;min-width:180px;}
-.tfbtns{display:flex;gap:6px;flex-shrink:0;}
-.tfbtn{padding:5px 13px;border-radius:7px;border:1.5px solid var(--border);background:var(--card2);color:var(--text);font-size:.75rem;font-weight:700;cursor:pointer;transition:all .2s;}
-.tfbtn.st{border-color:var(--green);background:rgba(52,211,153,.12);color:var(--green);}
-.tfbtn.sf{border-color:var(--red);background:rgba(248,113,113,.1);color:var(--red);}
-.tffb{font-size:.67rem;font-weight:600;width:100%;padding-top:2px;}
-.wprompt{background:linear-gradient(135deg,rgba(192,132,252,.07),rgba(120,90,180,.04));border:1px solid rgba(192,132,252,.22);border-radius:10px;padding:13px 15px;margin-bottom:12px;}
-.wprompt p{font-size:.85rem;line-height:1.65;}
-textarea.wa{width:100%;background:var(--card2);border:1.5px solid var(--border);border-radius:9px;color:var(--text);font-size:.85rem;padding:11px 13px;resize:vertical;min-height:85px;outline:none;font-family:'Cabin',sans-serif;line-height:1.65;}
-.cbtn{display:inline-block;padding:7px 20px;border-radius:8px;border:none;font-family:'Nunito',sans-serif;font-weight:800;font-size:.8rem;cursor:pointer;margin-top:6px;}
-.cbtn:hover{opacity:.85;}.c6{background:var(--u6);color:#002a30;}.c7{background:var(--u7);color:#1a0a2e;}.cx{background:var(--yellow);color:#1a1200;}
-.fb{margin-top:7px;font-size:.77rem;font-weight:700;min-height:18px;}.fbok{color:var(--green);}.fbno{color:var(--red);}
-.ocard{background:var(--card);border:1px solid var(--border);border-radius:11px;padding:14px;margin-bottom:12px;}
-.ocard h3{font-family:'Nunito',sans-serif;font-size:.88rem;font-weight:800;margin-bottom:9px;}
-.tags{display:flex;flex-wrap:wrap;gap:5px;}
-.tag{background:var(--card2);border:1px solid var(--border);border-radius:6px;padding:3px 9px;font-size:.72rem;color:var(--muted);}
-.footer{background:var(--card);border-top:1px solid var(--border);padding:11px 16px;text-align:center;font-size:.62rem;color:var(--muted);position:fixed;bottom:0;left:0;right:0;}
-</style></head><body>
+  :root {
+    --bg: #0d0f14;
+    --surface: #151820;
+    --surface2: #1c2030;
+    --gold: #e8b84b;
+    --gold2: #f5d580;
+    --teal: #3ecfb2;
+    --red: #e85b5b;
+    --green: #4ecb8a;
+    --text: #eef0f6;
+    --muted: #7a8099;
+    --border: rgba(232,184,75,0.18);
+    --radius: 14px;
+  }
 
-<div class="hdr">
-  <div class="hdr-school">Prof. Salah Sahmoudi &middot; Abdellah Guennoun High School, Sa&iuml;ss-F&egrave;s</div>
-  <div class="hdr-title">&#128221; Extensive Test Review</div>
-  <div class="hdr-sub">Common Core &middot; <em>Visa to the World</em> &middot; 55 minutes</div>
-  <div class="badge-row">
-    <span class="badge b6">&#128138; Unit 6 &mdash; Health &amp; Welfare</span>
-    <span class="badge b7">&#127912; Unit 7 &mdash; The Arts</span>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #0d0f14 0%, #1a1030 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 24px 14px;
+    text-align: center;
+    position: relative;
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 5vw, 36px);
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--gold2), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+  }
+  header p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .prof-tag {
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-top: 10px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+  .prof-tag span { color: var(--gold); }
+
+  /* ── NAV TABS ── */
+  /* ── NAV WRAPPER WITH ARROWS ── */
+  .nav-wrapper {
+    position: relative;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+  }
+  .nav-arrow {
+    flex-shrink: 0;
+    width: 36px;
+    height: 100%;
+    min-height: 48px;
+    background: transparent;
+    border: none;
+    color: var(--gold);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.18s, opacity 0.18s;
+    z-index: 2;
+    opacity: 0.5;
+  }
+  .nav-arrow:hover { background: rgba(232,184,75,0.08); opacity: 1; }
+  .nav-arrow.visible { opacity: 1; }
+  .nav-arrow:disabled { opacity: 0.15; cursor: default; }
+  .nav-arrow:disabled:hover { background: transparent; }
+  nav {
+    display: flex;
+    gap: 4px;
+    padding: 10px 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex: 1;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .tab-btn:hover { background: var(--surface2); color: var(--text); }
+  .tab-btn.active {
+    background: rgba(232,184,75,0.12);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .tab-icon { font-size: 14px; }
+
+  /* ── CONTENT AREA ── */
+  main { padding: 20px 16px 40px; max-width: 900px; margin: 0 auto; }
+  .tab-panel { display: none; animation: fadeUp 0.35s ease; }
+  .tab-panel.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION TITLES ── */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .section-sub {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .card-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  /* ── PHRASE GRID ── */
+  .phrase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 520px) { .phrase-grid { grid-template-columns: 1fr; } }
+  .phrase-col-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .asking { color: var(--teal); }
+  .giving { color: var(--gold); }
+  .refusing { color: #b084e0; }
+
+  .phrase-item {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 10px 13px;
+    font-size: 13.5px;
+    line-height: 1.4;
+    border-left: 3px solid transparent;
+    margin-bottom: 7px;
+    transition: transform 0.15s;
+  }
+  .phrase-item:hover { transform: translateX(3px); }
+  .phrase-item.ask-style { border-color: var(--teal); }
+  .phrase-item.give-style { border-color: var(--gold); }
+  .phrase-item.refuse-style { border-color: #b084e0; }
+  .phrase-item .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    display: block;
+    margin-top: 3px;
+  }
+
+  /* ── CONTEXT LABEL ── */
+  .context-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .formal-badge { background: rgba(62,207,178,0.12); color: var(--teal); border: 1px solid var(--teal); }
+  .informal-badge { background: rgba(232,184,75,0.12); color: var(--gold); border: 1px solid var(--gold); }
+  .strong-badge { background: rgba(232,91,91,0.12); color: var(--red); border: 1px solid var(--red); }
+  .soft-badge { background: rgba(176,132,224,0.12); color: #b084e0; border: 1px solid #b084e0; }
+
+  /* ── GRAMMAR BOX ── */
+  .grammar-box {
+    background: linear-gradient(135deg, rgba(62,207,178,0.07), rgba(232,184,75,0.05));
+    border: 1px solid rgba(62,207,178,0.25);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .grammar-box h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--teal);
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .formula {
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--gold2);
+    margin: 8px 0;
+    border-left: 3px solid var(--gold);
+  }
+  .formula .modal { color: var(--teal); }
+  .formula .verb { color: #b084e0; }
+  .formula .rest { color: var(--text); }
+  .example-line {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+    padding-left: 10px;
+  }
+  .example-line strong { color: var(--text); }
+
+  /* ── QUIZ ── */
+  .quiz-question {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .quiz-q-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .quiz-q-text {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .quiz-q-text em { color: var(--gold); font-style: normal; font-weight: 600; }
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .option-btn {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .option-btn:hover:not(:disabled) { border-color: var(--gold); background: rgba(232,184,75,0.07); }
+  .option-btn.correct { background: rgba(78,203,138,0.15); border-color: var(--green); color: var(--green); }
+  .option-btn.wrong   { background: rgba(232,91,91,0.12); border-color: var(--red); color: var(--red); }
+  .option-btn:disabled { cursor: default; }
+  .feedback {
+    margin-top: 10px;
+    font-size: 12.5px;
+    display: none;
+    padding: 8px 12px;
+    border-radius: 7px;
+    line-height: 1.4;
+  }
+  .feedback.show { display: block; }
+  .feedback.correct { background: rgba(78,203,138,0.1); color: var(--green); border: 1px solid rgba(78,203,138,0.3); }
+  .feedback.wrong   { background: rgba(232,91,91,0.1); color: var(--red); border: 1px solid rgba(232,91,91,0.25); }
+
+  .quiz-score-bar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .score-display {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--gold);
+    font-weight: 900;
+  }
+  .score-label { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .reset-btn {
+    margin-top: 12px;
+    padding: 9px 22px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .reset-btn:hover { background: rgba(232,184,75,0.1); }
+
+  /* ── FILL IN BLANKS ── */
+  .fill-sentence {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 15px 18px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 2;
+  }
+  .fill-input {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-bottom: 2px solid var(--gold);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    padding: 2px 8px;
+    width: 160px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .fill-input:focus { border-color: var(--teal); }
+  .fill-input.correct-ans { border-color: var(--green); background: rgba(78,203,138,0.07); color: var(--green); }
+  .fill-input.wrong-ans   { border-color: var(--red);   background: rgba(232,91,91,0.07);  color: var(--red); }
+  .check-fills-btn {
+    background: var(--gold);
+    border: none;
+    color: #0d0f14;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 28px;
+    border-radius: 9px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: opacity 0.2s;
+  }
+  .check-fills-btn:hover { opacity: 0.88; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .dialogue-box .speaker {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+  .speaker.a { color: var(--teal); }
+  .speaker.b { color: var(--gold); }
+  .dialogue-line {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    padding-left: 12px;
+    border-left: 2px solid var(--surface2);
+  }
+  .dialogue-line:last-child { margin-bottom: 0; }
+  .highlight-phrase {
+    color: var(--gold2);
+    font-weight: 600;
+  }
+  .highlight-ask {
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  /* ── SITUATION CARDS ── */
+  .situations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .situation-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .situation-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.25s;
+    transform-origin: left;
+  }
+  .situation-card:hover::before { transform: scaleX(1); }
+  .situation-card:hover { border-color: rgba(232,184,75,0.35); }
+  .sit-emoji { font-size: 26px; margin-bottom: 8px; }
+  .sit-title { font-size: 13px; font-weight: 600; color: var(--gold); margin-bottom: 5px; }
+  .sit-desc { font-size: 12px; color: var(--muted); line-height: 1.45; }
+  .sit-response {
+    display: none;
+    margin-top: 10px;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12.5px;
+    color: var(--teal);
+    line-height: 1.5;
+    border-left: 3px solid var(--teal);
+  }
+  .situation-card.revealed .sit-response { display: block; }
+  .sit-tap-hint { font-size: 10px; color: var(--muted); margin-top: 8px; font-family: 'DM Mono', monospace; }
+
+  /* ── TIPS BOX ── */
+  .tip-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .tip-item:last-child { border-bottom: none; }
+  .tip-icon { font-size: 20px; flex-shrink: 0; }
+  .tip-text { font-size: 13px; color: var(--muted); line-height: 1.55; }
+  .tip-text strong { color: var(--text); }
+
+  /* ── PROGRESS ── */
+  .tab-progress {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    padding: 10px 0 0;
+  }
+  .prog-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .prog-dot.active { background: var(--gold); border-color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 16px;
+    border-top: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+  footer span { color: var(--gold); }
+
+  /* ── MATCH EXERCISE ── */
+  .match-container { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 480px) { .match-container { grid-template-columns: 1fr; } }
+  .match-col-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .match-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 13px;
+    font-size: 13px;
+    margin-bottom: 7px;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1.45;
+  }
+  .match-item:hover { border-color: var(--gold); }
+  .match-item.selected { border-color: var(--teal); background: rgba(62,207,178,0.08); }
+  .match-item.matched-correct { border-color: var(--green); background: rgba(78,203,138,0.1); cursor: default; color: var(--green); }
+  .match-item.matched-wrong { border-color: var(--red); background: rgba(232,91,91,0.08); }
+  .check-match-btn {
+    background: transparent;
+    border: 1px solid var(--teal);
+    color: var(--teal);
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: all 0.2s;
+  }
+  .check-match-btn:hover { background: rgba(62,207,178,0.08); }
+
+  /* ── EXPRESSIONS PANEL ── */
+  .expr-fab {
+    position: fixed;
+    bottom: 24px;
+    right: 18px;
+    z-index: 900;
+    background: linear-gradient(135deg, var(--gold), #c9952a);
+    color: #0d0f14;
+    border: none;
+    border-radius: 50px;
+    padding: 11px 18px 11px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    box-shadow: 0 4px 20px rgba(232,184,75,0.35);
+    transition: transform 0.18s, box-shadow 0.18s;
+    letter-spacing: 0.2px;
+  }
+  .expr-fab:hover { transform: translateY(-2px); box-shadow: 0 6px 26px rgba(232,184,75,0.5); }
+  .expr-fab .fab-icon { font-size: 16px; }
+  .expr-fab.hidden { display: none; }
+  .expr-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    z-index: 950;
+    animation: bdfadeIn 0.2s ease;
+  }
+  .expr-backdrop.open { display: block; }
+  .expr-panel {
+    position: fixed;
+    top: 0; right: 0;
+    height: 100%;
+    width: min(380px, 92vw);
+    background: #12151e;
+    border-left: 1px solid var(--border);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(110%);
+    transition: transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    box-shadow: -6px 0 40px rgba(0,0,0,0.5);
+  }
+  .expr-panel.open { transform: translateX(0); }
+  .expr-panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 18px 14px;
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+    background: linear-gradient(135deg,#0d0f14,#1a1030);
+  }
+  .expr-panel-title { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--gold); font-weight: 700; }
+  .expr-panel-subtitle { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; margin-top: 2px; }
+  .expr-close-btn {
+    background: var(--surface2); border: 1px solid var(--border); color: var(--muted);
+    border-radius: 8px; width: 34px; height: 34px; font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; transition: all 0.18s; flex-shrink: 0;
+  }
+  .expr-close-btn:hover { color: var(--text); border-color: var(--gold); }
+  .expr-cats {
+    display: flex; gap: 4px; padding: 10px 12px 8px;
+    overflow-x: auto; scrollbar-width: none; flex-shrink: 0;
+    border-bottom: 1px solid var(--border); background: var(--surface);
+  }
+  .expr-cats::-webkit-scrollbar { display: none; }
+  .expr-cat-btn {
+    flex-shrink: 0; padding: 5px 12px; border-radius: 20px;
+    border: 1px solid var(--border); background: transparent; color: var(--muted);
+    font-family: 'DM Sans', sans-serif; font-size: 11.5px; font-weight: 500;
+    cursor: pointer; transition: all 0.18s; white-space: nowrap;
+  }
+  .expr-cat-btn:hover { border-color: var(--gold); color: var(--text); }
+  .expr-cat-btn.active { background: rgba(232,184,75,0.12); border-color: var(--gold); color: var(--gold); }
+  .expr-body {
+    flex: 1; overflow-y: auto; padding: 14px 14px 24px;
+    scrollbar-width: thin; scrollbar-color: var(--surface2) transparent;
+  }
+  .expr-body::-webkit-scrollbar { width: 4px; }
+  .expr-body::-webkit-scrollbar-thumb { background: var(--surface2); border-radius: 2px; }
+  .expr-cat-section { display: none; }
+  .expr-cat-section.active { display: block; }
+  .expr-group-label {
+    font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted); margin: 14px 0 8px;
+    padding-bottom: 5px; border-bottom: 1px solid var(--border);
+  }
+  .expr-group-label:first-child { margin-top: 2px; }
+  .expr-chip {
+    background: var(--surface2); border-radius: 8px; padding: 9px 12px; margin-bottom: 6px;
+    font-size: 13px; line-height: 1.45; border-left: 3px solid transparent;
+    display: flex; flex-direction: column; gap: 2px;
+  }
+  .expr-chip.ask    { border-color: var(--teal); }
+  .expr-chip.give   { border-color: var(--gold); }
+  .expr-chip.soft   { border-color: #b084e0; }
+  .expr-chip.warn   { border-color: var(--gold2); }
+  .expr-chip.refuse { border-color: var(--red); }
+  .expr-chip.time   { border-color: #b084e0; }
+  .expr-chip-tag { font-family: 'DM Mono', monospace; font-size: 9px; letter-spacing: 1px; color: var(--muted); }
+  @keyframes bdfadeIn { from{opacity:0} to{opacity:1} }
+</style>
+</head>
+<body>
+
+<!-- ── EXPRESSIONS FLOATING BUTTON ── -->
+<button class="expr-fab hidden" id="exprFab" onclick="toggleExprPanel()">
+  <span class="fab-icon">📋</span> Expressions
+</button>
+<div class="expr-backdrop" id="exprBackdrop" onclick="closeExprPanel()"></div>
+<div class="expr-panel" id="exprPanel">
+  <div class="expr-panel-header">
+    <div>
+      <div class="expr-panel-title">📋 Expressions</div>
+      <div class="expr-panel-subtitle">Quick Reference · Giving &amp; Asking for Advice</div>
+    </div>
+    <button class="expr-close-btn" onclick="closeExprPanel()">✕</button>
+  </div>
+  <div class="expr-cats">
+    <button class="expr-cat-btn active" onclick="switchCat(0)">❓ Asking</button>
+    <button class="expr-cat-btn" onclick="switchCat(1)">💪 Strong</button>
+    <button class="expr-cat-btn" onclick="switchCat(2)">🌿 Soft</button>
+    <button class="expr-cat-btn" onclick="switchCat(3)">⚠️ Had Better</button>
+    <button class="expr-cat-btn" onclick="switchCat(4)">⏰ High Time</button>
+    <button class="expr-cat-btn" onclick="switchCat(5)">🚫 Refusing</button>
+  </div>
+  <div class="expr-body">
+    <!-- 0: Asking -->
+    <div class="expr-cat-section active" id="ecat-0">
+      <div class="expr-group-label">Formal / Neutral</div>
+      <div class="expr-chip ask">Could you give me some advice on…?<span class="expr-chip-tag">Polite · formal</span></div>
+      <div class="expr-chip ask">What would you advise me to do?<span class="expr-chip-tag">Neutral · open</span></div>
+      <div class="expr-chip ask">I'd appreciate your advice about…<span class="expr-chip-tag">Respectful</span></div>
+      <div class="expr-chip ask">What do you think I should do about…?<span class="expr-chip-tag">Thoughtful</span></div>
+      <div class="expr-chip ask">I was wondering if you could advise me…<span class="expr-chip-tag">Tentative · formal</span></div>
+      <div class="expr-group-label">Informal</div>
+      <div class="expr-chip ask" style="border-color:var(--muted);">What should I do about…?<span class="expr-chip-tag">Casual · direct</span></div>
+      <div class="expr-chip ask" style="border-color:var(--muted);">Any ideas on how to deal with…?<span class="expr-chip-tag">Friendly</span></div>
+      <div class="expr-chip ask" style="border-color:var(--muted);">Have you got any tips for…?<span class="expr-chip-tag">Informal</span></div>
+      <div class="expr-chip ask" style="border-color:var(--muted);">What would you do if you were me?<span class="expr-chip-tag">Empathy · casual</span></div>
+    </div>
+    <!-- 1: Strong -->
+    <div class="expr-cat-section" id="ecat-1">
+      <div class="expr-group-label">Strong Advice</div>
+      <div class="expr-chip give">You should / You ought to + base verb<span class="expr-chip-tag">Common · neutral</span></div>
+      <div class="expr-chip give">You must / You have to + base verb<span class="expr-chip-tag">Strong obligation</span></div>
+      <div class="expr-chip give">I strongly advise you to + base verb<span class="expr-chip-tag">Formal · emphatic</span></div>
+      <div class="expr-chip give">If I were you, I would + base verb<span class="expr-chip-tag">Conditional · polite</span></div>
+      <div class="expr-chip give">The best thing (for you) to do is…<span class="expr-chip-tag">Assertive</span></div>
+      <div class="expr-chip give">Make sure you + base verb<span class="expr-chip-tag">Imperative · direct</span></div>
+      <div class="expr-chip give">It's (high) time you + past simple<span class="expr-chip-tag">Urgent · reproachful</span></div>
+    </div>
+    <!-- 2: Soft -->
+    <div class="expr-cat-section" id="ecat-2">
+      <div class="expr-group-label">Soft / Tentative Advice</div>
+      <div class="expr-chip soft">You could / might want to + base verb<span class="expr-chip-tag">Tentative</span></div>
+      <div class="expr-chip soft">Why don't you + base verb?<span class="expr-chip-tag">Suggestion</span></div>
+      <div class="expr-chip soft">Have you considered + -ing?<span class="expr-chip-tag">Open question</span></div>
+      <div class="expr-chip soft">It might be a good idea to…<span class="expr-chip-tag">Soft · indirect</span></div>
+      <div class="expr-chip soft">What about…? / How about + -ing?<span class="expr-chip-tag">Casual suggestion</span></div>
+      <div class="expr-chip soft">You might find it helpful to…<span class="expr-chip-tag">Thoughtful</span></div>
+    </div>
+    <!-- 3: Had Better -->
+    <div class="expr-cat-section" id="ecat-3">
+      <div class="expr-group-label">Structure</div>
+      <div class="expr-chip warn">You'd better + base verb &nbsp;(NO "to")<span class="expr-chip-tag">Warning · urgent</span></div>
+      <div class="expr-chip warn">You'd better not + base verb<span class="expr-chip-tag">Negative warning</span></div>
+      <div class="expr-group-label">Examples</div>
+      <div class="expr-chip warn">You'd better start revising now.<span class="expr-chip-tag">Implies: or you'll fail</span></div>
+      <div class="expr-chip warn">She'd better see a doctor.<span class="expr-chip-tag">Urgency</span></div>
+      <div class="expr-chip warn">You'd better not ignore this problem.<span class="expr-chip-tag">Negative form</span></div>
+      <div class="expr-group-label">⚠ Common Errors</div>
+      <div class="expr-chip warn" style="font-size:12px;line-height:1.7;">
+        ✗ You'd better <span style="color:var(--red);text-decoration:underline;">to go</span><br>
+        ✓ You'd better <span style="color:var(--green);">go</span><br>
+        ✗ You'd better <span style="color:var(--red);text-decoration:underline;">don't</span> go<br>
+        ✓ You'd better <span style="color:var(--green);">not</span> go
+      </div>
+    </div>
+    <!-- 4: High Time -->
+    <div class="expr-cat-section" id="ecat-4">
+      <div class="expr-group-label">Structure</div>
+      <div class="expr-chip time">It's time / It's high time + subject + <strong style="color:#b084e0;">past simple</strong><span class="expr-chip-tag">Long overdue action</span></div>
+      <div class="expr-chip time">It's time + to + base verb<span class="expr-chip-tag">Less personal — no subject</span></div>
+      <div class="expr-group-label">Examples</div>
+      <div class="expr-chip time">It's high time you <span style="color:#b084e0;">took</span> your studies seriously.<span class="expr-chip-tag">Past simple after subject</span></div>
+      <div class="expr-chip time">It's high time she <span style="color:#b084e0;">apologised</span>.<span class="expr-chip-tag">Mild reproach</span></div>
+      <div class="expr-chip time">It's time to make a decision.<span class="expr-chip-tag">to + base verb (no subject)</span></div>
+      <div class="expr-group-label">⚠ Common Errors</div>
+      <div class="expr-chip time" style="font-size:12px;line-height:1.7;">
+        ✗ It's high time you <span style="color:var(--red);text-decoration:underline;">make</span><br>
+        ✓ It's high time you <span style="color:var(--green);">made</span><br>
+        "High time" = action is <em>long overdue</em>.
+      </div>
+    </div>
+    <!-- 5: Refusing -->
+    <div class="expr-cat-section" id="ecat-5">
+      <div class="expr-group-label">Refusing / Qualifying Advice</div>
+      <div class="expr-chip refuse">Thanks, but I don't think that would work for me.<span class="expr-chip-tag">Polite refusal</span></div>
+      <div class="expr-chip refuse">I appreciate the advice, but I've already tried that.<span class="expr-chip-tag">With reason</span></div>
+      <div class="expr-chip refuse">That's a good point, but I'm not sure it applies to my situation.<span class="expr-chip-tag">Partial disagreement</span></div>
+      <div class="expr-chip refuse">I'll think about it, but I'd prefer to…<span class="expr-chip-tag">Diplomatic</span></div>
+    </div>
   </div>
 </div>
 
-<div class="tbar">
-  <span style="font-size:.75rem;color:var(--muted);">&#9201;</span>
-  <span class="tdisp" id="td">55:00</span>
-  <button class="tbtn" id="tBtn" onclick="toggleTimer()">&#9654; Start</button>
-  <button class="tbtn" onclick="resetTimer()">&#8635; Reset</button>
-  <span class="spill" id="scoreEl">Score: 0 / 0</span>
+<header>
+  <div class="header-label">2nd Year Baccalaureate · Language Functions</div>
+  <h1>Giving & Asking for Advice</h1>
+  <p>Ticket to English 2 · Communication Skills</p>
+  <div class="prof-tag"><span>Prof. Salah Sahmoudi</span> · Abdellah Guennoun High School, Saïss-Fès</div>
+</header>
+
+<div class="nav-wrapper">
+  <button class="nav-arrow" id="navLeft" onclick="scrollNav(-1)" title="Scroll left">&#8592;</button>
+  <nav id="mainNav">
+    <button class="tab-btn active" onclick="showTab('intro',0)"><span class="tab-icon">🎯</span> Warm-Up</button>
+    <button class="tab-btn" onclick="showTab('language',1)"><span class="tab-icon">📚</span> Language</button>
+    <button class="tab-btn" onclick="showTab('grammar',2)"><span class="tab-icon">⚙️</span> Grammar</button>
+    <button class="tab-btn" onclick="showTab('dialogue',3)"><span class="tab-icon">💬</span> Dialogue</button>
+    <button class="tab-btn" onclick="showTab('practice',4)"><span class="tab-icon">✏️</span> Practice</button>
+    <button class="tab-btn" onclick="showTab('quiz',5)"><span class="tab-icon">🏆</span> Quiz</button>
+    <button class="tab-btn" onclick="showTab('situations',6)"><span class="tab-icon">🎭</span> Situations</button>
+  </nav>
+  <button class="nav-arrow" id="navRight" onclick="scrollNav(1)" title="Scroll right">&#8594;</button>
 </div>
 
-<div class="tabs">
-  <button class="tab" onclick="go('ov',this)" data-u="x">&#128506; Overview</button>
-  <button class="tab" onclick="go('u6v',this)" data-u="6">U6 &middot; Vocab</button>
-  <button class="tab" onclick="go('u6s',this)" data-u="6">U6 &middot; Modals</button>
-  <button class="tab" onclick="go('u6c',this)" data-u="6">U6 &middot; Conditionals</button>
-  <button class="tab" onclick="go('u6j',this)" data-u="6">U6 &middot; Conjunctions</button>
-  <button class="tab" onclick="go('u7v',this)" data-u="7">U7 &middot; Vocab</button>
-  <button class="tab" onclick="go('u7s',this)" data-u="7">U7 &middot; Suggestions</button>
-  <button class="tab" onclick="go('u7p',this)" data-u="7">U7 &middot; Simple Past</button>
-  <button class="tab" onclick="go('writing',this)" data-u="x">&#9999; Writing</button>
-  <button class="tab" onclick="go('mixed',this)" data-u="x">&#128256; Mixed Quiz</button>
+<main>
+
+  <!-- TAB 0: WARM-UP -->
+  <div class="tab-panel active" id="tab-intro">
+    <p class="section-title">Warm-Up: Think About It</p>
+    <p class="section-sub">Before we start, reflect on these questions. Discuss with a partner!</p>
+
+    <div class="card">
+      <div class="card-title">🔍 Discussion Starters</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="phrase-item give-style">1. Have you ever asked someone for advice? What was the situation?</div>
+        <div class="phrase-item ask-style">2. When someone gives you advice, do you always follow it? Why / Why not?</div>
+        <div class="phrase-item refuse-style">3. Is it rude to refuse someone's advice? How can you do it politely?</div>
+        <div class="phrase-item give-style">4. Who do you usually turn to for advice — family, friends, or a professional?</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎯 Learning Objectives</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="phrase-item ask-style">✔ Identify and use expressions for <strong>asking</strong> for advice</div>
+        <div class="phrase-item give-style">✔ Use appropriate language for <strong>giving</strong> advice (strong & soft)</div>
+        <div class="phrase-item refuse-style">✔ Politely <strong>reject</strong> or qualify advice</div>
+        <div class="phrase-item give-style">✔ Distinguish <strong>formal</strong> from <strong>informal</strong> register</div>
+        <div class="phrase-item ask-style">✔ Produce short <strong>dialogues</strong> using advice language</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💡 Real-World Contexts</div>
+      <div class="situations-grid" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:0;">
+        <div style="background:var(--surface2);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:24px;margin-bottom:5px;">🎓</div>
+          <div style="font-size:12px;color:var(--gold);font-weight:600;">Studies</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px;">Choosing a major</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:24px;margin-bottom:5px;">💼</div>
+          <div style="font-size:12px;color:var(--gold);font-weight:600;">Career</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px;">Job interview tips</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:24px;margin-bottom:5px;">❤️</div>
+          <div style="font-size:12px;color:var(--gold);font-weight:600;">Relationships</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px;">Solving conflicts</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:24px;margin-bottom:5px;">🏥</div>
+          <div style="font-size:12px;color:var(--gold);font-weight:600;">Health</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px;">Doctor's advice</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 1: LANGUAGE -->
+  <div class="tab-panel" id="tab-language">
+    <p class="section-title">Language Input</p>
+    <p class="section-sub">Study these essential expressions. Register matters — know when to use formal vs. informal language.</p>
+
+    <div class="card">
+      <div class="card-title">🙋 Asking for Advice</div>
+      <div class="phrase-grid">
+        <div>
+          <div class="phrase-col-title asking">Formal / Neutral</div>
+          <div class="phrase-item ask-style">Could you give me some advice on…?<span class="tag">Polite · formal</span></div>
+          <div class="phrase-item ask-style">What would you advise me to do?<span class="tag">Neutral · open</span></div>
+          <div class="phrase-item ask-style">I'd appreciate your advice about…<span class="tag">Respectful</span></div>
+          <div class="phrase-item ask-style">What do you think I should do about…?<span class="tag">Thoughtful</span></div>
+          <div class="phrase-item ask-style">I was wondering if you could advise me…<span class="tag">Tentative · formal</span></div>
+        </div>
+        <div>
+          <div class="phrase-col-title giving">Informal</div>
+          <div class="phrase-item give-style" style="border-color:#7a8099;">What should I do about…?<span class="tag">Casual · direct</span></div>
+          <div class="phrase-item give-style" style="border-color:#7a8099;">Any ideas on how to deal with…?<span class="tag">Friendly</span></div>
+          <div class="phrase-item give-style" style="border-color:#7a8099;">Have you got any tips for…?<span class="tag">Informal</span></div>
+          <div class="phrase-item give-style" style="border-color:#7a8099;">What would you do if you were me?<span class="tag">Empathy · casual</span></div>
+          <div class="phrase-item give-style" style="border-color:#7a8099;">Got any advice?<span class="tag">Very casual</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💡 Giving Advice — Strong</div>
+      <span class="context-badge strong-badge">Firm Recommendation</span>
+      <div class="phrase-grid">
+        <div>
+          <div class="phrase-item give-style">You should / You ought to…<span class="tag">Common · neutral</span></div>
+          <div class="phrase-item give-style">You must / You have to…<span class="tag">Strong obligation</span></div>
+          <div class="phrase-item give-style">I strongly advise you to…<span class="tag">Formal · emphatic</span></div>
+          <div class="phrase-item give-style" style="border-color:#f5d580;background:rgba(245,213,128,0.07);">You'd better… <em style="font-size:10px;color:var(--gold2);font-style:normal;">(= had better)</em><span class="tag">⭐ Very common · warning tone</span></div>
+        </div>
+        <div>
+          <div class="phrase-item give-style">If I were you, I would…<span class="tag">Conditional · polite</span></div>
+          <div class="phrase-item give-style">The best thing (for you) to do is…<span class="tag">Assertive</span></div>
+          <div class="phrase-item give-style">Make sure you…<span class="tag">Imperative · direct</span></div>
+          <div class="phrase-item give-style">It's (high) time you…<span class="tag">Urgent · reproachful</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💡 Giving Advice — Soft</div>
+      <span class="context-badge soft-badge">Gentle Suggestion</span>
+      <div class="phrase-grid">
+        <div>
+          <div class="phrase-item refuse-style">You could / might want to…<span class="tag">Tentative</span></div>
+          <div class="phrase-item refuse-style">Why don't you…?<span class="tag">Suggestion</span></div>
+          <div class="phrase-item refuse-style">Have you considered…?<span class="tag">Open question</span></div>
+        </div>
+        <div>
+          <div class="phrase-item refuse-style">It might be a good idea to…<span class="tag">Soft · indirect</span></div>
+          <div class="phrase-item refuse-style">What about…? / How about…?<span class="tag">Casual suggestion</span></div>
+          <div class="phrase-item refuse-style">You might find it helpful to…<span class="tag">Thoughtful</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🚫 Refusing / Qualifying Advice</div>
+      <div class="phrase-item" style="border-left:3px solid var(--red);background:var(--surface2);margin-bottom:8px;">Thanks, but I don't think that would work for me.<span class="tag">Polite refusal</span></div>
+      <div class="phrase-item" style="border-left:3px solid var(--red);background:var(--surface2);margin-bottom:8px;">I appreciate the advice, but I've already tried that.<span class="tag">With reason</span></div>
+      <div class="phrase-item" style="border-left:3px solid var(--red);background:var(--surface2);margin-bottom:8px;">That's a good point, but I'm not sure it applies to my situation.<span class="tag">Partial disagreement</span></div>
+      <div class="phrase-item" style="border-left:3px solid var(--red);background:var(--surface2);">I'll think about it, but I'd prefer to…<span class="tag">Diplomatic</span></div>
+    </div>
+  </div>
+
+  <!-- TAB 2: GRAMMAR -->
+  <div class="tab-panel" id="tab-grammar">
+    <p class="section-title">Grammar Focus</p>
+    <p class="section-sub">Master the modal verbs and structures used to give and ask for advice.</p>
+
+    <div class="grammar-box">
+      <h3>SHOULD / OUGHT TO → Advice</h3>
+      <div class="formula">
+        Subject + <span class="modal">should</span> / <span class="modal">ought to</span> + <span class="verb">base verb</span>
+      </div>
+      <p class="example-line">→ <strong>You should study harder for the Bac exam.</strong></p>
+      <p class="example-line">→ <strong>You ought to see a doctor about that.</strong></p>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;">⚠ "Ought to" is slightly more formal than "should" and is less common in questions.</p>
+    </div>
+
+    <div class="grammar-box">
+      <h3>IF I WERE YOU → Conditional Advice</h3>
+      <div class="formula">
+        <span class="modal">If I were you</span>, I <span class="modal">would</span> + <span class="verb">base verb</span>
+      </div>
+      <p class="example-line">→ <strong>If I were you, I would talk to your parents first.</strong></p>
+      <p class="example-line">→ <strong>If I were in your shoes, I'd apologise immediately.</strong></p>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;">📌 This is a Conditional Type 2 structure. Notice: "were" (not "was") is used even for I/he/she.</p>
+    </div>
+
+    <div class="grammar-box">
+      <h3>WHY DON'T YOU / HOW ABOUT → Suggestions</h3>
+      <div class="formula">
+        <span class="modal">Why don't you</span> + <span class="verb">base verb</span>?
+      </div>
+      <p class="example-line">→ <strong>Why don't you apply for a scholarship?</strong></p>
+      <div class="formula" style="margin-top:8px;">
+        <span class="modal">How about</span> + <span class="verb">-ing</span>?
+      </div>
+      <p class="example-line">→ <strong>How about talking to your teacher?</strong></p>
+    </div>
+
+    <div class="grammar-box">
+      <h3>COULD / MIGHT → Tentative Advice</h3>
+      <div class="formula">
+        Subject + <span class="modal">could</span> / <span class="modal">might</span> + <span class="verb">base verb</span>
+      </div>
+      <p class="example-line">→ <strong>You could try a different approach.</strong></p>
+      <p class="example-line">→ <strong>You might want to reconsider your decision.</strong></p>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 "Could" and "might" make advice sound less imposing — ideal in formal/polite contexts.</p>
+    </div>
+
+    <div class="grammar-box" style="border-color:rgba(245,213,128,0.4);background:linear-gradient(135deg,rgba(245,213,128,0.07),rgba(232,184,75,0.04));">
+      <h3 style="color:var(--gold2);">YOU'D BETTER → Warning / Urgent Advice ⭐</h3>
+      <div class="formula">
+        Subject + <span class="modal">had better</span> (<span style="color:var(--muted);">'d better</span>) + <span class="verb">base verb</span>
+      </div>
+      <p class="example-line">→ <strong>You'd better start revising now or you'll fail.</strong></p>
+      <p class="example-line">→ <strong>She'd better see a doctor — that cough sounds serious.</strong></p>
+      <div class="formula" style="margin-top:10px;border-color:var(--red);">
+        Negative: Subject + <span class="modal">had better not</span> + <span class="verb">base verb</span>
+      </div>
+      <p class="example-line">→ <strong>You'd better not ignore this problem any longer.</strong></p>
+      <p style="font-size:12px;color:var(--muted);margin-top:10px;">⚠ "Had better" implies a <strong style="color:var(--text);">warning or consequence</strong> — stronger than "should". It does NOT refer to the past despite having "had". Use it for urgent, immediate situations. It is NOT followed by "to".</p>
+    </div>
+
+    <div class="grammar-box" style="border-color:rgba(176,132,224,0.35);background:linear-gradient(135deg,rgba(176,132,224,0.07),rgba(176,132,224,0.03));">
+      <h3 style="color:#b084e0;">IT'S (HIGH) TIME → Urgent / Overdue Advice</h3>
+      <div class="formula" style="border-color:#b084e0;">
+        <span class="modal">It's time</span> / <span class="modal">It's high time</span> + subject + <span class="verb">past simple</span>
+      </div>
+      <p class="example-line">→ <strong>It's time you started taking your studies seriously.</strong></p>
+      <p class="example-line">→ <strong>It's high time she apologised to her friend.</strong></p>
+      <div class="formula" style="margin-top:10px;border-color:#b084e0;">
+        Alternative: <span class="modal">It's time</span> + <span class="verb">to + base verb</span> <span style="color:var(--muted);font-size:11px;">(less personal)</span>
+      </div>
+      <p class="example-line">→ <strong>It's time to make a decision.</strong></p>
+      <div style="margin-top:12px;background:var(--bg);border-radius:8px;padding:12px 14px;border-left:3px solid #b084e0;">
+        <p style="font-size:12px;color:var(--muted);line-height:1.6;">
+          ⚠ <strong style="color:var(--text);">Key rule:</strong> After <em style="color:#b084e0;">It's time / It's high time + subject</em>, always use the <strong style="color:var(--text);">past simple</strong> — NOT the infinitive.<br>
+          ✗ <span style="color:var(--red);">It's high time you <u>to study</u>.</span><br>
+          ✓ <span style="color:var(--green);">It's high time you <u>studied</u>.</span><br><br>
+          💡 <strong style="color:var(--text);">"High time"</strong> adds extra urgency — it means the action is <em>long overdue</em> and should have happened already. It often carries a tone of mild reproach.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">⚖️ Strength of Advice</div>
+      <div style="position:relative;padding:14px 0;">
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:6px;">
+          <span>Soft</span><span>Strong</span>
+        </div>
+        <div style="background:linear-gradient(90deg,rgba(62,207,178,0.3),rgba(232,184,75,0.6),rgba(232,91,91,0.5));height:6px;border-radius:3px;"></div>
+        <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-top:8px;flex-wrap:wrap;gap:4px;">
+          <span style="color:var(--teal);">might</span>
+          <span style="color:var(--teal);">could</span>
+          <span style="color:var(--muted);">why don't</span>
+          <span style="color:var(--gold);">should</span>
+          <span style="color:var(--gold);">ought to</span>
+          <span style="color:var(--gold2);">you'd better</span>
+          <span style="color:#b084e0;">it's high time</span>
+          <span style="color:var(--red);">must / have to</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: DIALOGUE -->
+  <div class="tab-panel" id="tab-dialogue">
+    <p class="section-title">Model Dialogue</p>
+    <p class="section-sub">Read the dialogue carefully. Notice how advice is asked for, given, and responded to. Highlighted phrases show the target language.</p>
+
+    <div class="dialogue-box">
+      <div class="card-title">📖 Situation: Youssef is stressed about his Bac results</div>
+      <div>
+        <div class="speaker a">YOUSSEF</div>
+        <div class="dialogue-line">
+          Hey Leila, <span class="highlight-ask">I really don't know what to do.</span> I failed my mock exam and the Bac is in three weeks. <span class="highlight-ask">What do you think I should do?</span>
+        </div>
+
+        <div class="speaker b">LEILA</div>
+        <div class="dialogue-line">
+          I understand how you feel. First of all, don't panic. <span class="highlight-phrase">If I were you, I would start by making a study timetable.</span> That way, you can cover every subject without feeling overwhelmed.
+        </div>
+
+        <div class="speaker a">YOUSSEF</div>
+        <div class="dialogue-line">
+          A timetable sounds good. <span class="highlight-ask">But could you give me some advice on how to stay focused?</span> I get distracted really easily.
+        </div>
+
+        <div class="speaker b">LEILA</div>
+        <div class="dialogue-line">
+          <span class="highlight-phrase">You should turn off your phone while you study.</span> Also, <span class="highlight-phrase">why don't you study in short sessions of 45 minutes</span> with 10-minute breaks? It's much more effective than studying for hours at once.
+        </div>
+
+        <div class="speaker a">YOUSSEF</div>
+        <div class="dialogue-line">
+          <span class="highlight-ask">Thanks, but</span> I've tried the Pomodoro technique before and I find it hard to stop when I'm in the zone. <span class="highlight-ask">Is there anything else I could do?</span>
+        </div>
+
+        <div class="speaker b">LEILA</div>
+        <div class="dialogue-line">
+          <span class="highlight-phrase">You might also want to join a study group.</span> Working with others can really help. And <span class="highlight-phrase">I strongly advise you to see your teacher</span> — I'm sure they can give you extra guidance.
+        </div>
+
+        <div class="speaker a">YOUSSEF</div>
+        <div class="dialogue-line">
+          That's a great idea! <span class="highlight-ask">I appreciate your advice.</span> I'll definitely try all of that. Thank you, Leila.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔎 Analysis — Dialogue 1</div>
+      <div class="tip-item">
+        <div class="tip-icon">❓</div>
+        <div class="tip-text"><strong>Asking for advice:</strong> "What do you think I should do?", "Could you give me some advice on…?", "Is there anything else I could do?"</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">💡</div>
+        <div class="tip-text"><strong>Giving strong advice:</strong> "You should turn off your phone", "I strongly advise you to see your teacher"</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">🌿</div>
+        <div class="tip-text"><strong>Giving soft advice:</strong> "Why don't you study in short sessions?", "You might also want to join a study group"</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">🚫</div>
+        <div class="tip-text"><strong>Qualifying advice:</strong> "Thanks, but I've tried that before…" — politely explaining it doesn't suit him</div>
+      </div>
+    </div>
+
+    <!-- DIALOGUE 2 -->
+    <div style="margin-top:28px;margin-bottom:6px;">
+      <div style="font-family:'DM Mono',monospace;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:4px;">Dialogue 2</div>
+      <p class="section-title" style="font-size:19px;">Focus: <em style="color:var(--gold2);font-style:normal;">You'd better</em> &amp; <em style="color:#b084e0;font-style:normal;">It's high time</em></p>
+      <p class="section-sub" style="margin-bottom:14px;">Read carefully and identify where these two structures appear and why they are used.</p>
+    </div>
+
+    <div class="dialogue-box">
+      <div class="card-title">📖 Situation: Karim has been ignoring his health and his responsibilities at school</div>
+      <div>
+        <div class="speaker a">OMAR</div>
+        <div class="dialogue-line">
+          Karim, you've been skipping PE classes and eating junk food every day. <span class="highlight-ask">Have you got any idea how bad this is for you?</span>
+        </div>
+
+        <div class="speaker b">KARIM</div>
+        <div class="dialogue-line">
+          I know, I know… <span class="highlight-ask">but what do you think I should do? I just don't have the motivation to change.</span>
+        </div>
+
+        <div class="speaker a">OMAR</div>
+        <div class="dialogue-line">
+          Listen, <span class="highlight-phrase" style="color:var(--gold2);font-weight:600;">it's high time you took your health seriously.</span> You've been saying "I'll start tomorrow" for months now. That needs to stop.
+        </div>
+
+        <div class="speaker b">KARIM</div>
+        <div class="dialogue-line">
+          You're right, but it's hard to know where to begin. <span class="highlight-ask">Could you give me some advice on how to get started?</span>
+        </div>
+
+        <div class="speaker a">OMAR</div>
+        <div class="dialogue-line">
+          First, <span class="highlight-phrase" style="color:var(--gold2);font-weight:600;">you'd better stop eating fast food every day</span> — your energy levels are terrible because of it. Why don't you start by cooking simple meals at home?
+        </div>
+
+        <div class="speaker b">KARIM</div>
+        <div class="dialogue-line">
+          That makes sense. <span class="highlight-ask">What about exercise? Any ideas?</span>
+        </div>
+
+        <div class="speaker a">OMAR</div>
+        <div class="dialogue-line">
+          <span class="highlight-phrase">You ought to go back to PE classes</span> — the teacher has already noticed your absences. And honestly, <span class="highlight-phrase" style="color:#b084e0;font-weight:600;">it's high time you had a proper routine.</span> Even a 20-minute walk every morning would help.
+        </div>
+
+        <div class="speaker b">KARIM</div>
+        <div class="dialogue-line">
+          I hear you. <span class="highlight-ask">Thanks, but I'm not sure I can manage mornings.</span> I'm really not a morning person.
+        </div>
+
+        <div class="speaker a">OMAR</div>
+        <div class="dialogue-line">
+          Then go in the evening. But look — <span class="highlight-phrase" style="color:var(--gold2);font-weight:600;">you'd better not leave this any longer.</span> The Bac is coming and you need to be in good shape mentally and physically. I strongly advise you to make one small change this week and build from there.
+        </div>
+
+        <div class="speaker b">KARIM</div>
+        <div class="dialogue-line">
+          You're absolutely right. I appreciate your advice. I'll start with the food this week and add exercise next week.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔎 Analysis — Dialogue 2</div>
+      <div class="tip-item">
+        <div class="tip-icon">⏰</div>
+        <div class="tip-text">
+          <strong style="color:#b084e0;">It's high time you took…</strong> / <strong style="color:#b084e0;">It's high time you had…</strong> — past simple after "it's high time + subject" signals the action is <em>long overdue</em>. The speaker is mildly reproaching Karim for not having acted sooner.
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">⚠️</div>
+        <div class="tip-text">
+          <strong style="color:var(--gold2);">You'd better stop…</strong> / <strong style="color:var(--gold2);">You'd better not leave this…</strong> — "had better" warns of a negative consequence if Karim doesn't act. Notice the negative form: <em>you'd better not</em> (no auxiliary verb added).
+        </div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">🌿</div>
+        <div class="tip-text"><strong>Soft advice:</strong> "Why don't you start by cooking simple meals?", "Even a 20-minute walk would help"</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">🚫</div>
+        <div class="tip-text"><strong>Refusing advice:</strong> "Thanks, but I'm not sure I can manage mornings" — Karim politely declines and gives a reason, which leads Omar to offer an alternative.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: PRACTICE -->
+  <div class="tab-panel" id="tab-practice">
+    <p class="section-title">Practice Exercises</p>
+    <p class="section-sub">Test your understanding with these activities.</p>
+
+    <!-- Fill in the blanks -->
+    <div class="card">
+      <div class="card-title">✏️ Exercise 1 — Complete the Sentences</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">Fill in each blank with the correct word or phrase from the box below. Each item is used <strong>once</strong>.</p>
+      <div style="background:var(--bg);border:1px dashed var(--border);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-family:'DM Mono',monospace;font-size:11.5px;color:var(--gold2);line-height:1.9;">
+        Word Bank: <strong>ought to &nbsp;·&nbsp; you'd better &nbsp;·&nbsp; have you considered &nbsp;·&nbsp; if I were you &nbsp;·&nbsp; it's high time &nbsp;·&nbsp; why don't &nbsp;·&nbsp; could &nbsp;·&nbsp; had better not &nbsp;·&nbsp; strongly advise &nbsp;·&nbsp; should</strong>
+      </div>
+
+      <div class="fill-sentence">1. <input class="fill-input" id="f1" placeholder="________"> you join a language club? It would really improve your speaking.</div>
+      <div class="fill-sentence">2. You <input class="fill-input" id="f2" placeholder="________"> hand in your assignment on time, or the teacher will penalise you.</div>
+      <div class="fill-sentence">3. I <input class="fill-input" id="f3" placeholder="________"> you to see a doctor before the situation gets worse.</div>
+      <div class="fill-sentence">4. <input class="fill-input" id="f4" placeholder="________"> switching to a healthier diet? Even small changes can make a big difference.</div>
+      <div class="fill-sentence">5. <input class="fill-input" id="f5" placeholder="________">, I would think carefully before making such an important decision.</div>
+      <div class="fill-sentence">6. You <input class="fill-input" id="f6" placeholder="________"> revise your notes every evening — the Bac is only a month away.</div>
+      <div class="fill-sentence">7. You <input class="fill-input" id="f7" placeholder="________"> ignore your parents' calls any longer — they're worried about you.</div>
+      <div class="fill-sentence">8. <input class="fill-input" id="f8" placeholder="________"> you started taking responsibility for your own learning.</div>
+      <div class="fill-sentence">9. She <input class="fill-input" id="f9" placeholder="________"> talk to her teacher about the problem — there's still time to sort it out.</div>
+      <div class="fill-sentence">10. You <input class="fill-input" id="f10" placeholder="________"> try meditation — some students find it really helps with exam anxiety.</div>
+
+      <button class="check-fills-btn" onclick="checkFills()">Check Answers</button>
+      <div id="fills-score" style="margin-top:12px;font-size:13px;display:none;"></div>
+    </div>
+
+    <!-- Match exercise -->
+    <div class="card">
+      <div class="card-title">🔗 Exercise 2 — Match the Function</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">Select a sentence on the left, then select its matching function on the right.</p>
+      <div class="match-container">
+        <div>
+          <div class="match-col-title">Sentences</div>
+          <div class="match-item" id="ms1" onclick="selectLeft('ms1', 0)">"It's high time you looked for a job."</div>
+          <div class="match-item" id="ms2" onclick="selectLeft('ms2', 1)">"What would you advise me to do?"</div>
+          <div class="match-item" id="ms3" onclick="selectLeft('ms3', 2)">"You might want to reconsider."</div>
+          <div class="match-item" id="ms4" onclick="selectLeft('ms4', 3)">"You must see a doctor immediately."</div>
+          <div class="match-item" id="ms5" onclick="selectLeft('ms5', 4)">"You'd better not be late again."</div>
+          <div class="match-item" id="ms6" onclick="selectLeft('ms6', 5)">"Why don't you take a break?"</div>
+          <div class="match-item" id="ms7" onclick="selectLeft('ms7', 6)">"Thanks, but that won't work for me."</div>
+        </div>
+        <div>
+          <div class="match-col-title">Functions</div>
+          <div class="match-item" id="mr1" onclick="selectRight('mr1', 3)">Strong advice</div>
+          <div class="match-item" id="mr2" onclick="selectRight('mr2', 6)">Refusing advice</div>
+          <div class="match-item" id="mr3" onclick="selectRight('mr3', 4)">Warning (had better)</div>
+          <div class="match-item" id="mr4" onclick="selectRight('mr4', 1)">Asking for advice</div>
+          <div class="match-item" id="mr5" onclick="selectRight('mr5', 0)">Overdue advice (it's high time)</div>
+          <div class="match-item" id="mr6" onclick="selectRight('mr6', 2)">Soft / tentative advice</div>
+          <div class="match-item" id="mr7" onclick="selectRight('mr7', 5)">Suggestion</div>
+        </div>
+      </div>
+      <div id="match-result" style="margin-top:12px;font-size:13px;display:none;"></div>
+    </div>
+  </div>
+
+  <!-- TAB 5: QUIZ -->
+  <div class="tab-panel" id="tab-quiz">
+    <p class="section-title">Knowledge Quiz</p>
+    <p class="section-sub">Choose the best answer for each question. You'll get instant feedback!</p>
+
+    <div class="quiz-score-bar">
+      <div class="score-display" id="quizScore">0 / 10</div>
+      <div class="score-label">Score — answer all questions to complete</div>
+      <button class="reset-btn" onclick="resetQuiz()">↺ Reset Quiz</button>
+    </div>
+
+    <div id="quizContainer"></div>
+  </div>
+
+  <!-- TAB 6: SITUATIONS -->
+  <div class="tab-panel" id="tab-situations">
+    <p class="section-title">Role-Play Situations</p>
+    <p class="section-sub">Tap each card to reveal a model response. Then practice producing your own with a partner!</p>
+
+    <div class="situations-grid">
+      <div class="situation-card" onclick="revealSit(this)">
+        <div class="sit-emoji">📱</div>
+        <div class="sit-title">Screen Addiction</div>
+        <div class="sit-desc">Your friend spends 6 hours a day on social media and is failing school. What advice do you give?</div>
+        <div class="sit-response">If I were you, I would set a daily screen time limit. You should delete distracting apps during exam season and try spending that time on revision instead.</div>
+        <div class="sit-tap-hint">TAP TO REVEAL →</div>
+      </div>
+
+      <div class="situation-card" onclick="revealSit(this)">
+        <div class="sit-emoji">😟</div>
+        <div class="sit-title">Exam Stress</div>
+        <div class="sit-desc">A classmate is terrified about the Bac. They ask: "I don't know what to do — I can't concentrate at all."</div>
+        <div class="sit-response">You ought to create a study schedule and stick to it. Why don't you try mindfulness exercises before studying? I strongly advise you to talk to your teacher too.</div>
+        <div class="sit-tap-hint">TAP TO REVEAL →</div>
+      </div>
+
+      <div class="situation-card" onclick="revealSit(this)">
+        <div class="sit-emoji">👨‍👩‍👦</div>
+        <div class="sit-title">Family Conflict</div>
+        <div class="sit-desc">You want to study abroad but your parents disapprove. A friend asks for your advice on a similar situation.</div>
+        <div class="sit-response">I'd advise you to sit down with your parents calmly and explain your goals. You could try showing them research about the opportunities it would bring. What about writing them a letter if talking feels hard?</div>
+        <div class="sit-tap-hint">TAP TO REVEAL →</div>
+      </div>
+
+      <div class="situation-card" onclick="revealSit(this)">
+        <div class="sit-emoji">🤝</div>
+        <div class="sit-title">Career Choice</div>
+        <div class="sit-desc">Your cousin loves art but is being pressured to study medicine. They ask: "What would you do if you were me?"</div>
+        <div class="sit-response">If I were you, I would follow my passion but also research career paths in art seriously. You might want to consider graphic design or architecture — they combine creativity and good career prospects.</div>
+        <div class="sit-tap-hint">TAP TO REVEAL →</div>
+      </div>
+
+      <div class="situation-card" onclick="revealSit(this)">
+        <div class="sit-emoji">🏃</div>
+        <div class="sit-title">Health & Lifestyle</div>
+        <div class="sit-desc">A friend says: "I feel tired all the time and I can't sleep well. Could you give me some advice?"</div>
+        <div class="sit-response">You should try to go to bed at the same time every night. I'd also suggest reducing caffeine after noon. Have you considered exercising regularly? It really helps improve sleep quality.</div>
+        <div class="sit-tap-hint">TAP TO REVEAL →</div>
+      </div>
+
+      <div class="situation-card" onclick="revealSit(this)">
+        <div class="sit-emoji">💸</div>
+        <div class="sit-title">Financial Advice</div>
+        <div class="sit-desc">A classmate spent all their pocket money and needs money for books. They say: "What do you think I should do?"</div>
+        <div class="sit-response">You ought to track your spending next month. If I were you, I would talk to your parents honestly about what happened. You could also try borrowing the books from the school library for now.</div>
+        <div class="sit-tap-hint">TAP TO REVEAL →</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">✍️ Writing Task</div>
+      <div class="tip-item">
+        <div class="tip-icon">📝</div>
+        <div class="tip-text">
+          <strong>Your task:</strong> Write a short dialogue (8–10 lines) between two friends. One person has a problem and asks for advice. The other gives at least <strong>three pieces of advice</strong> using different structures. The first friend should accept one piece of advice and politely refuse another.<br><br>
+          <strong>Use at least:</strong> one "should/ought to", one "if I were you", one "why don't you", and one refusal expression.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="tab-progress">
+  <div class="prog-dot active" onclick="showTab('intro',0)"></div>
+  <div class="prog-dot" onclick="showTab('language',1)"></div>
+  <div class="prog-dot" onclick="showTab('grammar',2)"></div>
+  <div class="prog-dot" onclick="showTab('dialogue',3)"></div>
+  <div class="prog-dot" onclick="showTab('practice',4)"></div>
+  <div class="prog-dot" onclick="showTab('quiz',5)"></div>
+  <div class="prog-dot" onclick="showTab('situations',6)"></div>
 </div>
 
-<!-- OVERVIEW -->
-<div class="panel active" id="panel-ov">
-  <div class="ocard"><h3 style="color:var(--u6)">&#128138; Unit 6 &mdash; Health &amp; Welfare</h3>
-    <div class="tags"><span class="tag">Illnesses: cold, flu, fever, cough, sore throat</span><span class="tag">Symptoms: dizziness, fatigue, nausea, chills</span><span class="tag">should / shouldn&apos;t</span><span class="tag">can / can&apos;t / must / mustn&apos;t</span><span class="tag">Conditional Type 0</span><span class="tag">Conditional Type 1</span><span class="tag">and / but / so / because</span></div>
-  </div>
-  <div class="ocard"><h3 style="color:var(--u7)">&#127912; Unit 7 &mdash; The Arts</h3>
-    <div class="tags"><span class="tag">Art forms: painting, sculpture, photography, music, dance</span><span class="tag">Artists: painter, sculptor, musician, architect</span><span class="tag">Making suggestions: Why don&apos;t we / How about / Let&apos;s / What about</span><span class="tag">Simple Past: was / were</span><span class="tag">Regular verbs: -ed</span><span class="tag">Irregular verbs: go-went, write-wrote, see-saw...</span></div>
-  </div>
-  <div class="ebox" style="text-align:center;border-color:rgba(251,191,36,.2);">
-    <p style="font-size:.84rem;color:var(--muted);line-height:1.9;">&#9201; Press <strong style="color:var(--white)">&#9654; Start</strong> then work tab by tab.<br>&#128311; Blue = Unit 6 &nbsp;&middot;&nbsp; &#128312; Purple = Unit 7 &nbsp;&middot;&nbsp; Click answers for instant feedback!</p>
-  </div>
-</div>
-
-<!-- U6 VOCAB -->
-<div class="panel" id="panel-u6v">
-  <div class="stitle s6">&#128138; Unit 6 &middot; Vocabulary</div>
-  <div class="rule rule6"><strong>&#128204; Expressing illness:</strong><br>
-    <code>I have a + illness</code> &rarr; <em>I have a cold / headache / fever.</em><br>
-    <code>I feel + adjective</code> &rarr; <em>I feel sick / tired / terrible / dizzy.</em><br>
-    <code>My + body part + hurts</code> &rarr; <em>My head hurts. My throat aches.</em>
-  </div>
-  <p style="font-size:.73rem;color:var(--muted);margin-bottom:9px;">&#128070; Tap each card to reveal</p>
-  <div class="vgrid" id="u6vg"></div>
-  <div class="stitle s6" style="margin-top:20px;">&#129657; Exercise 1 &mdash; Illness to Symptom Matching</div>
-  <div class="ebox">
-    <div class="elabel">Click one from each column to make correct pairs</div>
-    <div class="mcols" id="u6match"></div>
-    <button class="cbtn c6" style="margin-top:11px;" onclick="checkU6Match()">Check Pairs</button>
-    <div class="fb" id="u6matchFB"></div>
-  </div>
-  <div class="stitle s6" style="margin-top:20px;">&#9999; Exercise 2 &mdash; Fill in the Blank</div>
-  <div class="ebox">
-    <div class="elabel">Choose the correct illness or symptom word</div>
-    <div id="u6vfill"></div>
-    <button class="cbtn c6" onclick="checkU6vFill()">Check Answers</button>
-    <div class="fb" id="u6vfillFB"></div>
-  </div>
-  <div class="stitle s6" style="margin-top:20px;">&#9989; Exercise 3 &mdash; True or False</div>
-  <div class="ebox">
-    <div class="elabel">Is each statement True or False?</div>
-    <div id="u6tf"></div>
-  </div>
-</div>
-
-<!-- U6 MODALS -->
-<div class="panel" id="panel-u6s">
-  <div class="stitle s6">&#128138; Unit 6 &middot; Should / Shouldn&apos;t &amp; Modals</div>
-  <div class="rule rule6"><strong>&#128208; should / shouldn&apos;t</strong> &mdash; giving advice<br>
-    <code>should + base verb</code> = good idea &#10003;&nbsp;&middot;&nbsp;<code>shouldn&apos;t + base verb</code> = bad idea &#10007;<br>
-    <em>You should rest. &middot; You shouldn&apos;t eat junk food.</em>
-  </div>
-  <div class="rule rule6"><strong>&#128208; can / can&apos;t / must / mustn&apos;t</strong><br>
-    <code>can</code> = ability / permission &nbsp;&middot;&nbsp; <code>can&apos;t</code> = not able / not allowed<br>
-    <code>must</code> = strong obligation &nbsp;&middot;&nbsp; <code>mustn&apos;t</code> = prohibition (do NOT!)<br>
-    &#9888; All modals + base verb (no -s, no -ing, no to)
-  </div>
-  <div id="u6sModalQ"></div>
-  <div class="stitle s6" style="margin-top:18px;">&#9999; Complete the Advice</div>
-  <div class="ebox">
-    <div class="elabel">Choose the correct modal to complete each sentence</div>
-    <div id="u6sAdvice"></div>
-    <button class="cbtn c6" onclick="checkU6sAdvice()">Check Answers</button>
-    <div class="fb" id="u6sAdviceFB"></div>
-  </div>
-</div>
-
-<!-- U6 CONDITIONALS -->
-<div class="panel" id="panel-u6c">
-  <div class="stitle s6">&#128138; Unit 6 &middot; Conditionals Type 0 &amp; Type 1</div>
-  <table class="gt">
-    <thead><tr><th class="th6" style="width:18%"></th><th class="th6">&#9889; Type 0 &mdash; General Truth</th><th class="th6">&#128302; Type 1 &mdash; Real / Possible Future</th></tr></thead>
-    <tbody>
-      <tr><td><strong>Use</strong></td><td>Facts, science, habits &mdash; always true</td><td>A future situation that is likely</td></tr>
-      <tr><td><strong>Formula</strong></td><td><code>If + Pres. Simple, Pres. Simple</code></td><td><code>If + Pres. Simple, will + base</code></td></tr>
-      <tr><td><strong>Example</strong></td><td><em>If you heat water, it <strong style="color:var(--u6)">boils</strong>.</em></td><td><em>If you rest, you <strong style="color:var(--u6)">will feel</strong> better.</em></td></tr>
-    </tbody>
-  </table>
-  <div class="rule rule6">
-    &#9888; After <code>if</code>, NEVER use <em>will</em>: <span class="no">&#10007; If it will rain</span> &rarr; <span class="ok">&#10003; If it rains</span><br>
-    When if-clause comes first &rarr; comma: <code>If ..., result.</code>
-  </div>
-  <div id="u6condQ"></div>
-  <div class="stitle s6" style="margin-top:18px;">&#128295; Build the Sentence</div>
-  <div class="ebox">
-    <div class="elabel">Choose the correct verb form for each blank</div>
-    <div id="u6condBuild"></div>
-    <button class="cbtn c6" onclick="checkU6condBuild()">Check Answers</button>
-    <div class="fb" id="u6condBuildFB"></div>
-  </div>
-</div>
-
-<!-- U6 CONJUNCTIONS -->
-<div class="panel" id="panel-u6j">
-  <div class="stitle s6">&#128138; Unit 6 &middot; Conjunctions</div>
-  <table class="gt">
-    <thead><tr><th class="th6">Conjunction</th><th class="th6">Meaning</th><th class="th6">Example</th></tr></thead>
-    <tbody>
-      <tr><td style="color:var(--green);font-weight:700;">and</td><td>Addition</td><td><em>I have a cold <strong>and</strong> a fever.</em></td></tr>
-      <tr><td style="color:var(--yellow);font-weight:700;">but</td><td>Contrast</td><td><em>I feel sick, <strong>but</strong> I went to school.</em></td></tr>
-      <tr><td style="color:var(--u6);font-weight:700;">so</td><td>Result</td><td><em>I have a headache, <strong>so</strong> I will take a pill.</em></td></tr>
-      <tr><td style="color:var(--u7);font-weight:700;">because</td><td>Reason</td><td><em>I stayed home <strong>because</strong> I was sick.</em></td></tr>
-    </tbody>
-  </table>
-  <div class="rule rule6">
-    <strong>so</strong> = result (what happened) &nbsp;&middot;&nbsp; <strong>because</strong> = reason (why)<br>
-    <em>I went to the doctor <span class="ok">because</span> I had a fever.</em> (reason &rarr; why)<br>
-    <em>I had a fever, <span class="ok">so</span> I went to the doctor.</em> (result &rarr; what happened)
-  </div>
-  <div id="u6conjQ"></div>
-  <div class="stitle s6" style="margin-top:18px;">&#128279; Combine the Sentences</div>
-  <div class="ebox">
-    <div class="elabel">Select the correct conjunction to link the two sentences</div>
-    <div id="u6conjCombine"></div>
-    <button class="cbtn c6" onclick="checkU6conjCombine()">Check Answers</button>
-    <div class="fb" id="u6conjCombineFB"></div>
-  </div>
-</div>
-
-<!-- U7 VOCAB -->
-<div class="panel" id="panel-u7v">
-  <div class="stitle s7">&#127912; Unit 7 &middot; The Arts Vocabulary</div>
-  <div class="rule rule7"><strong>&#128204; Art form &rarr; person:</strong><br>
-    painting &rarr; <em>painter</em> &nbsp;&middot;&nbsp; sculpture &rarr; <em>sculptor</em> &nbsp;&middot;&nbsp; photography &rarr; <em>photographer</em><br>
-    music &rarr; <em>musician</em> &nbsp;&middot;&nbsp; dance &rarr; <em>dancer</em> &nbsp;&middot;&nbsp; architecture &rarr; <em>architect</em>
-  </div>
-  <p style="font-size:.73rem;color:var(--muted);margin-bottom:9px;">&#128070; Tap each card to reveal</p>
-  <div class="vgrid" id="u7vg"></div>
-  <div class="stitle s7" style="margin-top:20px;">&#127914; Exercise 1 &mdash; Art Form to Person Matching</div>
-  <div class="ebox">
-    <div class="elabel">Click one from each column to match art form to person</div>
-    <div class="mcols" id="u7match"></div>
-    <button class="cbtn c7" style="margin-top:11px;" onclick="checkU7Match()">Check Pairs</button>
-    <div class="fb" id="u7matchFB"></div>
-  </div>
-  <div class="stitle s7" style="margin-top:18px;">&#127919; Exercise 2 &mdash; Vocabulary MCQ</div>
-  <div id="u7vocabQ"></div>
-</div>
-
-<!-- U7 SUGGESTIONS -->
-<div class="panel" id="panel-u7s">
-  <div class="stitle s7">&#127912; Unit 7 &middot; Making Suggestions</div>
-  <table class="gt">
-    <thead><tr><th class="th7">Phrase</th><th class="th7">Form</th><th class="th7">Example</th></tr></thead>
-    <tbody>
-      <tr><td style="color:var(--u7);font-weight:700;">Why don&apos;t we...?</td><td>Why don&apos;t we + base verb</td><td><em>Why don&apos;t we <strong>visit</strong> the museum?</em></td></tr>
-      <tr><td style="color:var(--u7);font-weight:700;">How about...?</td><td>How about + verb-ing</td><td><em>How about <strong>going</strong> to a concert?</em></td></tr>
-      <tr><td style="color:var(--u7);font-weight:700;">Let&apos;s...!</td><td>Let&apos;s + base verb</td><td><em>Let&apos;s <strong>watch</strong> a film tonight!</em></td></tr>
-      <tr><td style="color:var(--u7);font-weight:700;">What about...?</td><td>What about + verb-ing</td><td><em>What about <strong>visiting</strong> an art gallery?</em></td></tr>
-    </tbody>
-  </table>
-  <div class="rule rule7">
-    <strong>Accepting:</strong> <em>That sounds great! / I&apos;d love to! / Sure, why not?</em><br>
-    <strong>Declining:</strong> <em>I&apos;m sorry, I can&apos;t. / I&apos;d love to, but I&apos;m busy. / Maybe another time.</em>
-  </div>
-  <div id="u7suggestQ"></div>
-  <div class="stitle s7" style="margin-top:18px;">&#9999; Complete the Suggestion</div>
-  <div class="ebox">
-    <div class="elabel">Fill in the blank with the correct form of the verb in brackets</div>
-    <div id="u7suggestFill"></div>
-    <button class="cbtn c7" onclick="checkU7suggestFill()">Check Answers</button>
-    <div class="fb" id="u7suggestFillFB"></div>
-  </div>
-</div>
-
-<!-- U7 SIMPLE PAST -->
-<div class="panel" id="panel-u7p">
-  <div class="stitle s7">&#127912; Unit 7 &middot; Simple Past</div>
-  <div class="rule rule7"><strong>&#128208; Part 1 &mdash; was / were</strong></div>
-  <table class="gt">
-    <thead><tr><th class="th7">Subject</th><th class="th7">&#10003; Affirmative</th><th class="th7">&#10007; Negative</th><th class="th7">&#10067; Question</th></tr></thead>
-    <tbody>
-      <tr><td class="sbj">I</td><td class="aff">I <strong>was</strong> at the gallery.</td><td class="neg">I <strong>wasn&apos;t</strong> there.</td><td><strong>Was</strong> I late?</td></tr>
-      <tr><td class="sbj">He / She / It</td><td class="aff">She <strong>was</strong> a dancer.</td><td class="neg">He <strong>wasn&apos;t</strong> famous.</td><td><strong>Was</strong> she good?</td></tr>
-      <tr><td class="sbj">You / We / They</td><td class="aff">They <strong>were</strong> great artists.</td><td class="neg">We <strong>weren&apos;t</strong> there.</td><td><strong>Were</strong> they famous?</td></tr>
-    </tbody>
-  </table>
-  <div class="rule rule7">&#128336; Time words: <code>yesterday</code> &middot; <code>last week/month/year</code> &middot; <code>in 1990</code> &middot; <code>...ago</code> &middot; <code>when I was young</code></div>
-  <div class="stitle s7" style="margin-top:18px;">&#128208; Part 2 &mdash; Regular Verbs &rarr; add -ed</div>
-  <div class="rule rule7">
-    <code>paint &rarr; painted</code> &middot; <code>watch &rarr; watched</code> &middot; <code>perform &rarr; performed</code> &middot; <code>visit &rarr; visited</code><br>
-    <code>dance &rarr; danced</code> (drop e) &nbsp;&middot;&nbsp; <code>study &rarr; studied</code> (y&rarr;ied) &nbsp;&middot;&nbsp; <code>stop &rarr; stopped</code> (double consonant)<br>
-    &#10007; Negative: <code>didn&apos;t + base verb</code> &nbsp;&middot;&nbsp; &#10067; Question: <code>Did + subject + base verb?</code>
-  </div>
-  <div class="stitle s7" style="margin-top:18px;">&#128208; Part 3 &mdash; Irregular Verbs (memorise!)</div>
-  <table class="gt">
-    <thead><tr><th class="th7">Base</th><th class="th7">Past</th><th class="th7">Base</th><th class="th7">Past</th><th class="th7">Base</th><th class="th7">Past</th></tr></thead>
-    <tbody>
-      <tr><td class="base">go</td><td class="pst">went</td><td class="base">make</td><td class="pst">made</td><td class="base">see</td><td class="pst">saw</td></tr>
-      <tr><td class="base">take</td><td class="pst">took</td><td class="base">write</td><td class="pst">wrote</td><td class="base">come</td><td class="pst">came</td></tr>
-      <tr><td class="base">have</td><td class="pst">had</td><td class="base">give</td><td class="pst">gave</td><td class="base">know</td><td class="pst">knew</td></tr>
-      <tr><td class="base">think</td><td class="pst">thought</td><td class="base">buy</td><td class="pst">bought</td><td class="base">meet</td><td class="pst">met</td></tr>
-    </tbody>
-  </table>
-  <div id="u7pastQ"></div>
-  <div class="stitle s7" style="margin-top:18px;">&#128269; Spot the Error</div>
-  <div class="ebox">
-    <div class="elabel">One word in each sentence is wrong. Choose the correction.</div>
-    <div id="u7errorQ"></div>
-  </div>
-</div>
-
-<!-- WRITING -->
-<div class="panel" id="panel-writing">
-  <div class="stitle sx">&#9999; Writing Tasks &mdash; Units 6 &amp; 7</div>
-  <div class="wprompt">
-    <strong style="color:var(--u6);">Task 1 &mdash; Health Advice (Unit 6)</strong>
-    <p>Your friend has a fever, sore throat and feels dizzy. Write <strong>4 sentences</strong> of advice using <strong>should / shouldn&apos;t / must / can</strong>. Use at least one conjunction.</p>
-  </div>
-  <textarea class="wa" id="w1" placeholder="You should rest and drink warm water because your fever is high..."></textarea>
-  <div class="wprompt" style="margin-top:13px;">
-    <strong style="color:var(--u6);">Task 2 &mdash; Conditional Sentences (Unit 6)</strong>
-    <p>Write <strong>one Type 0</strong> sentence (general health truth) and <strong>one Type 1</strong> sentence (real future health situation).</p>
-  </div>
-  <textarea class="wa" id="w2" placeholder="Type 0: If you eat too much sugar, you get toothache.&#10;Type 1: If I feel better tomorrow, I will go to school."></textarea>
-  <div class="wprompt" style="margin-top:13px;">
-    <strong style="color:var(--u7);">Task 3 &mdash; Suggest an Activity (Unit 7)</strong>
-    <p>Write a short dialogue (4&ndash;5 lines) using at least <strong>2 suggestion phrases</strong> and include an acceptance or polite refusal.</p>
-  </div>
-  <textarea class="wa" id="w3" placeholder="A: Why don't we go to the art exhibition?&#10;B: I'd love to! How about going on Saturday?&#10;A: That sounds great!"></textarea>
-  <div class="wprompt" style="margin-top:13px;">
-    <strong style="color:var(--u7);">Task 4 &mdash; Famous Artist (Unit 7)</strong>
-    <p>Write <strong>4&ndash;5 sentences</strong> about a famous artist. Use Simple Past (was/were + regular AND irregular verbs) and at least one conjunction.</p>
-  </div>
-  <textarea class="wa" id="w4" placeholder="Frida Kahlo was a famous Mexican painter. She was born in 1907 and she painted many self-portraits..."></textarea>
-  <button class="cbtn cx" style="margin-top:10px;" onclick="saveW()">&#128190; Save All Answers</button>
-  <div class="fb" id="wFB"></div>
-  <div class="rule rule7" style="margin-top:16px;">
-    <strong>&#10003; Self-Correction Checklist:</strong><br>
-    &#9633; Capital letter at the start &middot; Full stop at the end<br>
-    &#9633; Correct modal + base verb (no -s, no -ing, no to)<br>
-    &#9633; if-clause uses Present Simple (NOT will)<br>
-    &#9633; Conjunction used correctly: and / but / so / because<br>
-    &#9633; Simple Past: was (I/he/she/it) &middot; were (you/we/they)<br>
-    &#9633; Regular -ed / irregular forms are correct
-  </div>
-</div>
-
-<!-- MIXED QUIZ -->
-<div class="panel" id="panel-mixed">
-  <div class="stitle sx">&#128256; Mixed Quiz &mdash; Units 6 &amp; 7</div>
-  <p style="font-size:.78rem;color:var(--muted);margin-bottom:15px;">20 questions covering all topics from both units.</p>
-  <div id="mixedC"></div>
-  <div id="mixedDone" style="display:none;text-align:center;padding:24px 16px;">
-    <div style="font-size:3rem;margin-bottom:10px;">&#127942;</div>
-    <div style="font-family:'Nunito',sans-serif;font-size:1.4rem;font-weight:900;margin-bottom:8px;">Quiz Complete!</div>
-    <p style="color:var(--muted);" id="mixedMsg"></p>
-  </div>
-</div>
-
-<div class="footer">Prof. Salah Sahmoudi &middot; Abdellah Guennoun High School, Sa&iuml;ss-F&egrave;s &middot; Common Core &mdash; Visa to the World</div>
+<footer>
+  <span>Prof. Salah Sahmoudi</span> · Abdellah Guennoun High School, Saïss-Fès · 2BAC Language Functions
+</footer>
 
 <script>
-// ============================================================
-//  DATA
-// ============================================================
-const u6Cards=[
-  {e:'&#129298;',w:'Fever',d:'Very high body temperature (39&deg;+)'},
-  {e:'&#129303;',w:'Cold',d:'Runny nose, sneezing, mild cough'},
-  {e:'&#128567;',w:'Flu',d:'Like a cold but stronger — high fever'},
-  {e:'&#129301;',w:'Headache',d:'Pain in your head — take a painkiller'},
-  {e:'&#128560;',w:'Cough',d:'Forcing air sharply out of the lungs'},
-  {e:'&#128308;',w:'Sore throat',d:'Painful irritated throat — hard to swallow'},
-  {e:'&#129314;',w:'Nausea',d:'Feeling sick in your stomach'},
-  {e:'&#128565;',w:'Dizziness',d:'Feeling unsteady, the room spins'},
-  {e:'&#128564;',w:'Fatigue',d:'Extreme tiredness — no energy'},
-  {e:'&#129463;',w:'Toothache',d:'Sharp pain in or around a tooth'},
-  {e:'&#129326;',w:'Stomachache',d:'Pain in the stomach or belly'},
-  {e:'&#129657;',w:'Rash',d:'Red itchy spots on the skin'},
-  {e:'&#129398;',w:'Chills',d:'Feeling very cold, shivering'},
-  {e:'&#128138;',w:'Medicine',d:'Pills or liquid to treat illness'},
-  {e:'&#129690;',w:'Prescription',d:'Doctor\'s written order for medicine'},
-  {e:'&#127973;',w:'Appointment',d:'Scheduled time to see the doctor'},
-];
-const matchIll=['Cold','Headache','Fever','Sore Throat','Stomachache'];
-const matchSym=['Runny nose &amp; sneezing','Pain in the head','High temperature','Painful throat','Pain in the belly'];
-const matchCorr=[0,1,2,3,4];
-const u6vFillData=[
-  {s:'My head is pounding. I have a terrible ___.', a:'headache', o:['fever','headache','cough','rash']},
-  {s:'My temperature is 40°C. I have a high ___.', a:'fever', o:['chills','fever','nausea','fatigue']},
-  {s:'I can\'t stop sneezing. I think I have a ___.', a:'cold', o:['flu','cold','rash','dizziness']},
-  {s:'I feel sick in my stomach. I have ___.', a:'nausea', o:['fatigue','cough','nausea','chills']},
-  {s:'I feel very weak and tired. I have ___.', a:'fatigue', o:['fatigue','headache','rash','dizziness']},
-];
-const u6tfData=[
-  {stmt:'A toothache is pain in your head.',correct:false,exp:'&#10060; False! A toothache is pain in a tooth. Head pain = headache.'},
-  {stmt:'You say "I have a fever" when your temperature is very high.',correct:true,exp:'&#10003; True! Fever = very high body temperature.'},
-  {stmt:'Fatigue means you feel dizzy and the room is spinning.',correct:false,exp:'&#10060; False! Fatigue = extreme tiredness. Dizziness = feeling the room spins.'},
-  {stmt:'A prescription is a doctor\'s written order for medicine.',correct:true,exp:'&#10003; True! You take a prescription to the pharmacy.'},
-  {stmt:'Chills means you feel very hot and sweaty.',correct:false,exp:'&#10060; False! Chills = feeling very cold and shivering.'},
-];
-const u6sModalData=[
-  {q:'Your friend has a bad cough. Best advice?',opts:['You should go swimming.','You should drink warm honey and lemon.','You mustn\'t rest.','You can eat cold ice cream.'],ans:1},
-  {q:'"You ___ smoke in the hospital." (prohibition)',opts:['should','can','mustn\'t','must'],ans:2},
-  {q:'"___ I open the window?" (asking permission)',opts:['Must','Should','Can','Will'],ans:2},
-  {q:'Grammatically CORRECT sentence:',opts:['You must to rest.','You must resting.','You must rest.','You musts rest.'],ans:2},
-  {q:'"She is really sick. She ___ see a doctor." (obligation)',opts:['should','mustn\'t','can\'t','must'],ans:3},
-  {q:'"You ___ eat junk food when you are sick." (bad idea)',opts:['should','can','mustn\'t','shouldn\'t'],ans:3},
-];
-const u6sAdvData=[
-  {s:'You have a fever. You ___ stay in bed.', a:'should', o:['should','mustn\'t','can\'t','will']},
-  {s:'You ___ eat junk food when you are sick.', a:'shouldn\'t', o:['should','shouldn\'t','must','can']},
-  {s:'You ___ smoke. It is very bad for your health.', a:'mustn\'t', o:['should','can','mustn\'t','will']},
-  {s:'___ I take this medicine twice a day?', a:'Can', o:['Must','Should','Can','Will']},
-  {s:'Doctor: "You ___ finish all the medicine."', a:'must', o:['should','must','can\'t','mustn\'t']},
-];
-const u6condData=[
-  {q:'Which is Conditional Type 0?',opts:['If you rest, you will feel better.','If ice gets warm, it melts.','If she studies, she will pass.','If it rains, I will stay home.'],ans:1},
-  {q:'Which is Conditional Type 1?',opts:['If you heat metal, it expands.','If plants have no water, they die.','If you take this medicine, you will feel better.','If you eat sugar, your teeth hurt.'],ans:2},
-  {q:'Type 1 — "If I ___ sick, I will stay home."',opts:['will feel','felt','feel','feeling'],ans:2},
-  {q:'Type 0 — "If you mix red and blue, you ___ purple."',opts:['will get','got','getting','get'],ans:3},
-  {q:'Which sentence is WRONG?',opts:['If it rains, we will cancel.','If you exercise, you get stronger.','If it will rain, we cancel.','If she rests, she will recover.'],ans:2},
-  {q:'Type 0 correct ending — "If you eat too much sugar, ___."',opts:['you will get toothache','you got toothache','you getting toothache','you get toothache'],ans:3},
-];
-const u6condBuildData=[
-  {s:'If you ___ water, it boils.', a:'heat', o:['heat','heated','will heat','heating'], type:'Type 0'},
-  {s:'If she takes her medicine, she ___ better.', a:'will feel', o:['feels','felt','will feel','feeling'], type:'Type 1'},
-  {s:'If you ___ junk food, you get stomachache.', a:'eat', o:['ate','will eat','eat','eating'], type:'Type 0'},
-  {s:'If it rains tomorrow, we ___ inside.', a:'will stay', o:['stay','stayed','will stay','staying'], type:'Type 1'},
-];
-const u6conjData=[
-  {q:'"I was sick, ___ I didn\'t go to school." (result)',opts:['because','but','and','so'],ans:3},
-  {q:'"I stayed home ___ I had a fever." (reason)',opts:['so','but','because','and'],ans:2},
-  {q:'"I have a headache, ___ I don\'t have a fever." (contrast)',opts:['and','but','so','because'],ans:1},
-  {q:'"I have a cold ___ a sore throat." (addition)',opts:['but','so','and','because'],ans:2},
-  {q:'Correct use of "because":',opts:['I was tired, because I rested.','I rested because I was tired.','Because I was tired so I rested.','I because rested was tired.'],ans:1},
-  {q:'"I took medicine ___ I felt better soon." (result)',opts:['because','but','and','so'],ans:3},
-];
-const u6conjCombineData=[
-  {s1:'She has a bad cough.',s2:'she went to the doctor.',conj:'so',opts:['and','but','so','because']},
-  {s1:'I feel sick.',s2:'I ate too much.',conj:'because',opts:['and','but','so','because']},
-  {s1:'He has a fever.',s2:'he doesn\'t have a headache.',conj:'but',opts:['and','but','so','because']},
-  {s1:'She took her medicine',s2:'drank warm water.',conj:'and',opts:['and','but','so','because']},
-];
-const u7Cards=[
-  {e:'&#128444;',w:'Painting',d:'Art made with paint on canvas or paper'},
-  {e:'&#128511;',w:'Sculpture',d:'3D artwork carved from stone or metal'},
-  {e:'&#128247;',w:'Photography',d:'Art of taking and developing pictures'},
-  {e:'&#127917;',w:'Theatre',d:'Performing plays on a stage for an audience'},
-  {e:'&#127916;',w:'Cinema / Film',d:'Art of making and watching motion pictures'},
-  {e:'&#127963;',w:'Architecture',d:'Art and science of designing buildings'},
-  {e:'&#127925;',w:'Music',d:'Art of organising sounds and melody'},
-  {e:'&#128131;',w:'Dance',d:'Moving the body to music or rhythm'},
-  {e:'&#129350;',w:'Pottery',d:'Making objects from clay'},
-  {e:'&#128288;',w:'Calligraphy',d:'Beautiful decorative handwriting as art'},
-  {e:'&#128396;',w:'Painter',d:'A person who makes paintings'},
-  {e:'&#128509;',w:'Sculptor',d:'A person who makes sculptures'},
-  {e:'&#128247;',w:'Photographer',d:'A person who takes photographs professionally'},
-  {e:'&#127908;',w:'Musician',d:'A person who plays or composes music'},
-  {e:'&#127959;',w:'Architect',d:'A person who designs buildings'},
-  {e:'&#127916;',w:'Director',d:'A person who directs films or theatre'},
-];
-const u7matchArt=['Painting','Music','Photography','Dance','Architecture'];
-const u7matchPerson=['Painter','Musician','Photographer','Dancer','Architect'];
-const u7matchCorr=[0,1,2,3,4];
-const u7vocabMCQ=[
-  {q:'Which art form involves carving stone or metal into 3D shapes?',opts:['Painting','Calligraphy','Sculpture','Photography'],ans:2},
-  {q:'A person who designs buildings is called a(n):',opts:['Sculptor','Architect','Musician','Director'],ans:1},
-  {q:'Which art form uses a camera to create images?',opts:['Theatre','Pottery','Dance','Photography'],ans:3},
-  {q:'Calligraphy is the art of:',opts:['Making pottery','Beautiful handwriting','Performing on stage','Taking photos'],ans:1},
-  {q:'"Mohamed Melehi was a famous Moroccan ___." (he made paintings)',opts:['sculptor','architect','dancer','painter'],ans:3},
-];
-const u7suggestData=[
-  {q:'Which phrase is followed by verb-ing?',opts:['Let\'s visit','Why don\'t we visit','How about visiting','What do we visit'],ans:2},
-  {q:'"Let\'s ___ to the art gallery." (go)',opts:['going','to go','go','went'],ans:2},
-  {q:'Suggest going to a concert:',opts:['I went to a concert.','Why don\'t we go to a concert?','She suggested a concert.','Did you go to the concert?'],ans:1},
-  {q:'"I\'d love to, but I\'m busy." = ',opts:['accepting a suggestion','making a suggestion','refusing a suggestion','giving advice'],ans:2},
-  {q:'"What about ___ an art class?" (join)',opts:['join','joins','joined','joining'],ans:3},
-  {q:'Which suggestion phrase uses the base verb (no -ing)?',opts:['How about going','What about visiting','Let\'s watch','How about watching'],ans:2},
-];
-const u7suggestFillData=[
-  {s:'Why don\'t we ___ (visit) the art museum?', a:'visit', hint:'base verb'},
-  {s:'How about ___ (go) to a concert tonight?', a:'going', hint:'verb-ing'},
-  {s:'Let\'s ___ (watch) this documentary about Picasso!', a:'watch', hint:'base verb'},
-  {s:'What about ___ (take) a painting class together?', a:'taking', hint:'verb-ing'},
-];
-const u7pastData=[
-  {q:'"Leonardo da Vinci ___ a famous Italian painter."',opts:['is','were','was','be'],ans:2},
-  {q:'"Picasso and Matisse ___ great artists."',opts:['was','is','were','are'],ans:2},
-  {q:'Regular past of "paint":',opts:['painten','painted','paint','paintted'],ans:1},
-  {q:'"They ___ to the museum last Saturday." (go)',opts:['goed','goes','went','going'],ans:2},
-  {q:'"She ___ a poem about art last week." (write)',opts:['write','writes','wrote','writed'],ans:2},
-  {q:'"He ___ a painting lesson last Monday." (have)',opts:['has','haved','had','have'],ans:2},
-  {q:'Negative: "She was famous." &rarr;',opts:['She weren\'t famous.','She wasn\'t famous.','She didn\'t famous.','She not was famous.'],ans:1},
-  {q:'Which is a REGULAR past tense form?',opts:['went','made','danced','took'],ans:2},
-];
-const u7errorData=[
-  {q:'She writed a poem about the ocean last year.',opts:['writed &rarr; wrote','ocean &rarr; sea','year &rarr; month','last &rarr; past'],ans:0},
-  {q:'They were at the exhibition last week, wasn\'t they?',opts:['were &rarr; was','exhibition &rarr; show','last &rarr; past','wasn\'t &rarr; weren\'t'],ans:3},
-  {q:'He goed to the concert with his family.',opts:['goed &rarr; went','concert &rarr; show','his &rarr; her','to &rarr; at'],ans:0},
-  {q:'Why don\'t we going to the theatre tonight?',opts:['going &rarr; go','theatre &rarr; cinema','tonight &rarr; yesterday','don\'t &rarr; doesn\'t'],ans:0},
-];
-const mixedData=[
-  {u:'U6',q:'Your friend has a fever. Best advice:',opts:['Go swimming.','Rest and drink water.','Play football.','Eat ice cream.'],ans:1,c:'var(--u6)'},
-  {u:'U6',q:'"You ___ smoke here." (prohibition)',opts:['should','can','mustn\'t','must'],ans:2,c:'var(--u6)'},
-  {u:'U6',q:'Type 0: "If you heat water to 100°C, it ___."',opts:['will boil','boiled','boils','is boiling'],ans:2,c:'var(--u6)'},
-  {u:'U6',q:'Type 1: "If she rests, she ___ better."',opts:['feel','felt','feels','will feel'],ans:3,c:'var(--u6)'},
-  {u:'U6',q:'"I was tired, ___ I went to bed early." (result)',opts:['because','but','and','so'],ans:3,c:'var(--u6)'},
-  {u:'U6',q:'Which is NOT a symptom of the flu?',opts:['High fever','Broken arm','Fatigue','Chills'],ans:1,c:'var(--u6)'},
-  {u:'U6',q:'Correct Conditional Type 1:',opts:['If it will rain, we cancel.','If it rained, we will cancel.','If it rains, we will cancel.','If it rain, we cancel.'],ans:2,c:'var(--u6)'},
-  {u:'U6',q:'"She stayed home ___ she was sick." (reason)',opts:['so','and','but','because'],ans:3,c:'var(--u6)'},
-  {u:'U6',q:'"You ___ exercise every day." (strong advice)',opts:['mustn\'t','shouldn\'t','should','can\'t'],ans:2,c:'var(--u6)'},
-  {u:'U6',q:'Type 0 or Type 1? "If it rains tomorrow, we will cancel."',opts:['Type 0','Type 1','Both','Neither'],ans:1,c:'var(--u6)'},
-  {u:'U7',q:'A person who takes photographs is a:',opts:['Painter','Director','Photographer','Sculptor'],ans:2,c:'var(--u7)'},
-  {u:'U7',q:'"Michelangelo ___ a famous sculptor."',opts:['is','were','was','be'],ans:2,c:'var(--u7)'},
-  {u:'U7',q:'Simple Past of "go":',opts:['goed','going','gone','went'],ans:3,c:'var(--u7)'},
-  {u:'U7',q:'"___ visiting the art gallery?" (suggestion)',opts:['Let\'s','Why don\'t we','How about','What do you think'],ans:2,c:'var(--u7)'},
-  {u:'U7',q:'"She ___ (write) a poem last year."',opts:['write','writes','wrote','writed'],ans:2,c:'var(--u7)'},
-  {u:'U7',q:'Regular past of "dance":',opts:['danceed','danced','dancted','dancing'],ans:1,c:'var(--u7)'},
-  {u:'U7',q:'"Let\'s ___ to the museum." (go)',opts:['going','to go','go','went'],ans:2,c:'var(--u7)'},
-  {u:'U7',q:'"Picasso and Dali ___ Spanish artists."',opts:['was','is','were','are'],ans:2,c:'var(--u7)'},
-  {u:'U7',q:'Accepting a suggestion:',opts:['I\'d love to, but I\'m busy.','I think so.','That sounds great!','Maybe another time.'],ans:2,c:'var(--u7)'},
-  {u:'U7',q:'Which verb forms its past with -ed?',opts:['go','write','have','visit'],ans:3,c:'var(--u7)'},
-];
+const TABS = ['intro','language','grammar','dialogue','practice','quiz','situations'];
+let currentTab = 0;
 
-// ============================================================
-//  STATE
-// ============================================================
-let totC=0,totA=0,timerSec=55*60,timerOn=false,timerInt=null;
-let u6mSel={l:null,r:null},u6mPairs={};
-let u7mSel={l:null,r:null},u7mPairs={};
-let mixDone=0;
-
-// ============================================================
-//  TIMER
-// ============================================================
-function updT(){
-  const m=Math.floor(timerSec/60),s=timerSec%60;
-  const el=document.getElementById('td');
-  el.textContent=String(m).padStart(2,'0')+':'+String(s).padStart(2,'0');
-  el.classList.remove('warn','danger');
-  if(timerSec<=300)el.classList.add('danger');
-  else if(timerSec<=600)el.classList.add('warn');
+/* ── NAV ARROWS ── */
+function scrollNav(dir) {
+  const nav = document.getElementById('mainNav');
+  nav.scrollBy({ left: dir * 130, behavior: 'smooth' });
+  setTimeout(updateArrows, 200);
 }
-function toggleTimer(){
-  if(timerOn){clearInterval(timerInt);timerOn=false;document.getElementById('tBtn').textContent='&#9654; Resume';}
-  else{timerOn=true;document.getElementById('tBtn').textContent='&#9646;&#9646; Pause';
-    timerInt=setInterval(()=>{if(timerSec>0){timerSec--;updT();}else{clearInterval(timerInt);document.getElementById('tBtn').textContent='Done!';}},1000);}
+function updateArrows() {
+  const nav = document.getElementById('mainNav');
+  const left = document.getElementById('navLeft');
+  const right = document.getElementById('navRight');
+  left.disabled  = nav.scrollLeft <= 2;
+  right.disabled = nav.scrollLeft >= nav.scrollWidth - nav.clientWidth - 2;
 }
-function resetTimer(){clearInterval(timerInt);timerOn=false;timerSec=55*60;updT();document.getElementById('tBtn').textContent='&#9654; Start';}
+document.getElementById('mainNav').addEventListener('scroll', updateArrows);
+window.addEventListener('resize', updateArrows);
 
-// ============================================================
-//  SCORE
-// ============================================================
-function addSc(c,t){totC+=c;totA+=t;document.getElementById('scoreEl').textContent='Score: '+totC+' / '+totA;}
-
-// ============================================================
-//  TABS
-// ============================================================
-function go(name,btn){
-  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('a6','a7','ax'));
-  document.getElementById('panel-'+name).classList.add('active');
-  const u=btn.dataset.u;
-  if(u==='6')btn.classList.add('a6');
-  else if(u==='7')btn.classList.add('a7');
-  else btn.classList.add('ax');
+/* ── EXPRESSIONS PANEL ── */
+// Show FAB only on Practice (4), Quiz (5), Situations (6)
+const FAB_TABS = [4, 5, 6];
+function toggleExprPanel() {
+  const panel = document.getElementById('exprPanel');
+  const backdrop = document.getElementById('exprBackdrop');
+  if (panel.classList.contains('open')) {
+    closeExprPanel();
+  } else {
+    panel.classList.add('open');
+    backdrop.classList.add('open');
+  }
+}
+function closeExprPanel() {
+  document.getElementById('exprPanel').classList.remove('open');
+  document.getElementById('exprBackdrop').classList.remove('open');
+}
+function switchCat(idx) {
+  document.querySelectorAll('.expr-cat-section').forEach((s,i) => s.classList.toggle('active', i===idx));
+  document.querySelectorAll('.expr-cat-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
 }
 
-// ============================================================
-//  VOCAB GRIDS
-// ============================================================
-function buildVG(data,id){
-  document.getElementById(id).innerHTML=data.map(v=>`
-    <div class="vc" onclick="this.classList.toggle('open');this.querySelector('.ht').style.display=this.classList.contains('open')?'none':'block'">
-      <span class="em">${v.e}</span><div class="wd">${v.w}</div>
-      <div class="df">${v.d}</div><div class="ht">&#128070; tap</div>
-    </div>`).join('');
+function showTab(name, idx) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.prog-dot').forEach((d,i) => d.classList.toggle('active', i===idx));
+  document.getElementById('tab-'+name).classList.add('active');
+  document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+  currentTab = idx;
+  // Show FAB only on Practice, Quiz, Situations tabs
+  const fab = document.getElementById('exprFab');
+  if (FAB_TABS.includes(idx)) {
+    fab.classList.remove('hidden');
+  } else {
+    fab.classList.add('hidden');
+    closeExprPanel();
+  }
+  window.scrollTo({top:0, behavior:'smooth'});
 }
 
-// ============================================================
-//  MCQ
-// ============================================================
-function buildMCQ(data,cid){
-  document.getElementById(cid).innerHTML=data.map((item,qi)=>`
-    <div class="ebox" id="mcq_${cid}_${qi}">
-      <div class="elabel">Question ${qi+1}</div>
-      <div class="eq">${item.q}</div>
-      <div class="opts">${item.opts.map((o,oi)=>`<div class="opt" onclick="chkMCQ(this,'${cid}',${qi},${oi},${item.ans})">${o}</div>`).join('')}</div>
-      <div class="fb" id="fb_${cid}_${qi}"></div>
-    </div>`).join('');
-}
-function chkMCQ(el,cid,qi,chosen,correct){
-  const box=document.getElementById('mcq_'+cid+'_'+qi);
-  if(box.dataset.done)return;
-  box.dataset.done='1';
-  const opts=box.querySelectorAll('.opt');
-  opts.forEach(o=>o.classList.add('disabled'));
-  opts[correct].classList.add('reveal');
-  const fb=document.getElementById('fb_'+cid+'_'+qi);
-  if(chosen===correct){el.classList.add('correct');fb.textContent='&#10003; Correct!';fb.className='fb fbok';addSc(1,1);}
-  else{el.classList.add('wrong');fb.textContent='&#10060; Answer: "'+opts[correct].textContent+'"';fb.className='fb fbno';addSc(0,1);}
-}
+/* ── FILL IN BLANKS ── */
+// Answers keyed to the NEW sentences (f1–f10)
+// f1: "Why don't you join a language club?"
+// f2: "You'd better hand in your assignment on time"
+// f3: "I strongly advise you to see a doctor"
+// f4: "Have you considered switching to a healthier diet?"
+// f5: "If I were you, I would think carefully"
+// f6: "You ought to revise your notes every evening"
+// f7: "You had better not ignore your parents' calls"
+// f8: "It's high time you started taking responsibility"
+// f9: "She should talk to her teacher"
+// f10: "You could try meditation"
+const fillAnswers = {
+  f1:  ["why don't"],
+  f2:  ["you'd better", "you had better"],
+  f3:  ["strongly advise"],
+  f4:  ["have you considered"],
+  f5:  ["if i were you", "if i were"],
+  f6:  ["ought to"],
+  f7:  ["had better not", "you'd better not"],
+  f8:  ["it's high time", "it is high time"],
+  f9:  ["should"],
+  f10: ["could"]
+};
 
-// ============================================================
-//  SELECT FILL
-// ============================================================
-function buildSelectFill(data,cid){
-  document.getElementById(cid).innerHTML=data.map((item,i)=>{
-    const opts=item.o.map(o=>`<option value="${o}">${o}</option>`).join('');
-    const pts=item.s.split('___');
-    return `<div style="margin-bottom:11px;font-size:.86rem;line-height:2.4;">${pts[0]}<select class="bl" id="${cid}_${i}"><option value="">...</option>${opts}</select>${pts[1]||''}</div>`;
-  }).join('');
-}
-function chkSelectFill(data,cid,fbId){
-  let ok=0;
-  data.forEach((item,i)=>{
-    const el=document.getElementById(cid+'_'+i);
-    el.classList.remove('correct','wrong');
-    if(el.value===item.a){el.classList.add('correct');ok++;}else{el.classList.add('wrong');}
+function checkFills() {
+  let correct = 0;
+  const total = Object.keys(fillAnswers).length;
+  Object.entries(fillAnswers).forEach(([id, accepted]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const val = el.value.trim().toLowerCase();
+    el.classList.remove('correct-ans','wrong-ans');
+    const isCorrect = accepted.some(a => val === a);
+    if (isCorrect) { el.classList.add('correct-ans'); correct++; }
+    else           { el.classList.add('wrong-ans'); }
   });
-  const fb=document.getElementById(fbId);
-  fb.textContent=ok+'/'+data.length+' correct!';
-  fb.className='fb '+(ok===data.length?'fbok':'fbno');
-  addSc(ok,data.length);
+  const scoreEl = document.getElementById('fills-score');
+  scoreEl.style.display = 'block';
+  const pct = Math.round(correct/total*100);
+  scoreEl.innerHTML = `<strong style="color:${correct===total?'var(--green)':correct>=total*0.6?'var(--gold)':'var(--red)'}">${correct}/${total} correct (${pct}%)</strong>${correct<total?' — Check the highlighted answers.':' — Excellent work! 🎉'}`;
 }
-function checkU6vFill(){chkSelectFill(u6vFillData,'u6vfill','u6vfillFB');}
-function checkU6sAdvice(){chkSelectFill(u6sAdvData,'u6sAdvice','u6sAdviceFB');}
 
-// ============================================================
-//  TRUE/FALSE
-// ============================================================
-function buildTF(data,cid){
-  document.getElementById(cid).innerHTML=data.map((item,i)=>`
-    <div class="tfrow" id="tf_${cid}_${i}">
-      <div class="tfstmt">${i+1}. ${item.stmt}</div>
-      <div class="tfbtns">
-        <button class="tfbtn" onclick="chkTF(${i},'${cid}',${item.correct},true)">T</button>
-        <button class="tfbtn" onclick="chkTF(${i},'${cid}',${item.correct},false)">F</button>
+/* ── MATCHING ──
+   Left sentences indexed 0–6:
+   ms1=0 "It's high time you looked for a job."
+   ms2=1 "What would you advise me to do?"
+   ms3=2 "You might want to reconsider."
+   ms4=3 "You must see a doctor immediately."
+   ms5=4 "You'd better not be late again."
+   ms6=5 "Why don't you take a break?"
+   ms7=6 "Thanks, but that won't work for me."
+
+   Right functions keyed to sentence index:
+   mr1→3 (Strong advice)
+   mr2→6 (Refusing)
+   mr3→4 (Warning had better)
+   mr4→1 (Asking)
+   mr5→0 (It's high time)
+   mr6→2 (Soft/tentative)
+   mr7→5 (Suggestion)
+*/
+const matchCorrect = { ms1:0, ms2:1, ms3:2, ms4:3, ms5:4, ms6:5, ms7:6 };
+const rightAnswers  = { mr1:3, mr2:6, mr3:4, mr4:1, mr5:0, mr6:2, mr7:5 };
+let selectedLeft = null;
+let matchedPairs = 0;
+
+function selectLeft(id, idx) {
+  if (document.getElementById(id).classList.contains('matched-correct')) return;
+  document.querySelectorAll('[id^="ms"]').forEach(el => {
+    if (!el.classList.contains('matched-correct')) el.classList.remove('selected');
+  });
+  selectedLeft = id;
+  document.getElementById(id).classList.add('selected');
+}
+
+function selectRight(id, idx) {
+  if (!selectedLeft) return;
+  if (document.getElementById(id).classList.contains('matched-correct')) return;
+  const sentenceIdx = matchCorrect[selectedLeft];  // what sentence was selected
+  const correctRightIdx = rightAnswers[id];         // what sentence this right label belongs to
+  if (sentenceIdx === correctRightIdx) {
+    document.getElementById(selectedLeft).classList.remove('selected');
+    document.getElementById(selectedLeft).classList.add('matched-correct');
+    document.getElementById(id).classList.add('matched-correct');
+    matchedPairs++;
+    if (matchedPairs === 7) {
+      const r = document.getElementById('match-result');
+      r.style.display = 'block';
+      r.innerHTML = '<strong style="color:var(--green)">✓ All matched correctly! Great job! 🎉</strong>';
+    }
+  } else {
+    document.getElementById(id).classList.add('matched-wrong');
+    document.getElementById(selectedLeft).classList.add('matched-wrong');
+    setTimeout(() => {
+      document.getElementById(id).classList.remove('matched-wrong');
+      document.getElementById(selectedLeft).classList.remove('matched-wrong','selected');
+    }, 700);
+  }
+  selectedLeft = null;
+}
+
+/* ── QUIZ ──
+   Correct answers are deliberately spread across A/B/C/D positions.
+*/
+const quizData = [
+  {
+    q: "Which sentence is asking for advice?",
+    options: [
+      "A. You should talk to your parents.",
+      "B. Why don't you call him?",
+      "C. I'd appreciate your advice about this situation.",
+      "D. If I were you, I'd stay home."
+    ],
+    correct: 2,
+    feedback: '"I\'d appreciate your advice about this situation" is a request for advice. The other options are all ways of giving advice.'
+  },
+  {
+    q: "Choose the grammatically CORRECT sentence using <em>If I were you</em>:",
+    options: [
+      "A. If I were you, I would apologise immediately.",
+      "B. If I was you, I will apologise.",
+      "C. If I am you, I would apologise.",
+      "D. If I were you, I apologise."
+    ],
+    correct: 0,
+    feedback: 'Conditional Type 2: "If I were you + would + base verb." Always use "were" (not "was"), and "would" in the result clause.'
+  },
+  {
+    q: "Which expression gives the SOFTEST / most tentative advice?",
+    options: [
+      "A. You must revise every night.",
+      "B. You'd better start now.",
+      "C. It's high time you studied.",
+      "D. You might want to try a study group."
+    ],
+    correct: 3,
+    feedback: '"You might want to…" is the most tentative — it suggests without imposing. "Must", "you\'d better" and "it\'s high time" all carry stronger urgency.'
+  },
+  {
+    q: "A friend says: 'I keep failing my tests. What should I do?' — Which is the MOST appropriate response?",
+    options: [
+      "A. That's too bad.",
+      "B. No idea, sorry.",
+      "C. You ought to review your notes daily and ask your teacher for extra help.",
+      "D. You must be very stressed."
+    ],
+    correct: 2,
+    feedback: 'Option C gives concrete, helpful advice using "ought to" correctly. The other options don\'t offer any advice at all.'
+  },
+  {
+    q: "Which sentence politely REFUSES advice?",
+    options: [
+      "A. What do you think I should do?",
+      "B. I appreciate the advice, but I've already tried that.",
+      "C. You should do that right away.",
+      "D. If I were you, I would try harder."
+    ],
+    correct: 1,
+    feedback: 'Politely refusing advice means acknowledging it first ("I appreciate…"), then explaining why it doesn\'t apply. Option B does this correctly.'
+  },
+  {
+    q: "Fill in the blank: 'You _____ leave your revision to the last minute — it never works.'",
+    options: [
+      "A. could",
+      "B. might want to",
+      "C. had better not",
+      "D. have you considered"
+    ],
+    correct: 2,
+    feedback: '"Had better not" is correct — it warns against doing something harmful. "Could" and "might want to" are too soft for a warning; "have you considered" is a question structure.'
+  },
+  {
+    q: "What does 'It's high time' express that 'It's time' does NOT?",
+    options: [
+      "A. A softer, more polite suggestion",
+      "B. A past action that already happened",
+      "C. Extra urgency — the action is long overdue",
+      "D. A question about the future"
+    ],
+    correct: 2,
+    feedback: '"It\'s high time" adds urgency and mild reproach — it means the action should already have happened. "It\'s time" is neutral; "it\'s high time" implies the delay is unacceptable.'
+  },
+  {
+    q: "Which sentence uses <em>you'd better</em> CORRECTLY?",
+    options: [
+      "A. You'd better to call her now.",
+      "B. You'd better calling him immediately.",
+      "C. You'd better don't be rude to your teacher.",
+      "D. You'd better apologise before it's too late."
+    ],
+    correct: 3,
+    feedback: '"Had better" is followed directly by the base verb — no "to", no "-ing", no "don\'t". Option D is the only correct form: "you\'d better + apologise".'
+  },
+  {
+    q: "Choose the correct form: 'It's high time she _____ her career more seriously.'",
+    options: [
+      "A. takes",
+      "B. took",
+      "C. to take",
+      "D. will take"
+    ],
+    correct: 1,
+    feedback: 'After "It\'s high time + subject", always use the PAST SIMPLE. "Took" is correct. Using the present simple ("takes"), infinitive ("to take"), or future ("will take") is incorrect.'
+  },
+  {
+    q: "What is the correct NEGATIVE form of 'You'd better go now'?",
+    options: [
+      "A. You'd better not go now.",
+      "B. You'd not better go now.",
+      "C. You'd better don't go now.",
+      "D. You hadn't better go now."
+    ],
+    correct: 0,
+    feedback: 'The negative of "had better" is "had better not" — "not" comes directly after "better". Options B, C and D are all grammatically wrong.'
+  }
+];
+
+let quizAnswers = new Array(quizData.length).fill(null);
+let quizScore = 0;
+
+function buildQuiz() {
+  const container = document.getElementById('quizContainer');
+  container.innerHTML = '';
+  quizData.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'quiz-question';
+    div.innerHTML = `
+      <div class="quiz-q-num">QUESTION ${qi+1} OF ${quizData.length}</div>
+      <div class="quiz-q-text">${q.q}</div>
+      <div class="options" id="opts-${qi}">
+        ${q.options.map((opt,oi)=>`<button class="option-btn" onclick="answerQuiz(${qi},${oi})">${opt}</button>`).join('')}
       </div>
-      <div class="tffb" id="tffb_${cid}_${i}"></div>
-    </div>`).join('');
-}
-function chkTF(i,cid,correct,chosen){
-  const row=document.getElementById('tf_'+cid+'_'+i);
-  if(row.dataset.done)return;
-  row.dataset.done='1';
-  const btns=row.querySelectorAll('.tfbtn');
-  btns.forEach(b=>b.disabled=true);
-  const fb=document.getElementById('tffb_'+cid+'_'+i);
-  const isOk=(chosen===correct);
-  btns[chosen?0:1].classList.add(isOk?'st':'sf');
-  fb.innerHTML=u6tfData[i].exp;
-  fb.style.color=isOk?'var(--green)':'var(--red)';
-  addSc(isOk?1:0,1);
-}
-
-// ============================================================
-//  MATCHING
-// ============================================================
-function buildU6Match(){
-  const c=document.getElementById('u6match');
-  c.innerHTML=`<div class="mcol">${matchIll.map((s,i)=>`<div class="mi" id="u6mL${i}" onclick="u6sel('l',${i})">${s}</div>`).join('')}</div>
-    <div class="mcol">${matchSym.map((s,i)=>`<div class="mi" id="u6mR${i}" onclick="u6sel('r',${i})">${s}</div>`).join('')}</div>`;
-}
-function u6sel(side,idx){
-  u6mSel[side]=idx;
-  document.querySelectorAll('[id^="u6m"]').forEach(el=>{if(!el.classList.contains('ok'))el.classList.remove('sel');});
-  document.getElementById(side==='l'?'u6mL'+idx:'u6mR'+idx).classList.add('sel');
-  if(u6mSel.l!==null&&u6mSel.r!==null){
-    const l=u6mSel.l,r=u6mSel.r,ok=matchCorr[l]===r;
-    const lE=document.getElementById('u6mL'+l),rE=document.getElementById('u6mR'+r);
-    if(ok){lE.classList.add('ok');rE.classList.add('ok');u6mPairs[l]=r;}
-    else{lE.classList.add('fail');rE.classList.add('fail');setTimeout(()=>{lE.classList.remove('fail','sel');rE.classList.remove('fail','sel');},700);}
-    u6mSel={l:null,r:null};
-  }
-}
-function checkU6Match(){
-  const ok=Object.keys(u6mPairs).length,total=matchIll.length;
-  const fb=document.getElementById('u6matchFB');
-  fb.textContent=ok+'/'+total+' correct pairs!';
-  fb.className='fb '+(ok===total?'fbok':'fbno');
-  addSc(ok,total);
-}
-function buildU7Match(){
-  const c=document.getElementById('u7match');
-  c.innerHTML=`<div class="mcol">${u7matchArt.map((s,i)=>`<div class="mi" id="u7mL${i}" onclick="u7sel('l',${i})">${s}</div>`).join('')}</div>
-    <div class="mcol">${u7matchPerson.map((s,i)=>`<div class="mi" id="u7mR${i}" onclick="u7sel('r',${i})">${s}</div>`).join('')}</div>`;
-}
-function u7sel(side,idx){
-  u7mSel[side]=idx;
-  document.querySelectorAll('[id^="u7m"]').forEach(el=>{if(!el.classList.contains('ok'))el.classList.remove('sel');});
-  document.getElementById(side==='l'?'u7mL'+idx:'u7mR'+idx).classList.add('sel');
-  if(u7mSel.l!==null&&u7mSel.r!==null){
-    const l=u7mSel.l,r=u7mSel.r,ok=u7matchCorr[l]===r;
-    const lE=document.getElementById('u7mL'+l),rE=document.getElementById('u7mR'+r);
-    if(ok){lE.classList.add('ok');rE.classList.add('ok');u7mPairs[l]=r;}
-    else{lE.classList.add('fail');rE.classList.add('fail');setTimeout(()=>{lE.classList.remove('fail','sel');rE.classList.remove('fail','sel');},700);}
-    u7mSel={l:null,r:null};
-  }
-}
-function checkU7Match(){
-  const ok=Object.keys(u7mPairs).length,total=u7matchArt.length;
-  const fb=document.getElementById('u7matchFB');
-  fb.textContent=ok+'/'+total+' correct pairs!';
-  fb.className='fb '+(ok===total?'fbok':'fbno');
-  addSc(ok,total);
-}
-
-// ============================================================
-//  COND BUILD
-// ============================================================
-function buildU6condBuild(){
-  document.getElementById('u6condBuild').innerHTML=u6condBuildData.map((item,i)=>{
-    const opts=item.o.map(o=>`<option value="${o}">${o}</option>`).join('');
-    const pts=item.s.split('___');
-    return `<div style="margin-bottom:11px;font-size:.86rem;line-height:2.4;"><span style="font-size:.62rem;color:var(--u6);font-weight:700;margin-right:5px;">${item.type}</span>${pts[0]}<select class="bl" id="cb${i}"><option value="">...</option>${opts}</select>${pts[1]||''}</div>`;
-  }).join('');
-}
-function checkU6condBuild(){
-  let ok=0;
-  u6condBuildData.forEach((item,i)=>{
-    const el=document.getElementById('cb'+i);
-    el.classList.remove('correct','wrong');
-    if(el.value===item.a){el.classList.add('correct');ok++;}else{el.classList.add('wrong');}
+      <div class="feedback" id="fb-${qi}"></div>
+    `;
+    container.appendChild(div);
   });
-  const fb=document.getElementById('u6condBuildFB');
-  fb.textContent=ok+'/'+u6condBuildData.length+' correct!';
-  fb.className='fb '+(ok===u6condBuildData.length?'fbok':'fbno');
-  addSc(ok,u6condBuildData.length);
+  updateScore();
 }
 
-// ============================================================
-//  CONJ COMBINE
-// ============================================================
-function buildU6conjCombine(){
-  document.getElementById('u6conjCombine').innerHTML=u6conjCombineData.map((item,i)=>{
-    const opts=item.opts.map(o=>`<option value="${o}">${o}</option>`).join('');
-    return `<div style="margin-bottom:11px;font-size:.86rem;line-height:2.4;">${item.s1} <select class="bl" id="cc${i}"><option value="">...</option>${opts}</select> ${item.s2}</div>`;
-  }).join('');
-}
-function checkU6conjCombine(){
-  let ok=0;
-  u6conjCombineData.forEach((item,i)=>{
-    const el=document.getElementById('cc'+i);
-    el.classList.remove('correct','wrong');
-    if(el.value===item.conj){el.classList.add('correct');ok++;}else{el.classList.add('wrong');}
-  });
-  const fb=document.getElementById('u6conjCombineFB');
-  fb.textContent=ok+'/'+u6conjCombineData.length+' correct!';
-  fb.className='fb '+(ok===u6conjCombineData.length?'fbok':'fbno');
-  addSc(ok,u6conjCombineData.length);
+function answerQuiz(qi, oi) {
+  if (quizAnswers[qi] !== null) return;
+  quizAnswers[qi] = oi;
+  const opts = document.querySelectorAll(`#opts-${qi} .option-btn`);
+  opts.forEach(b => b.disabled = true);
+  const isCorrect = quizData[qi].correct === oi;
+  opts[quizData[qi].correct].classList.add('correct');
+  if (!isCorrect) opts[oi].classList.add('wrong');
+  const fb = document.getElementById(`fb-${qi}`);
+  fb.textContent = (isCorrect ? '✓ Correct! ' : '✗ Not quite. ') + quizData[qi].feedback;
+  fb.className = `feedback show ${isCorrect ? 'correct' : 'wrong'}`;
+  if (isCorrect) quizScore++;
+  updateScore();
 }
 
-// ============================================================
-//  SUGGEST FILL
-// ============================================================
-function buildU7suggestFill(){
-  document.getElementById('u7suggestFill').innerHTML=u7suggestFillData.map((item,i)=>{
-    const pts=item.s.split('___');
-    return `<div style="margin-bottom:11px;font-size:.86rem;line-height:2.4;">${pts[0]}<input class="blin" id="sf${i}" placeholder="${item.hint}">${pts[1]||''}</div>`;
-  }).join('');
-}
-function checkU7suggestFill(){
-  let ok=0;
-  u7suggestFillData.forEach((item,i)=>{
-    const el=document.getElementById('sf'+i);
-    el.classList.remove('correct','wrong');
-    if(el.value.trim().toLowerCase()===item.a){el.classList.add('correct');ok++;}else{el.classList.add('wrong');}
-  });
-  const fb=document.getElementById('u7suggestFillFB');
-  fb.textContent=ok+'/'+u7suggestFillData.length+' correct!';
-  fb.className='fb '+(ok===u7suggestFillData.length?'fbok':'fbno');
-  addSc(ok,u7suggestFillData.length);
+function updateScore() {
+  document.getElementById('quizScore').textContent = `${quizScore} / ${quizData.length}`;
 }
 
-// ============================================================
-//  ERROR SPOT
-// ============================================================
-function buildU7errorQ(){
-  document.getElementById('u7errorQ').innerHTML=u7errorData.map((item,qi)=>`
-    <div class="ebox" id="err_${qi}" style="margin-bottom:12px;">
-      <div class="elabel">Find the error — Question ${qi+1}</div>
-      <div class="eq" style="font-style:italic;color:var(--yellow);">"${item.q}"</div>
-      <div class="opts">${item.opts.map((o,oi)=>`<div class="opt" onclick="chkErr(this,${qi},${oi},${item.ans})">${o}</div>`).join('')}</div>
-      <div class="fb" id="errfb_${qi}"></div>
-    </div>`).join('');
-}
-function chkErr(el,qi,chosen,correct){
-  const box=document.getElementById('err_'+qi);
-  if(box.dataset.done)return;
-  box.dataset.done='1';
-  const opts=box.querySelectorAll('.opt');
-  opts.forEach(o=>o.classList.add('disabled'));
-  opts[correct].classList.add('reveal');
-  const fb=document.getElementById('errfb_'+qi);
-  if(chosen===correct){el.classList.add('correct');fb.textContent='&#10003; Correct!';fb.className='fb fbok';addSc(1,1);}
-  else{el.classList.add('wrong');fb.textContent='&#10060; Answer: "'+opts[correct].textContent+'"';fb.className='fb fbno';addSc(0,1);}
+function resetQuiz() {
+  quizAnswers = new Array(quizData.length).fill(null);
+  quizScore = 0;
+  buildQuiz();
 }
 
-// ============================================================
-//  WRITING
-// ============================================================
-function saveW(){
-  const all=[1,2,3,4].map(n=>document.getElementById('w'+n).value.trim());
-  const fb=document.getElementById('wFB');
-  if(all.every(v=>!v)){fb.textContent='&#9888; Write at least one task first!';fb.className='fb fbno';return;}
-  fb.textContent='&#10003; Answers saved! Use the checklist below to self-correct.';
-  fb.className='fb fbok';
+/* ── SITUATIONS ── */
+function revealSit(card) {
+  card.classList.toggle('revealed');
 }
 
-// ============================================================
-//  MIXED QUIZ
-// ============================================================
-function buildMixed(){
-  document.getElementById('mixedC').innerHTML=mixedData.map((item,qi)=>`
-    <div class="ebox" id="mix_${qi}" style="border-top:3px solid ${item.c};">
-      <div class="elabel" style="color:${item.c};">&#128218; ${item.u}</div>
-      <div class="eq">${item.q}</div>
-      <div class="opts">${item.opts.map((o,oi)=>`<div class="opt" onclick="chkMix(this,${qi},${oi},${item.ans})">${o}</div>`).join('')}</div>
-      <div class="fb" id="mfb_${qi}"></div>
-    </div>`).join('');
-}
-function chkMix(el,qi,chosen,correct){
-  const box=document.getElementById('mix_'+qi);
-  if(box.dataset.done)return;
-  box.dataset.done='1';
-  const opts=box.querySelectorAll('.opt');
-  opts.forEach(o=>o.classList.add('disabled'));
-  opts[correct].classList.add('reveal');
-  const fb=document.getElementById('mfb_'+qi);
-  if(chosen===correct){el.classList.add('correct');fb.textContent='&#10003; Correct!';fb.className='fb fbok';addSc(1,1);}
-  else{el.classList.add('wrong');fb.textContent='&#10060; Answer: "'+opts[correct].textContent+'"';fb.className='fb fbno';addSc(0,1);}
-  mixDone++;
-  if(mixDone===mixedData.length){
-    document.getElementById('mixedDone').style.display='block';
-    document.getElementById('mixedMsg').textContent='You completed all '+mixedData.length+' questions! Check your score above.';
-  }
-}
-
-// ============================================================
-//  INIT
-// ============================================================
-buildVG(u6Cards,'u6vg');
-buildVG(u7Cards,'u7vg');
-buildU6Match();
-buildU7Match();
-buildSelectFill(u6vFillData,'u6vfill');
-buildTF(u6tfData,'u6tf');
-buildMCQ(u6sModalData,'u6sModalQ');
-buildSelectFill(u6sAdvData,'u6sAdvice');
-buildMCQ(u6condData,'u6condQ');
-buildU6condBuild();
-buildMCQ(u6conjData,'u6conjQ');
-buildU6conjCombine();
-buildMCQ(u7vocabMCQ,'u7vocabQ');
-buildMCQ(u7suggestData,'u7suggestQ');
-buildU7suggestFill();
-buildMCQ(u7pastData,'u7pastQ');
-buildU7errorQ();
-buildMixed();
-updT();
+/* ── INIT ── */
+buildQuiz();
+updateArrows();
 </script>
 </body>
 </html>
