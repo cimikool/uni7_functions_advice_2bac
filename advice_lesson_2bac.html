@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giving & Asking for Advice – 2BAC</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f14;
+    --surface: #151820;
+    --surface2: #1c2030;
+    --gold: #e8b84b;
+    --gold2: #f5d580;
+    --teal: #3ecfb2;
+    --red: #e85b5b;
+    --green: #4ecb8a;
+    --text: #eef0f6;
+    --muted: #7a8099;
+    --border: rgba(232,184,75,0.18);
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, #0d0f14 0%, #1a1030 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 18px 24px 14px;
+    text-align: center;
+    position: relative;
+  }
+  header::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 50%; transform: translateX(-50%);
+    width: 120px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+  .header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 5vw, 36px);
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--gold2), var(--gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+  }
+  header p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-top: 4px;
+  }
+  .prof-tag {
+    font-size: 10.5px;
+    color: var(--muted);
+    margin-top: 10px;
+    font-family: 'DM Mono', monospace;
+    letter-spacing: 0.5px;
+  }
+  .prof-tag span { color: var(--gold); }
+
+  /* ── NAV TABS ── */
+  /* ── NAV WRAPPER WITH ARROWS ── */
+  .nav-wrapper {
+    position: relative;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+  }
+  .nav-arrow {
+    flex-shrink: 0;
+    width: 36px;
+    height: 100%;
+    min-height: 48px;
+    background: transparent;
+    border: none;
+    color: var(--gold);
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.18s, opacity 0.18s;
+    z-index: 2;
+    opacity: 0.5;
+  }
+  .nav-arrow:hover { background: rgba(232,184,75,0.08); opacity: 1; }
+  .nav-arrow.visible { opacity: 1; }
+  .nav-arrow:disabled { opacity: 0.15; cursor: default; }
+  .nav-arrow:disabled:hover { background: transparent; }
+  nav {
+    display: flex;
+    gap: 4px;
+    padding: 10px 6px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    flex: 1;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    flex-shrink: 0;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--muted);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .tab-btn:hover { background: var(--surface2); color: var(--text); }
+  .tab-btn.active {
+    background: rgba(232,184,75,0.12);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+  .tab-icon { font-size: 14px; }
+
+  /* ── CONTENT AREA ── */
+  main { padding: 20px 16px 40px; max-width: 900px; margin: 0 auto; }
+  .tab-panel { display: none; animation: fadeUp 0.35s ease; }
+  .tab-panel.active { display: block; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTION TITLES ── */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .section-sub {
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .card-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  /* ── PHRASE GRID ── */
+  .phrase-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  @media (max-width: 520px) { .phrase-grid { grid-template-columns: 1fr; } }
+  .phrase-col-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .asking { color: var(--teal); }
+  .giving { color: var(--gold); }
+  .refusing { color: #b084e0; }
+
+  .phrase-item {
+    background: var(--surface2);
+    border-radius: 8px;
+    padding: 10px 13px;
+    font-size: 13.5px;
+    line-height: 1.4;
+    border-left: 3px solid transparent;
+    margin-bottom: 7px;
+    transition: transform 0.15s;
+  }
+  .phrase-item:hover { transform: translateX(3px); }
+  .phrase-item.ask-style { border-color: var(--teal); }
+  .phrase-item.give-style { border-color: var(--gold); }
+  .phrase-item.refuse-style { border-color: #b084e0; }
+  .phrase-item .tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: var(--muted);
+    display: block;
+    margin-top: 3px;
+  }
+
+  /* ── CONTEXT LABEL ── */
+  .context-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .formal-badge { background: rgba(62,207,178,0.12); color: var(--teal); border: 1px solid var(--teal); }
+  .informal-badge { background: rgba(232,184,75,0.12); color: var(--gold); border: 1px solid var(--gold); }
+  .strong-badge { background: rgba(232,91,91,0.12); color: var(--red); border: 1px solid var(--red); }
+  .soft-badge { background: rgba(176,132,224,0.12); color: #b084e0; border: 1px solid #b084e0; }
+
+  /* ── GRAMMAR BOX ── */
+  .grammar-box {
+    background: linear-gradient(135deg, rgba(62,207,178,0.07), rgba(232,184,75,0.05));
+    border: 1px solid rgba(62,207,178,0.25);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .grammar-box h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--teal);
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .formula {
+    font-family: 'DM Mono', monospace;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--gold2);
+    margin: 8px 0;
+    border-left: 3px solid var(--gold);
+  }
+  .formula .modal { color: var(--teal); }
+  .formula .verb { color: #b084e0; }
+  .formula .rest { color: var(--text); }
+  .example-line {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 6px;
+    padding-left: 10px;
+  }
+  .example-line strong { color: var(--text); }
+
+  /* ── QUIZ ── */
+  .quiz-question {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .quiz-q-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .quiz-q-text {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .quiz-q-text em { color: var(--gold); font-style: normal; font-weight: 600; }
+  .options { display: flex; flex-direction: column; gap: 8px; }
+  .option-btn {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13.5px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .option-btn:hover:not(:disabled) { border-color: var(--gold); background: rgba(232,184,75,0.07); }
+  .option-btn.correct { background: rgba(78,203,138,0.15); border-color: var(--green); color: var(--green); }
+  .option-btn.wrong   { background: rgba(232,91,91,0.12); border-color: var(--red); color: var(--red); }
+  .option-btn:disabled { cursor: default; }
+  .feedback {
+    margin-top: 10px;
+    font-size: 12.5px;
+    display: none;
+    padding: 8px 12px;
+    border-radius: 7px;
+    line-height: 1.4;
+  }
+  .feedback.show { display: block; }
+  .feedback.correct { background: rgba(78,203,138,0.1); color: var(--green); border: 1px solid rgba(78,203,138,0.3); }
+  .feedback.wrong   { background: rgba(232,91,91,0.1); color: var(--red); border: 1px solid rgba(232,91,91,0.25); }
+
+  .quiz-score-bar {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .score-display {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    color: var(--gold);
+    font-weight: 900;
+  }
+  .score-label { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .reset-btn {
+    margin-top: 12px;
+    padding: 9px 22px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .reset-btn:hover { background: rgba(232,184,75,0.1); }
+
+  /* ── FILL IN BLANKS ── */
+  .fill-sentence {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 15px 18px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 2;
+  }
+  .fill-input {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-bottom: 2px solid var(--gold);
+    border-radius: 4px;
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    padding: 2px 8px;
+    width: 160px;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .fill-input:focus { border-color: var(--teal); }
+  .fill-input.correct-ans { border-color: var(--green); background: rgba(78,203,138,0.07); color: var(--green); }
+  .fill-input.wrong-ans   { border-color: var(--red);   background: rgba(232,91,91,0.07);  color: var(--red); }
+  .check-fills-btn {
+    background: var(--gold);
+    border: none;
+    color: #0d0f14;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 28px;
+    border-radius: 9px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: opacity 0.2s;
+  }
+  .check-fills-btn:hover { opacity: 0.88; }
+
+  /* ── DIALOGUE ── */
+  .dialogue-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 20px;
+    margin-bottom: 14px;
+  }
+  .dialogue-box .speaker {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 3px;
+  }
+  .speaker.a { color: var(--teal); }
+  .speaker.b { color: var(--gold); }
+  .dialogue-line {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 14px;
+    padding-left: 12px;
+    border-left: 2px solid var(--surface2);
+  }
+  .dialogue-line:last-child { margin-bottom: 0; }
+  .highlight-phrase {
+    color: var(--gold2);
+    font-weight: 600;
+  }
+  .highlight-ask {
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  /* ── SITUATION CARDS ── */
+  .situations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+  .situation-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .situation-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transition: transform 0.25s;
+    transform-origin: left;
+  }
+  .situation-card:hover::before { transform: scaleX(1); }
+  .situation-card:hover { border-color: rgba(232,184,75,0.35); }
+  .sit-emoji { font-size: 26px; margin-bottom: 8px; }
+  .sit-title { font-size: 13px; font-weight: 600; color: var(--gold); margin-bottom: 5px; }
+  .sit-desc { font-size: 12px; color: var(--muted); line-height: 1.45; }
+  .sit-response {
+    display: none;
+    margin-top: 10px;
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 12.5px;
+    color: var(--teal);
+    line-height: 1.5;
+    border-left: 3px solid var(--teal);
+  }
+  .situation-card.revealed .sit-response { display: block; }
+  .sit-tap-hint { font-size: 10px; color: var(--muted); margin-top: 8px; font-family: 'DM Mono', monospace; }
+
+  /* ── TIPS BOX ── */
+  .tip-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .tip-item:last-child { border-bottom: none; }
+  .tip-icon { font-size: 20px; flex-shrink: 0; }
+  .tip-text { font-size: 13px; color: var(--muted); line-height: 1.55; }
+  .tip-text strong { color: var(--text); }
+
+  /* ── PROGRESS ── */
+  .tab-progress {
+    display: flex;
+    gap: 6px;
+    justify-content: center;
+    padding: 10px 0 0;
+  }
+  .prog-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .prog-dot.active { background: var(--gold); border-color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 16px;
+    border-top: 1px solid var(--border);
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+  footer span { color: var(--gold); }
+
+  /* ── MATCH EXERCISE ── */
+  .match-container { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 480px) { .match-container { grid-template-columns: 1fr; } }
+  .match-col-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .match-item {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 13px;
+    font-size: 13px;
+    margin-bottom: 7px;
+    cursor: pointer;
+    transition: all 0.2s;
+    line-height: 1.45;
+  }
+  .match-item:hover { border-color: var(--gold); }
+  .match-item.selected { border-color: var(--teal); background: rgba(62,207,178,0.08); }
+  .match-item.matched-correct { border-color: var(--green); background: rgba(78,203,138,0.1); cursor: default; color: var(--green); }
+  .match-item.matched-wrong { border-color: var(--red); background: rgba(232,91,91,0.08); }
+  .check-match-btn {
+    background: transparent;
+    border: 1px solid var(--teal);
+    color: var(--teal);
+    border-radius: 8px;
+    padding: 10px 22px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: all 0.2s;
+  }
+  .check-match-btn:hover { background: rgba(62,207,178,0.08); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-label">2nd Year Baccalaureate · Language Functions</div>
+  <h1>Giving & Asking for Advice</h1>
+  <p>Ticket to English 2 · Communication Skills</p>
+  <div class="prof-tag"><span>Prof. Salah Sahmoudi</span> · Abdellah Guennoun High School, Saïss-Fès</div>
+</header>
+
+<div class="nav-wrapper">
+  <button class="nav-arrow" id="navLeft" onclick="scrollNav(-1)" title="Scroll left">&#8592;</button>
+  <nav id="mainNav">
+    <button class="tab-btn active" onclick="showTab('intro',0)"><span class="tab-icon">🎯</span> Warm-Up</button>
+    <button class="tab-btn" onclick="showTab('language',1)"><span class="tab-icon">📚</span> Language</button>
+    <button class="tab-btn" onclick="showTab('grammar',2)"><span class="tab-icon">⚙️</span> Grammar</button>
+    <button class="tab-btn" onclick="showTab('dialogue',3)"><span class="tab-icon">💬</span> Dialogue</button>
+    <button class="tab-btn" onclick="showTab('practice',4)"><span class="tab-icon">✏️</span> Practice</button>
+    <button class="tab-btn" onclick="showTab('quiz',5)"><span class="tab-icon">🏆</span> Quiz</button>
+    <button class="tab-btn" onclick="showTab('situations',6)"><span class="tab-icon">🎭</span> Situations</button>
+  </nav>
+  <button class="nav-arrow" id="navRight" onclick="scrollNav(1)" title="Scroll right">&#8594;</button>
+</div>
+
+<main>
+
+  <!-- TAB 0: WARM-UP -->
+  <div class="tab-panel active" id="tab-intro">
+    <p class="section-title">Warm-Up: Think About It</p>
+    <p class="section-sub">Before we start, reflect on these questions. Discuss with a partner!</p>
+
+    <div class="card">
+      <div class="card-title">🔍 Discussion Starters</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div class="phrase-item give-style">1. Have you ever asked someone for advice? What was the situation?</div>
+        <div class="phrase-item ask-style">2. When someone gives you advice, do you always follow it? Why / Why not?</div>
+        <div class="phrase-item refuse-style">3. Is it rude to refuse someone's advice? How can you do it politely?</div>
+        <div class="phrase-item give-style">4. Who do you usually turn to for advice — family, friends, or a professional?</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🎯 Learning Objectives</div>
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="phrase-item ask-style">✔ Identify and use expressions for <strong>asking</strong> for advice</div>
+        <div class="phrase-item give-style">✔ Use appropriate language for <strong>giving</strong> advice (strong & soft)</div>
+        <div class="phrase-item refuse-style">✔ Politely <strong>reject</strong> or qualify advice</div>
+        <div class="phrase-item give-style">✔ Distinguish <strong>formal</strong> from <strong>informal</strong> register</div>
+        <div class="phrase-item ask-style">✔ Produce short <strong>dialogues</strong> using advice language</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💡 Real-World Contexts</div>
+      <div class="situations-grid" style="grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;margin-bottom:0;">
+        <div style="background:var(--surface2);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:24px;margin-bottom:5px;">🎓</div>
+          <div style="font-size:12px;color:var(--gold);font-weight:600;">Studies</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px;">Choosing a major</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:24px;margin-bottom:5px;">💼</div>
+          <div style="font-size:12px;color:var(--gold);font-weight:600;">Career</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px;">Job interview tips</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:24px;margin-bottom:5px;">❤️</div>
+          <div style="font-size:12px;color:var(--gold);font-weight:600;">Relationships</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px;">Solving conflicts</div>
+        </div>
+        <div style="background:var(--surface2);border-radius:10px;padding:14px;text-align:center;">
+          <div style="font-size:24px;margin-bottom:5px;">🏥</div>
+          <div style="font-size:12px;color:var(--gold);font-weight:600;">Health</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px;">Doctor's advice</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 1: LANGUAGE -->
+  <div class="tab-panel" id="tab-language">
+    <p class="section-title">Language Input</p>
+    <p class="section-sub">Study these essential expressions. Register matters — know when to use formal vs. informal language.</p>
+
+    <div class="card">
+      <div class="card-title">🙋 Asking for Advice</div>
+      <div class="phrase-grid">
+        <div>
+          <div class="phrase-col-title asking">Formal / Neutral</div>
+          <div class="phrase-item ask-style">Could you give me some advice on…?<span class="tag">Polite · formal</span></div>
+          <div class="phrase-item ask-style">What would you advise me to do?<span class="tag">Neutral · open</span></div>
+          <div class="phrase-item ask-style">I'd appreciate your advice about…<span class="tag">Respectful</span></div>
+          <div class="phrase-item ask-style">What do you think I should do about…?<span class="tag">Thoughtful</span></div>
+          <div class="phrase-item ask-style">I was wondering if you could advise me…<span class="tag">Tentative · formal</span></div>
+        </div>
+        <div>
+          <div class="phrase-col-title giving">Informal</div>
+          <div class="phrase-item give-style" style="border-color:#7a8099;">What should I do about…?<span class="tag">Casual · direct</span></div>
+          <div class="phrase-item give-style" style="border-color:#7a8099;">Any ideas on how to deal with…?<span class="tag">Friendly</span></div>
+          <div class="phrase-item give-style" style="border-color:#7a8099;">Have you got any tips for…?<span class="tag">Informal</span></div>
+          <div class="phrase-item give-style" style="border-color:#7a8099;">What would you do if you were me?<span class="tag">Empathy · casual</span></div>
+          <div class="phrase-item give-style" style="border-color:#7a8099;">Got any advice?<span class="tag">Very casual</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💡 Giving Advice — Strong</div>
+      <span class="context-badge strong-badge">Firm Recommendation</span>
+      <div class="phrase-grid">
+        <div>
+          <div class="phrase-item give-style">You should / You ought to…<span class="tag">Common · neutral</span></div>
+          <div class="phrase-item give-style">You must / You have to…<span class="tag">Strong obligation</span></div>
+          <div class="phrase-item give-style">I strongly advise you to…<span class="tag">Formal · emphatic</span></div>
+        </div>
+        <div>
+          <div class="phrase-item give-style">If I were you, I would…<span class="tag">Conditional · polite</span></div>
+          <div class="phrase-item give-style">The best thing (for you) to do is…<span class="tag">Assertive</span></div>
+          <div class="phrase-item give-style">Make sure you…<span class="tag">Imperative · direct</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💡 Giving Advice — Soft</div>
+      <span class="context-badge soft-badge">Gentle Suggestion</span>
+      <div class="phrase-grid">
+        <div>
+          <div class="phrase-item refuse-style">You could / might want to…<span class="tag">Tentative</span></div>
+          <div class="phrase-item refuse-style">Why don't you…?<span class="tag">Suggestion</span></div>
+          <div class="phrase-item refuse-style">Have you considered…?<span class="tag">Open question</span></div>
+        </div>
+        <div>
+          <div class="phrase-item refuse-style">It might be a good idea to…<span class="tag">Soft · indirect</span></div>
+          <div class="phrase-item refuse-style">What about…? / How about…?<span class="tag">Casual suggestion</span></div>
+          <div class="phrase-item refuse-style">You might find it helpful to…<span class="tag">Thoughtful</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🚫 Refusing / Qualifying Advice</div>
+      <div class="phrase-item" style="border-left:3px solid var(--red);background:var(--surface2);margin-bottom:8px;">Thanks, but I don't think that would work for me.<span class="tag">Polite refusal</span></div>
+      <div class="phrase-item" style="border-left:3px solid var(--red);background:var(--surface2);margin-bottom:8px;">I appreciate the advice, but I've already tried that.<span class="tag">With reason</span></div>
+      <div class="phrase-item" style="border-left:3px solid var(--red);background:var(--surface2);margin-bottom:8px;">That's a good point, but I'm not sure it applies to my situation.<span class="tag">Partial disagreement</span></div>
+      <div class="phrase-item" style="border-left:3px solid var(--red);background:var(--surface2);">I'll think about it, but I'd prefer to…<span class="tag">Diplomatic</span></div>
+    </div>
+  </div>
+
+  <!-- TAB 2: GRAMMAR -->
+  <div class="tab-panel" id="tab-grammar">
+    <p class="section-title">Grammar Focus</p>
+    <p class="section-sub">Master the modal verbs and structures used to give and ask for advice.</p>
+
+    <div class="grammar-box">
+      <h3>SHOULD / OUGHT TO → Advice</h3>
+      <div class="formula">
+        Subject + <span class="modal">should</span> / <span class="modal">ought to</span> + <span class="verb">base verb</span>
+      </div>
+      <p class="example-line">→ <strong>You should study harder for the Bac exam.</strong></p>
+      <p class="example-line">→ <strong>You ought to see a doctor about that.</strong></p>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;">⚠ "Ought to" is slightly more formal than "should" and is less common in questions.</p>
+    </div>
+
+    <div class="grammar-box">
+      <h3>IF I WERE YOU → Conditional Advice</h3>
+      <div class="formula">
+        <span class="modal">If I were you</span>, I <span class="modal">would</span> + <span class="verb">base verb</span>
+      </div>
+      <p class="example-line">→ <strong>If I were you, I would talk to your parents first.</strong></p>
+      <p class="example-line">→ <strong>If I were in your shoes, I'd apologise immediately.</strong></p>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;">📌 This is a Conditional Type 2 structure. Notice: "were" (not "was") is used even for I/he/she.</p>
+    </div>
+
+    <div class="grammar-box">
+      <h3>WHY DON'T YOU / HOW ABOUT → Suggestions</h3>
+      <div class="formula">
+        <span class="modal">Why don't you</span> + <span class="verb">base verb</span>?
+      </div>
+      <p class="example-line">→ <strong>Why don't you apply for a scholarship?</strong></p>
+      <div class="formula" style="margin-top:8px;">
+        <span class="modal">How about</span> + <span class="verb">-ing</span>?
+      </div>
+      <p class="example-line">→ <strong>How about talking to your teacher?</strong></p>
+    </div>
+
+    <div class="grammar-box">
+      <h3>COULD / MIGHT → Tentative Advice</h3>
+      <div class="formula">
+        Subject + <span class="modal">could</span> / <span class="modal">might</span> + <span class="verb">base verb</span>
+      </div>
+      <p class="example-line">→ <strong>You could try a different approach.</strong></p>
+      <p class="example-line">→ <strong>You might want to reconsider your decision.</strong></p>
+      <p style="font-size:12px;color:var(--muted);margin-top:8px;">💡 "Could" and "might" make advice sound less imposing — ideal in formal/polite contexts.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">⚖️ Strength of Advice</div>
+      <div style="position:relative;padding:14px 0;">
+        <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:6px;">
+          <span>Soft</span><span>Strong</span>
+        </div>
+        <div style="background:linear-gradient(90deg,rgba(62,207,178,0.3),rgba(232,184,75,0.6),rgba(232,91,91,0.5));height:6px;border-radius:3px;"></div>
+        <div style="display:flex;justify-content:space-between;font-size:11.5px;margin-top:8px;flex-wrap:wrap;gap:4px;">
+          <span style="color:var(--teal);">might</span>
+          <span style="color:var(--teal);">could</span>
+          <span style="color:var(--muted);">why don't</span>
+          <span style="color:var(--gold);">should</span>
+          <span style="color:var(--gold);">ought to</span>
+          <span style="color:var(--red);">must / have to</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 3: DIALOGUE -->
+  <div class="tab-panel" id="tab-dialogue">
+    <p class="section-title">Model Dialogue</p>
+    <p class="section-sub">Read the dialogue carefully. Notice how advice is asked for, given, and responded to. Highlighted phrases show the target language.</p>
+
+    <div class="dialogue-box">
+      <div class="card-title">📖 Situation: Youssef is stressed about his Bac results</div>
+      <div>
+        <div class="speaker a">YOUSSEF</div>
+        <div class="dialogue-line">
+          Hey Leila, <span class="highlight-ask">I really don't know what to do.</span> I failed my mock exam and the Bac is in three weeks. <span class="highlight-ask">What do you think I should do?</span>
+        </div>
+
+        <div class="speaker b">LEILA</div>
+        <div class="dialogue-line">
+          I understand how you feel. First of all, don't panic. <span class="highlight-phrase">If I were you, I would start by making a study timetable.</span> That way, you can cover every subject without feeling overwhelmed.
+        </div>
+
+        <div class="speaker a">YOUSSEF</div>
+        <div class="dialogue-line">
+          A timetable sounds good. <span class="highlight-ask">But could you give me some advice on how to stay focused?</span> I get distracted really easily.
+        </div>
+
+        <div class="speaker b">LEILA</div>
+        <div class="dialogue-line">
+          <span class="highlight-phrase">You should turn off your phone while you study.</span> Also, <span class="highlight-phrase">why don't you study in short sessions of 45 minutes</span> with 10-minute breaks? It's much more effective than studying for hours at once.
+        </div>
+
+        <div class="speaker a">YOUSSEF</div>
+        <div class="dialogue-line">
+          <span class="highlight-ask">Thanks, but</span> I've tried the Pomodoro technique before and I find it hard to stop when I'm in the zone. <span class="highlight-ask">Is there anything else I could do?</span>
+        </div>
+
+        <div class="speaker b">LEILA</div>
+        <div class="dialogue-line">
+          <span class="highlight-phrase">You might also want to join a study group.</span> Working with others can really help. And <span class="highlight-phrase">I strongly advise you to see your teacher</span> — I'm sure they can give you extra guidance.
+        </div>
+
+        <div class="speaker a">YOUSSEF</div>
+        <div class="dialogue-line">
+          That's a great idea! <span class="highlight-ask">I appreciate your advice.</span> I'll definitely try all of that. Thank you, Leila.
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🔎 Analysis — Spot the Functions</div>
+      <div class="tip-item">
+        <div class="tip-icon">❓</div>
+        <div class="tip-text"><strong>Asking for advice:</strong> "What do you think I should do?", "Could you give me some advice on…?", "Is there anything else I could do?"</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">💡</div>
+        <div class="tip-text"><strong>Giving strong advice:</strong> "You should turn off your phone", "I strongly advise you to see your teacher"</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">🌿</div>
+        <div class="tip-text"><strong>Giving soft advice:</strong> "Why don't you study in short sessions?", "You might also want to join a study group"</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">🚫</div>
+        <div class="tip-text"><strong>Qualifying advice:</strong> "Thanks, but I've tried that before…" — politely explaining it doesn't suit him</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAB 4: PRACTICE -->
+  <div class="tab-panel" id="tab-practice">
+    <p class="section-title">Practice Exercises</p>
+    <p class="section-sub">Test your understanding with these activities.</p>
+
+    <!-- Fill in the blanks -->
+    <div class="card">
+      <div class="card-title">✏️ Exercise 1 — Complete the Sentences</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">Fill in each blank with the correct word from the box below.</p>
+      <div style="background:var(--bg);border:1px dashed var(--border);border-radius:8px;padding:10px 14px;margin-bottom:14px;font-family:'DM Mono',monospace;font-size:12px;color:var(--gold2);">
+        Word Bank: <strong>should · if I were you · why don't · ought to · could · have you considered · strongly advise</strong>
+      </div>
+
+      <div class="fill-sentence">1. You <input class="fill-input" id="f1" placeholder="______"> go to bed earlier — you look exhausted.</div>
+      <div class="fill-sentence">2. <input class="fill-input" id="f2" placeholder="______"> you, I would apologise right away.</div>
+      <div class="fill-sentence">3. <input class="fill-input" id="f3" placeholder="______"> you joining a sports club? It might help you relieve stress.</div>
+      <div class="fill-sentence">4. I <input class="fill-input" id="f4" placeholder="______"> you to speak to a guidance counsellor.</div>
+      <div class="fill-sentence">5. You <input class="fill-input" id="f5" placeholder="______"> try a different revision method to see if it works better.</div>
+      <div class="fill-sentence">6. <input class="fill-input" id="f6" placeholder="______"> you ask your teacher for extra help?</div>
+      <div class="fill-sentence">7. She <input class="fill-input" id="f7" placeholder="______"> inform her parents about the situation.</div>
+
+      <button class="check-fills-btn" onclick="checkFills()">Check Answers</button>
+      <div id="fills-score" style="margin-top:12px;font-size:13px;display:none;"></div>
+    </div>
+
+    <!-- Match exercise -->
+    <div class="card">
+      <div class="card-title">🔗 Exercise 2 — Match the Function</div>
+      <p style="font-size:12px;color:var(--muted);margin-bottom:14px;">Select a sentence on the left, then select its function on the right.</p>
+      <div class="match-container">
+        <div>
+          <div class="match-col-title">Sentences</div>
+          <div class="match-item" id="ms1" onclick="selectLeft('ms1', 0)">"What would you advise me to do?"</div>
+          <div class="match-item" id="ms2" onclick="selectLeft('ms2', 1)">"You must see a doctor immediately."</div>
+          <div class="match-item" id="ms3" onclick="selectLeft('ms3', 2)">"Why don't you take a break?"</div>
+          <div class="match-item" id="ms4" onclick="selectLeft('ms4', 3)">"Thanks, but that won't work for me."</div>
+          <div class="match-item" id="ms5" onclick="selectLeft('ms5', 4)">"You might want to reconsider."</div>
+        </div>
+        <div>
+          <div class="match-col-title">Functions</div>
+          <div class="match-item" id="mr1" onclick="selectRight('mr1', 1)">Strong advice</div>
+          <div class="match-item" id="mr2" onclick="selectRight('mr2', 0)">Asking for advice</div>
+          <div class="match-item" id="mr3" onclick="selectRight('mr3', 4)">Soft / tentative advice</div>
+          <div class="match-item" id="mr4" onclick="selectRight('mr4', 2)">Suggestion</div>
+          <div class="match-item" id="mr5" onclick="selectRight('mr5', 3)">Refusing advice</div>
+        </div>
+      </div>
+      <div id="match-result" style="margin-top:12px;font-size:13px;display:none;"></div>
+    </div>
+  </div>
+
+  <!-- TAB 5: QUIZ -->
+  <div class="tab-panel" id="tab-quiz">
+    <p class="section-title">Knowledge Quiz</p>
+    <p class="section-sub">Choose the best answer for each question. You'll get instant feedback!</p>
+
+    <div class="quiz-score-bar">
+      <div class="score-display" id="quizScore">0 / 7</div>
+      <div class="score-label">Score — answer all questions to complete</div>
+      <button class="reset-btn" onclick="resetQuiz()">↺ Reset Quiz</button>
+    </div>
+
+    <div id="quizContainer"></div>
+  </div>
+
+  <!-- TAB 6: SITUATIONS -->
+  <div class="tab-panel" id="tab-situations">
+    <p class="section-title">Role-Play Situations</p>
+    <p class="section-sub">Tap each card to reveal a model response. Then practice producing your own with a partner!</p>
+
+    <div class="situations-grid">
+      <div class="situation-card" onclick="revealSit(this)">
+        <div class="sit-emoji">📱</div>
+        <div class="sit-title">Screen Addiction</div>
+        <div class="sit-desc">Your friend spends 6 hours a day on social media and is failing school. What advice do you give?</div>
+        <div class="sit-response">If I were you, I would set a daily screen time limit. You should delete distracting apps during exam season and try spending that time on revision instead.</div>
+        <div class="sit-tap-hint">TAP TO REVEAL →</div>
+      </div>
+
+      <div class="situation-card" onclick="revealSit(this)">
+        <div class="sit-emoji">😟</div>
+        <div class="sit-title">Exam Stress</div>
+        <div class="sit-desc">A classmate is terrified about the Bac. They ask: "I don't know what to do — I can't concentrate at all."</div>
+        <div class="sit-response">You ought to create a study schedule and stick to it. Why don't you try mindfulness exercises before studying? I strongly advise you to talk to your teacher too.</div>
+        <div class="sit-tap-hint">TAP TO REVEAL →</div>
+      </div>
+
+      <div class="situation-card" onclick="revealSit(this)">
+        <div class="sit-emoji">👨‍👩‍👦</div>
+        <div class="sit-title">Family Conflict</div>
+        <div class="sit-desc">You want to study abroad but your parents disapprove. A friend asks for your advice on a similar situation.</div>
+        <div class="sit-response">I'd advise you to sit down with your parents calmly and explain your goals. You could try showing them research about the opportunities it would bring. What about writing them a letter if talking feels hard?</div>
+        <div class="sit-tap-hint">TAP TO REVEAL →</div>
+      </div>
+
+      <div class="situation-card" onclick="revealSit(this)">
+        <div class="sit-emoji">🤝</div>
+        <div class="sit-title">Career Choice</div>
+        <div class="sit-desc">Your cousin loves art but is being pressured to study medicine. They ask: "What would you do if you were me?"</div>
+        <div class="sit-response">If I were you, I would follow my passion but also research career paths in art seriously. You might want to consider graphic design or architecture — they combine creativity and good career prospects.</div>
+        <div class="sit-tap-hint">TAP TO REVEAL →</div>
+      </div>
+
+      <div class="situation-card" onclick="revealSit(this)">
+        <div class="sit-emoji">🏃</div>
+        <div class="sit-title">Health & Lifestyle</div>
+        <div class="sit-desc">A friend says: "I feel tired all the time and I can't sleep well. Could you give me some advice?"</div>
+        <div class="sit-response">You should try to go to bed at the same time every night. I'd also suggest reducing caffeine after noon. Have you considered exercising regularly? It really helps improve sleep quality.</div>
+        <div class="sit-tap-hint">TAP TO REVEAL →</div>
+      </div>
+
+      <div class="situation-card" onclick="revealSit(this)">
+        <div class="sit-emoji">💸</div>
+        <div class="sit-title">Financial Advice</div>
+        <div class="sit-desc">A classmate spent all their pocket money and needs money for books. They say: "What do you think I should do?"</div>
+        <div class="sit-response">You ought to track your spending next month. If I were you, I would talk to your parents honestly about what happened. You could also try borrowing the books from the school library for now.</div>
+        <div class="sit-tap-hint">TAP TO REVEAL →</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">✍️ Writing Task</div>
+      <div class="tip-item">
+        <div class="tip-icon">📝</div>
+        <div class="tip-text">
+          <strong>Your task:</strong> Write a short dialogue (8–10 lines) between two friends. One person has a problem and asks for advice. The other gives at least <strong>three pieces of advice</strong> using different structures. The first friend should accept one piece of advice and politely refuse another.<br><br>
+          <strong>Use at least:</strong> one "should/ought to", one "if I were you", one "why don't you", and one refusal expression.
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div class="tab-progress">
+  <div class="prog-dot active" onclick="showTab('intro',0)"></div>
+  <div class="prog-dot" onclick="showTab('language',1)"></div>
+  <div class="prog-dot" onclick="showTab('grammar',2)"></div>
+  <div class="prog-dot" onclick="showTab('dialogue',3)"></div>
+  <div class="prog-dot" onclick="showTab('practice',4)"></div>
+  <div class="prog-dot" onclick="showTab('quiz',5)"></div>
+  <div class="prog-dot" onclick="showTab('situations',6)"></div>
+</div>
+
+<footer>
+  <span>Prof. Salah Sahmoudi</span> · Abdellah Guennoun High School, Saïss-Fès · 2BAC Language Functions
+</footer>
+
+<script>
+const TABS = ['intro','language','grammar','dialogue','practice','quiz','situations'];
+let currentTab = 0;
+
+/* ── NAV ARROWS ── */
+function scrollNav(dir) {
+  const nav = document.getElementById('mainNav');
+  nav.scrollBy({ left: dir * 130, behavior: 'smooth' });
+  setTimeout(updateArrows, 200);
+}
+function updateArrows() {
+  const nav = document.getElementById('mainNav');
+  const left = document.getElementById('navLeft');
+  const right = document.getElementById('navRight');
+  left.disabled  = nav.scrollLeft <= 2;
+  right.disabled = nav.scrollLeft >= nav.scrollWidth - nav.clientWidth - 2;
+}
+document.getElementById('mainNav').addEventListener('scroll', updateArrows);
+window.addEventListener('resize', updateArrows);
+
+function showTab(name, idx) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('.prog-dot').forEach((d,i) => d.classList.toggle('active', i===idx));
+  document.getElementById('tab-'+name).classList.add('active');
+  document.querySelectorAll('.tab-btn')[idx].classList.add('active');
+  currentTab = idx;
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+/* ── FILL IN BLANKS ── */
+const fillAnswers = {
+  f1: 'should',
+  f2: 'if i were',
+  f3: 'have you considered',
+  f4: 'strongly advise',
+  f5: 'could',
+  f6: 'why don\'t',
+  f7: 'ought to'
+};
+
+function checkFills() {
+  let correct = 0;
+  const total = Object.keys(fillAnswers).length;
+  Object.entries(fillAnswers).forEach(([id, ans]) => {
+    const el = document.getElementById(id);
+    const val = el.value.trim().toLowerCase();
+    el.classList.remove('correct-ans','wrong-ans');
+    if (val === ans || (id==='f2' && val.includes('if i were'))) {
+      el.classList.add('correct-ans');
+      correct++;
+    } else {
+      el.classList.add('wrong-ans');
+    }
+  });
+  const scoreEl = document.getElementById('fills-score');
+  scoreEl.style.display = 'block';
+  const pct = Math.round(correct/total*100);
+  scoreEl.innerHTML = `<strong style="color:${correct===total?'var(--green)':correct>=total*0.6?'var(--gold)':'var(--red)'}">${correct}/${total} correct (${pct}%)</strong>${correct<total?' — Review the highlighted answers.':' — Excellent work! 🎉'}`;
+}
+
+/* ── MATCHING ── */
+const matchCorrect = { ms1:0, ms2:1, ms3:2, ms4:3, ms5:4 };
+const rightCorrect  = { mr1:1, mr2:0, mr3:4, mr4:2, mr5:3 };
+let selectedLeft = null, selectedLeftIdx = null;
+let matchedPairs = 0;
+
+function selectLeft(id, idx) {
+  if (document.getElementById(id).classList.contains('matched-correct')) return;
+  document.querySelectorAll('[id^="ms"]').forEach(el => {
+    if (!el.classList.contains('matched-correct')) el.classList.remove('selected');
+  });
+  selectedLeft = id;
+  selectedLeftIdx = idx;
+  document.getElementById(id).classList.add('selected');
+}
+
+function selectRight(id, idx) {
+  if (!selectedLeft) return;
+  if (document.getElementById(id).classList.contains('matched-correct')) return;
+  const expectedRight = matchCorrect[selectedLeft];
+  if (idx === expectedRight) {
+    document.getElementById(selectedLeft).classList.remove('selected');
+    document.getElementById(selectedLeft).classList.add('matched-correct');
+    document.getElementById(id).classList.add('matched-correct');
+    matchedPairs++;
+    if (matchedPairs===5) {
+      const r = document.getElementById('match-result');
+      r.style.display='block';
+      r.innerHTML = '<strong style="color:var(--green)">✓ All matched correctly! Great job! 🎉</strong>';
+    }
+  } else {
+    document.getElementById(id).classList.add('matched-wrong');
+    document.getElementById(selectedLeft).classList.add('matched-wrong');
+    setTimeout(()=>{
+      document.getElementById(id).classList.remove('matched-wrong');
+      document.getElementById(selectedLeft).classList.remove('matched-wrong','selected');
+    }, 700);
+  }
+  selectedLeft = null;
+  selectedLeftIdx = null;
+}
+
+/* ── QUIZ ── */
+const quizData = [
+  {
+    q: "Which sentence correctly asks for advice?",
+    options: [
+      "A. You should talk to your parents.",
+      "B. What would you advise me to do?",
+      "C. If I were you, I'd stay home.",
+      "D. Why don't you call him?"
+    ],
+    correct: 1,
+    feedback: '"What would you advise me to do?" is a question seeking advice. The others are all examples of giving advice.'
+  },
+  {
+    q: "Choose the correct sentence using <em>If I were you</em>:",
+    options: [
+      "A. If I was you, I will apologise.",
+      "B. If I were you, I would apologise.",
+      "C. If I were you, I apologise.",
+      "D. If I am you, I would apologise."
+    ],
+    correct: 1,
+    feedback: 'Conditional Type 2 requires: "If I were you + would + base verb". Always use "were", not "was".'
+  },
+  {
+    q: "Which modal gives the STRONGEST advice?",
+    options: [
+      "A. You could try again.",
+      "B. You might want to rest.",
+      "C. You must see a doctor.",
+      "D. Why don't you ask someone?"
+    ],
+    correct: 2,
+    feedback: '"Must" expresses the strongest obligation/advice. "Could" and "might" are tentative; "why don\'t" is a suggestion.'
+  },
+  {
+    q: "A friend says: 'I'm worried about my Bac results. Have you got any advice?' — Which is the BEST response?",
+    options: [
+      "A. No, I don't.",
+      "B. If I were you, I would start revising earlier and ask your teacher for help.",
+      "C. You must not study.",
+      "D. Have you considered I was wrong?"
+    ],
+    correct: 1,
+    feedback: 'Option B gives specific, constructive advice using the correct "If I were you + would" structure.'
+  },
+  {
+    q: "Which sentence politely REFUSES advice?",
+    options: [
+      "A. You should do that.",
+      "B. If I were you, I would try.",
+      "C. Thanks for the advice, but I don't think that would work for me.",
+      "D. What do you think I should do?"
+    ],
+    correct: 2,
+    feedback: 'Politely refusing advice means acknowledging it ("Thanks…") then explaining why it doesn\'t suit you.'
+  },
+  {
+    q: "Complete the sentence: 'You _____ consider all your options before deciding.'",
+    options: [
+      "A. must",
+      "B. ought to",
+      "C. are",
+      "D. were"
+    ],
+    correct: 1,
+    feedback: '"Ought to" is correct: it\'s followed by the base verb and gives neutral/formal advice. "Must" is too strong here.'
+  },
+  {
+    q: "What does the structure 'Why don't you…?' express?",
+    options: [
+      "A. A question about someone's behaviour",
+      "B. A polite suggestion or advice",
+      "C. A refusal of advice",
+      "D. A conditional statement"
+    ],
+    correct: 1,
+    feedback: '"Why don\'t you…?" is a common informal way of making a suggestion or giving soft advice.'
+  }
+];
+
+let quizAnswers = new Array(quizData.length).fill(null);
+let quizScore = 0;
+
+function buildQuiz() {
+  const container = document.getElementById('quizContainer');
+  container.innerHTML = '';
+  quizData.forEach((q, qi) => {
+    const div = document.createElement('div');
+    div.className = 'quiz-question';
+    div.innerHTML = `
+      <div class="quiz-q-num">QUESTION ${qi+1} OF ${quizData.length}</div>
+      <div class="quiz-q-text">${q.q}</div>
+      <div class="options" id="opts-${qi}">
+        ${q.options.map((opt,oi)=>`<button class="option-btn" onclick="answerQuiz(${qi},${oi})">${opt}</button>`).join('')}
+      </div>
+      <div class="feedback" id="fb-${qi}"></div>
+    `;
+    container.appendChild(div);
+  });
+  updateScore();
+}
+
+function answerQuiz(qi, oi) {
+  if (quizAnswers[qi] !== null) return;
+  quizAnswers[qi] = oi;
+  const opts = document.querySelectorAll(`#opts-${qi} .option-btn`);
+  opts.forEach(b => b.disabled = true);
+  const correct = quizData[qi].correct === oi;
+  opts[quizData[qi].correct].classList.add('correct');
+  if (!correct) opts[oi].classList.add('wrong');
+  const fb = document.getElementById(`fb-${qi}`);
+  fb.textContent = (correct ? '✓ Correct! ' : '✗ Not quite. ') + quizData[qi].feedback;
+  fb.className = `feedback show ${correct ? 'correct' : 'wrong'}`;
+  if (correct) quizScore++;
+  updateScore();
+}
+
+function updateScore() {
+  document.getElementById('quizScore').textContent = `${quizScore} / ${quizData.length}`;
+}
+
+function resetQuiz() {
+  quizAnswers = new Array(quizData.length).fill(null);
+  quizScore = 0;
+  buildQuiz();
+}
+
+/* ── SITUATIONS ── */
+function revealSit(card) {
+  card.classList.toggle('revealed');
+}
+
+/* ── INIT ── */
+buildQuiz();
+updateArrows();
+</script>
+</body>
+</html>
